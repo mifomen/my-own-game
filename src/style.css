@@ -1,0 +1,76 @@
+* {
+  outline: 2px solid #121;
+}
+body {
+  font-family: 'Roboto', sans-serif,'Arial';
+   display: flex;
+background-color: rgba(0,0,255,0.5);
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   padding:0;
+
+   height: 98vh;
+   width: 99%;
+}
+.game {
+  display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+  margin: 10%;
+  width: 100%;
+}
+.row {
+  /*width: 70%;*/
+  text-align: center;
+  /*align-content: middle;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+    align-items: space-around;
+  align-content: space-around; 
+}
+
+.one {
+  /*width: 30%;*/
+}
+/*.s5 {
+  font-size: 20px;
+}*/
+.row-balls {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  align-content: space-around; 
+}
+:root {
+  --width:5vw;
+}
+.title {
+  /*padding: 1em;*/
+  color: white;
+   text-shadow:3px 3px 5px rgba(0,0,0,1) ;
+   width: 30%;
+}
+.ball {
+  /*padding: 5vh 2vw;*/
+  font-size: 2.4em;
+  background-color: rgba(0,0,175,1);
+  color: white;
+  transition: 500ms ease;
+  text-decoration: none;
+  outline: 2px solid white;
+  outline-offset: -5px;
+}
+.ball:hover {
+  transform: scale(1.2);
+  transition: 500ms ease;
+  color: white;
+  font-weight: bold;
+  text-shadow:10px 10px 5px rgba(255,255,255,05.) ;
+  box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.3),-10px -10px 5px 0px rgba(255,255,255,0.3);
+}
+
+.hidden {
+  display: none;
+}
