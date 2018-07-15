@@ -15,16 +15,31 @@
   ],
   "author": "mifomen",
   "license": "MIT",
+  "config": {
+    "src": {
+      "css": "src/"
+    },
+    "build": {
+      "css": "build/"
+    }
+  },
   "bugs": {
     "url": "https://github.com/mifomen/my-own-game/issues"
   },
   "homepage": "https://github.com/mifomen/my-own-game#readme",
   "devDependencies": {
+    "autoprefixer": "^8.6.5",
     "browser-sync": "^2.24.5",
+    "css-mqpacker": "^6.0.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.9.4",
     "gulp-cli": "^2.0.1",
     "gulp-gh-pages": "^0.5.4",
+    "gulp-html-minify": "0.0.14",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-uglify": "^3.0.0",
     "require-dir": "^1.0.0",
     "run-sequence": "^2.2.1"
   }
