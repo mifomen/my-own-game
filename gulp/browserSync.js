@@ -14,3 +14,13 @@ gulp.task("serve", function() {
   gulp.watch("src/*.js", ["js-min"]).on("change", browserSync.reload);
   gulp.watch("src/*.css", ["css-min"]).on("change", browserSync.reload);
 });
+
+
+gulp.task("watch", function() {
+  browserSync.init({
+    server: "build",
+    notify: false,
+    open: true,
+    ui: false
+  });
+});

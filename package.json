@@ -4,7 +4,8 @@
   "description": "game is my own game",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp build && gulp serve"
+    "start": "gulp build && gulp serve",
+    "test": "gulp build && gulp watch"
   },
   "repository": {
     "type": "git",
