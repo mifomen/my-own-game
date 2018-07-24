@@ -1,9 +1,3 @@
-// var Start = function ('DOMContentLoaded',function(e){
-//  document.getElementById('Start').classList.remove('hidden')
-
-// })
- document.getElementById('Start').classList.remove('hidden')
-
 
 var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
@@ -13,23 +7,21 @@ for (var i = 0; i < links.length; i++) {
 };
 
 var points = document.querySelectorAll('.points');
-// console.log(points);
+
 var BtnStartGame = document.getElementById("StartGame");
-// console.log(BtnStartGame)
+
 
 StartGame. addEventListener('click',function(evt){
-document.querySelector('.game').classList.add('hidden');
-document.querySelector('.Start-One').classList.remove('hidden');
+  document.querySelector('.game').classList.add('hidden');
+  document.querySelector('.Start-One').classList.remove('hidden');
 })
 
 var All  = document.querySelectorAll('.points');
 All.forEach(function(evt){
-evt.addEventListener('click',function(e) {
-  evt.style.opacity="0";
-  evt.style.visibility="hidden";
-
-})
-
+  evt.addEventListener('click',function(e) {
+    evt.style.opacity="0";
+    evt.style.visibility="hidden";
+  })
 });
 
 var FirstTheme  = document.querySelectorAll('.one .points')
@@ -38,16 +30,42 @@ var ThirdTheme  = document.querySelectorAll('.three .points')
 var FourTheme  = document.querySelectorAll('.four .points')
 var FiveTheme  = document.querySelectorAll('.five .points')
 
+  var GetPointsButton = function (FindButton,points,team) {
+   var PointsButton = document.getElementById(FindButton);
+   PointsButton.addEventListener('click',function (evt) {
+    var WhoGetPoints = document.querySelector(team); 
+    if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
+    WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
+    PointsButton.disabled = true;
+  });
+};
+var NewButton = function(msg,id,parent) {
+  var TextArea = document.createElement(parent);
+  TextArea.className = "image-output";
+  TextArea.id = "Qestion-Delete";
+  var TextOfQestion = document.createElement('h1');
+  TextOfQestion.textContent = msg;
+  TextOfQestion.className = 'Text-Qestion'
+  TextArea.appendChild(TextOfQestion);
 
+   var SomeButton = document.createElement('button');
+   SomeButton.type = 'button';
+   SomeButton.id = id;
+   SomeButton.textContent = msg;
+   parent.appendChild(SomeButton);
+}
 
 var Question = function(evt,points) {
   var TextArea = document.createElement('div');
   TextArea.className = "image-output";
   TextArea.id = "Qestion-Delete";
-     var h = document.createElement('h1');
-     h.textContent = evt;
-     h.className = 'Text-Qestion'
-     TextArea.appendChild(h);
+     var TextOfQestion = document.createElement('h1');
+     TextOfQestion.textContent = evt;
+     TextOfQestion.className = 'Text-Qestion'
+     TextArea.appendChild(TextOfQestion);
+
+// NewButton('Дать очки синим!','Left-Button','div');
+// NewButton('Дать очки красным!','Right-Button'.TextArea);
    var LeftButton = document.createElement('button');
    LeftButton.type = 'button';
    LeftButton.id = "Left-Button";
@@ -62,42 +80,17 @@ var Question = function(evt,points) {
 
  document.body.appendChild(TextArea);
 
- var GetPointsBlue = document.getElementById('Left-Button');
- GetPointsBlue.addEventListener('click',function (evt) {
-  GetPointsToBlueTeam(points);
-  GetPointsBlue.disabled = true;
-})
- var GetPointsRed = document.getElementById('Right-Button');
- GetPointsRed.addEventListener('click',function (evt) {
-  GetPointsToRedTeam(points)
-  GetPointsRed.disabled = true;
-})
-
+GetPointsButton('Left-Button',points,'.blue');
+GetPointsButton('Right-Button',points,'.red');
 }
- var ESC_KEY_CODE=27;
- document.onkeydown  = function(evt) {
+var ESC_KEY_CODE=27;
+document.onkeydown  = function(evt) {
   if (evt.keyCode == ESC_KEY_CODE) {
-    RemoveElementInDom('Qestion-Delete');
+    var elem = document.getElementById('Qestion-Delete');
+    if (elem) {elem.parentNode.removeChild(elem)}
   }
 }
 
-var RemoveElementInDom = function(evt) {
-  var elem = document.getElementById(evt);
-  if (elem) {elem.parentNode.removeChild(elem)}
-}
-
-var GetPointsToBlueTeam = function(points) {
-  var ToGet = document.querySelector('.blue'); 
-  // if (ToGet.textContent==='0') {alert('asdasd')}
-  if (ToGet.textContent==='0') ToGet.textContent=0;
-  ToGet.textContent = Number(ToGet.textContent) + Number(points)
-}
-
-var GetPointsToRedTeam = function(points) {
-  var ToGet = document.querySelector('.red'); 
-  if (ToGet.textContent==='0') ToGet.textContent=0;
-  ToGet.textContent = Number(ToGet.textContent) + Number(points)
-}
 FirstTheme[0].addEventListener('click',function(evt) {
   var q = 'Как расшифровать http?';
   Question(q,5);
@@ -146,7 +139,7 @@ ThirdTheme[0].addEventListener('click',function(evt) {
   Question(q,5);
 })
 ThirdTheme[1].addEventListener('click',function(evt) {
-  var q = 'В интернете компьютеры обмениваются? ';
+  var q = 'В интернете компьютеры обмениваются? (связано со спайками и лагами при играх)';
   Question(q,10);
 })
 ThirdTheme[2].addEventListener('click',function(evt) {
@@ -183,7 +176,6 @@ FourTheme[4].addEventListener('click',function(evt) {
   Question(q,25);
 })
 
-
 FiveTheme[0].addEventListener('click',function(evt) {
   var q = 'css существуется для?';
   Question(q,5);
@@ -204,5 +196,4 @@ FiveTheme[4].addEventListener('click',function(evt) {
   var q = 'Каким свойством можно задать задний фон элемента?';
   Question(q,25);
 })
-
 console.log('all fine')
