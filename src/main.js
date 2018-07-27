@@ -10,10 +10,23 @@ var points = document.querySelectorAll('.points');
 
 var BtnStartGame = document.getElementById("StartGame");
 
+function addScript(src) {
+  var elem = document.createElement("script");
+  elem.src = src;
+  document.head.appendChild(elem);
 
-StartGame. addEventListener('click',function(evt){
+}
+
+document.addEventListener('DOMContentLoaded',function(evt){
+  addScript('questions.js');
+
+})
+
+
+BtnStartGame.addEventListener('click',function(evt){
   document.querySelector('.game').classList.add('hidden');
   document.querySelector('.Start-One').classList.remove('hidden');
+
 })
 
 var All  = document.querySelectorAll('.points');
@@ -83,6 +96,7 @@ var Question = function(evt,points) {
 GetPointsButton('Left-Button',points,'.blue');
 GetPointsButton('Right-Button',points,'.red');
 }
+
 var ESC_KEY_CODE=27;
 document.onkeydown  = function(evt) {
   if (evt.keyCode == ESC_KEY_CODE) {
@@ -91,31 +105,62 @@ document.onkeydown  = function(evt) {
   }
 }
 
-FirstTheme[0].addEventListener('click',function(evt) {
-  var q = 'Как расшифровать http?';
-  Question(q,5);
-})
-FirstTheme[1].addEventListener('click',function(evt) {
-  var q = 'Что на самом деле происходит, когда вы вводите в браузере адрес сайта и нажимаете Enter? ';
-  Question(q,10);
-})
-FirstTheme[2].addEventListener('click',function(evt) {
-  var q = 'Где "живут" сайты?';
-  Question(q,15);
-})
-FirstTheme[3].addEventListener('click',function(evt) {
-  var q = '«Доехать» от сервера до сервера можно по ? почему можно доехать?';
-  Question(q,20);
-})
-FirstTheme[4].addEventListener('click',function(evt) {
-  var q = 'При помощи службы браузер узнает на какой сайт хочет перейти пользователь';
-  Question(q,25);
-})
+// for (var i=0; i++; i<=All.length) {
+//   All[i].innerHTML = AllQuestion[i].points;
+// }
+// All[0].innerHTML = AllQuestion[0].points;
+
+// var nameLengths = AllQuestion.filter(function(name) {
+//   return name.theme=='html';
+// });
+
+
+// for (var i=0; i++; i<5) {
+//   FirstTheme[i].addEventListener('click',function(evt) {
+//     Question(AllQuestion[i].question,AllQuestion[i].points);
+//   })
+// }
+
+// FirstTheme.forEach(function(entry){
+//   entry.addEventListener('click',function(evt) {
+//   Question(AllQuestion.question,AllQuestion.points);
+// })
+// })
+
+// FirstTheme.forEach(function(entry){
+// entry.addEventListener('click',function(evt) {
+//   // var q = 'Как расшифровать http?';
+//   // Question(q,5);
+//   Question(AllQuestion[0].question,AllQuestion[0].points);
+// })
+// })
+
+// FirstTheme[0].addEventListener('click',function(evt) {
+//   // var q = 'Как расшифровать http?';
+//   // Question(q,5);
+//   Question(AllQuestion[0].question,AllQuestion[0].points);
+// })
+// FirstTheme[1].addEventListener('click',function(evt) {
+//   var q = 'Что на самом деле происходит, когда вы вводите в браузере адрес сайта и нажимаете Enter? ';
+//   Question(q,10);
+// })
+// FirstTheme[2].addEventListener('click',function(evt) {
+//   var q = 'Где "живут" сайты?';
+//   Question(q,15);
+// })
+// FirstTheme[3].addEventListener('click',function(evt) {
+//   var q = '«Доехать» от сервера до сервера можно по ? почему можно доехать?';
+//   Question(q,20);
+// })
+// FirstTheme[4].addEventListener('click',function(evt) {
+//   var q = 'При помощи службы браузер узнает на какой сайт хочет перейти пользователь';
+//   Question(q,25);
+// })
 
 
 SecondTheme[0].addEventListener('click',function(evt) {
   var q = 'Все его называют "питоном", но правильно его называть?';
-  Question(q,5);
+  Question(AllQuestion[0].question,AllQuestion[0].points);
 })
 SecondTheme[1].addEventListener('click',function(evt) {
   var q = 'Язык программирования Python назвали в честь английской ...  \n Какой?';

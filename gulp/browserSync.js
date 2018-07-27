@@ -11,9 +11,11 @@ gulp.task("serve", function() {
   });
 
   gulp.watch("src/*.html", ["html-min"]).on("change", browserSync.reload);
-  gulp.watch("src/*.js", ["js-min"]).on("change", browserSync.reload);
+  gulp.watch("src/main.js", ["js-min"]).on("change", browserSync.reload);
+    gulp.watch("src/qestions.js", ["js-min-q"]).on("change", browserSync.reload);
   gulp.watch("src/*.css", ["css-min"]).on("change", browserSync.reload);
 });
+
 
 
 gulp.task("watch", function() {
