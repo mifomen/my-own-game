@@ -8,6 +8,7 @@ for (var i = 0; i < links.length; i++) {
 
 var points = document.querySelectorAll('.points');
 
+
 var BtnStartGame = document.getElementById("StartGame");
 
 function addScript(src) {
@@ -97,6 +98,7 @@ GetPointsButton('Left-Button',points,'.blue');
 GetPointsButton('Right-Button',points,'.red');
 }
 
+mama.getPrice();
 var ESC_KEY_CODE=27;
 document.onkeydown  = function(evt) {
   if (evt.keyCode == ESC_KEY_CODE) {

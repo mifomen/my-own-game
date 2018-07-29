@@ -16,14 +16,14 @@ gulp.task("js-q", function() {
 
 gulp.task("js-min", function() {
   gulp.src("src/**/main.js")
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(plumber())
     .pipe(gulp.dest("build/"));
 });
 
 gulp.task("js-min-q", function() {
   gulp.src("src/**/questions.js")
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(plumber())
     .pipe(gulp.dest("build/"));
 });

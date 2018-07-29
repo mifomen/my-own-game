@@ -126,3 +126,15 @@ var AllQuestion = [
   points: 150 
 }
 ]
+
+var mama = {
+  dada: 500,
+  mama: 1250,
+  getFunction: function() {
+    console.log('mama')
+  },
+  getPrice: function() {
+    console.log('papa')
+  }
+
+}
