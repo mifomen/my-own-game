@@ -11,17 +11,17 @@ var points = document.querySelectorAll('.points');
 
 var BtnStartGame = document.getElementById("StartGame");
 
-function addScript(src) {
-  var elem = document.createElement("script");
-  elem.src = src;
-  document.head.appendChild(elem);
+// function addScript(src) {
+//   var elem = document.createElement("script");
+//   elem.src = src;
+//   document.head.appendChild(elem);
 
-}
+// }
 
-document.addEventListener('DOMContentLoaded',function(evt){
-  addScript('questions.js');
+// document.addEventListener('DOMContentLoaded',function(evt){
+//   addScript('questions.js');
 
-})
+// })
 
 
 BtnStartGame.addEventListener('click',function(evt){
@@ -98,7 +98,7 @@ GetPointsButton('Left-Button',points,'.blue');
 GetPointsButton('Right-Button',points,'.red');
 }
 
-mama.getPrice();
+
 var ESC_KEY_CODE=27;
 document.onkeydown  = function(evt) {
   if (evt.keyCode == ESC_KEY_CODE) {
@@ -107,140 +107,235 @@ document.onkeydown  = function(evt) {
   }
 }
 
-// for (var i=0; i++; i<=All.length) {
-//   All[i].innerHTML = AllQuestion[i].points;
-// }
-// All[0].innerHTML = AllQuestion[0].points;
 
-// var nameLengths = AllQuestion.filter(function(name) {
-//   return name.theme=='html';
-// });
-
-
-// for (var i=0; i++; i<5) {
-//   FirstTheme[i].addEventListener('click',function(evt) {
-//     Question(AllQuestion[i].question,AllQuestion[i].points);
-//   })
-// }
-
-// FirstTheme.forEach(function(entry){
-//   entry.addEventListener('click',function(evt) {
-//   Question(AllQuestion.question,AllQuestion.points);
-// })
-// })
-
-// FirstTheme.forEach(function(entry){
-// entry.addEventListener('click',function(evt) {
-//   // var q = 'Как расшифровать http?';
-//   // Question(q,5);
-//   Question(AllQuestion[0].question,AllQuestion[0].points);
-// })
-// })
-
-// FirstTheme[0].addEventListener('click',function(evt) {
-//   // var q = 'Как расшифровать http?';
-//   // Question(q,5);
-//   Question(AllQuestion[0].question,AllQuestion[0].points);
-// })
-// FirstTheme[1].addEventListener('click',function(evt) {
-//   var q = 'Что на самом деле происходит, когда вы вводите в браузере адрес сайта и нажимаете Enter? ';
-//   Question(q,10);
-// })
-// FirstTheme[2].addEventListener('click',function(evt) {
-//   var q = 'Где "живут" сайты?';
-//   Question(q,15);
-// })
-// FirstTheme[3].addEventListener('click',function(evt) {
-//   var q = '«Доехать» от сервера до сервера можно по ? почему можно доехать?';
-//   Question(q,20);
-// })
-// FirstTheme[4].addEventListener('click',function(evt) {
-//   var q = 'При помощи службы браузер узнает на какой сайт хочет перейти пользователь';
-//   Question(q,25);
-// })
+FirstTheme[0].addEventListener('click',function(evt) {
+  Question(AllQuestion[0].question,AllQuestion[0].points);
+})
+FirstTheme[1].addEventListener('click',function(evt) {
+  Question(AllQuestion[1].question,AllQuestion[1].points);
+})
+FirstTheme[2].addEventListener('click',function(evt) {
+  Question(AllQuestion[2].question,AllQuestion[2].points);
+})
+FirstTheme[3].addEventListener('click',function(evt) {
+  Question(AllQuestion[3].question,AllQuestion[3].points);
+})
+FirstTheme[4].addEventListener('click',function(evt) {
+  Question(AllQuestion[4].question,AllQuestion[4].points);
+})
 
 
 SecondTheme[0].addEventListener('click',function(evt) {
-  var q = 'Все его называют "питоном", но правильно его называть?';
-  Question(AllQuestion[0].question,AllQuestion[0].points);
+  Question(AllQuestion[5].question,AllQuestion[5].points);
 })
 SecondTheme[1].addEventListener('click',function(evt) {
-  var q = 'Язык программирования Python назвали в честь английской ...  \n Какой?';
-  Question(q,10);
+  Question(AllQuestion[6].question,AllQuestion[6].points);
 })
 SecondTheme[2].addEventListener('click',function(evt) {
-  var q = 'Чтобы отслеживать какие-то сбытия надо повесить...  что надо повесить?';
-  Question(q,15);
+  Question(AllQuestion[7].question,AllQuestion[7].points);
 })
 SecondTheme[3].addEventListener('click',function(evt) {
-  var q = 'Именно эта логическая единица используется, чтобы у программы был выбор';
-  Question(q,20);
+  Question(AllQuestion[8].question,AllQuestion[8].points);
 })
 SecondTheme[4].addEventListener('click',function(evt) {
-  var q = 'почему python популярен сейчас?';
-  Question(q,25);
+   Question(AllQuestion[9].question,AllQuestion[9].points);
 })
 
 ThirdTheme[0].addEventListener('click',function(evt) {
-  var q = 'Чтобы браузер красиво показывал материал на сайте, нужно использовать?';
-  Question(q,5);
+  Question(AllQuestion[10].question,AllQuestion[10].points);
 })
 ThirdTheme[1].addEventListener('click',function(evt) {
-  var q = 'В интернете компьютеры обмениваются? (связано со спайками и лагами при играх)';
-  Question(q,10);
+  Question(AllQuestion[11].question,AllQuestion[11].points);
 })
 ThirdTheme[2].addEventListener('click',function(evt) {
-  var q = 'Какая служба доставки пакетов испльзуется в "Сети" ?';
-  Question(q,15);
+  Question(AllQuestion[12].question,AllQuestion[12].points);
 })
 ThirdTheme[3].addEventListener('click',function(evt) {
-  var q = 'Как браузер собирается сайт?';
-  Question(q,20);
+  Question(AllQuestion[13].question,AllQuestion[13].points);
 })
 ThirdTheme[4].addEventListener('click',function(evt) {
-  var q = 'Для создания сайта достаточной 3-х ключевых людей, назоваите их должности';
-  Question(q,25);
+  Question(AllQuestion[14].question,AllQuestion[14].points);
 })
 
 FourTheme[0].addEventListener('click',function(evt) {
-  var q = 'Каждому элемента scratch\'a можно задать свое поведение? ';
-  Question(q,5);
+  Question(AllQuestion[15].question,AllQuestion[15].points);
 })
 FourTheme[1].addEventListener('click',function(evt) {
-  var q = 'Почему создатели назвали его именно scratch?';
-  Question(q,10);
+  Question(AllQuestion[16].question,AllQuestion[16].points);
 })
 FourTheme[2].addEventListener('click',function(evt) {
-  var q = 'Самый знаменитый персонаж scratch это ?';
-  Question(q,15);
+  Question(AllQuestion[17].question,AllQuestion[17].points);
 })
 FourTheme[3].addEventListener('click',function(evt) {
-  var q = 'почему scratch стали считать языком программирования?';
-  Question(q,20);
+  Question(AllQuestion[18].question,AllQuestion[18].points);
 })
 FourTheme[4].addEventListener('click',function(evt) {
-  var q = 'какое свойство надо добавлять событию, чтобы потом можно было работать с клавишами и не нажимать по несколько раз сам этот флажок?';
-  Question(q,25);
+  Question(AllQuestion[19].question,AllQuestion[19].points);
 })
 
 FiveTheme[0].addEventListener('click',function(evt) {
-  var q = 'css существуется для?';
-  Question(q,5);
+  Question(AllQuestion[20].question,AllQuestion[20].points);
 })
 FiveTheme[1].addEventListener('click',function(evt) {
-  var q = 'Чтобы придаться объекту оформление нужно?';
-  Question(q,10);
+  Question(AllQuestion[21].question,AllQuestion[21].points);
 })
 FiveTheme[2].addEventListener('click',function(evt) {
-  var q = 'Какое свойство мы использовали для смены картинок?';
-  Question(q,15);
+  Question(AllQuestion[22].question,AllQuestion[22].points);
 })
 FiveTheme[3].addEventListener('click',function(evt) {
-  var q = 'При помощи какой технологии строиться цвет элемента?';
-  Question(q,20);
+  Question(AllQuestion[23].question,AllQuestion[23].points);
 })
 FiveTheme[4].addEventListener('click',function(evt) {
-  var q = 'Каким свойством можно задать задний фон элемента?';
-  Question(q,25);
+  Question(AllQuestion[24].question,AllQuestion[24].points);
 })
 console.log('all fine')
+
+
+var Themes = ['html','python','Интернет','SCRATCH','css']
+var AllQuestion = [
+{
+  theme:'html', 
+  question: 'расшифруйте аббревиатуру http', 
+  points: 100 
+},
+{
+  theme:'html', 
+  question: 'Что на самом деле происходит, когда пользователь вводит в браузере адрес сайта и нажимаете Enter?', 
+  points: 200 
+},
+{
+  theme:'html', 
+  question: 'Где "живут" сайты?', 
+  points: 300 
+},
+{
+  theme:'html', 
+  question: 'Какой тег надо использовать для создания заголовков?', 
+  points: 400 
+},
+{
+  theme:'html', 
+  question: 'Данная служба подсказывает, какой именно сайт хочет посетить пользователь', 
+  points: 500 
+},
+{
+  theme:'html', 
+  question: 'Сколько людей нужно, чтобы создать сайт?', 
+  points: 100 
+},
+{
+  theme:'html', 
+  question: 'Люди пишут слова, а браузеру надо написать?', 
+  points: 200,
+  answer: 'тэги'
+},
+{
+  theme:'html', 
+  question: 'Какой тег надо использовать чтобы создать абзац', 
+  points: 300 
+},
+{
+  theme:'html', 
+  question: 'Для задания оформления, тегам прописывают..', 
+  points: 400,
+  answer: 'классы \ class'
+},
+{
+  theme:'html', 
+  question: 'Назовите 3-х китов, на которых держится интернет?', 
+  points: 500,
+  answer: 'html + css + js' 
+},
+{
+  theme:'загадки', 
+  question: 'Шли два отца и два сына, нашли три апельсина. Поделили – всем по одному. Как так получилось?', 
+  points: 100,
+  answer: 'шли дед, отец и сын'
+},
+{
+  theme:'загадки', 
+  question: 'Что в России на первом месте, а во Франции на втором?', 
+  points: 200,
+  anwser:' Буква Р'
+},
+{
+  theme:'загадки', 
+  question: 'Завязать можно, а развязать нельзя', 
+  points: 300,
+  answer:'разговор'
+},
+{
+  theme:'загадки', 
+  question: 'По какому пути ещё никто никогда не ходил и не ездил?', 
+  points: 400,
+  answer: 'по млечному'
+},
+{
+  theme:'загадки', 
+  question: 'Чем кончаются день и ночь?', 
+  points: 500,
+  answer: 'мягким знаком'
+},
+{
+  theme:'css', 
+  question: 'Как расшифровывается css? ', 
+  points: 100 
+},
+{
+  theme:'css', 
+  question: 'Для чего используют css?', 
+  points: 200 
+},
+{
+  theme:'css', 
+  question: 'Почему таблицу называют именно каскадной?', 
+  points: 300 
+},
+{
+  theme:'css', 
+  question: 'Итак, язык CSS состоит из ............. и свойств.', 
+  points: 400 
+},
+{
+  theme:'css', 
+  question: 'Чем в css, отличается запись .leard от #leard', 
+  points: 500 
+},
+{
+  theme:'css', 
+  question: 'css существуется для?', 
+  points: 100 
+},
+{
+  theme:'css', 
+  question: 'Чтобы придать объекту оформление нужно описать его...', 
+  points: 200 
+},
+{
+  theme:'css', 
+  question: 'При помощи background-image можно задать?', 
+  points: 300 
+},
+{
+  theme:'css', 
+  question: 'Что появится у элемента в результате свойства border: 2px solid yellow', 
+  points: 400 
+},
+{
+  theme:'css', 
+  question: 'При помощи background-repeat можно задать?', 
+  points: 500 
+}
+]
+
+// var dds = {
+//   dada: 500,
+//   mama: 1250,
+//   getFunction: function() {
+//     console.log('mama')
+//   },
+//   getPrice: function() {
+//     console.log('papa')
+//   }
+
+// }
