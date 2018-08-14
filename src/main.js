@@ -1,3 +1,15 @@
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 
 var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
@@ -7,27 +19,23 @@ for (var i = 0; i < links.length; i++) {
 };
 
 var points = document.querySelectorAll('.points');
-
-
 var BtnStartGame = document.getElementById("StartGame");
 
-// function addScript(src) {
-//   var elem = document.createElement("script");
-//   elem.src = src;
-//   document.head.appendChild(elem);
+function addScript(src) {
+  var elem = document.createElement("script");
+  elem.src = src;
+  document.head.appendChild(elem);
+}
 
-// }
+document.addEventListener('DOMContentLoaded',function(evt){
+  addScript('questions.js');
 
-// document.addEventListener('DOMContentLoaded',function(evt){
-//   addScript('questions.js');
-
-// })
+})
 
 
 BtnStartGame.addEventListener('click',function(evt){
   document.querySelector('.game').classList.add('hidden');
   document.querySelector('.Start-One').classList.remove('hidden');
-
 })
 
 var All  = document.querySelectorAll('.points');
@@ -38,9 +46,10 @@ All.forEach(function(evt){
   })
 });
 
+var All = document.querySelectorAll('.game .points')
 var FirstTheme  = document.querySelectorAll('.one .points')
-var SecondTheme  = document.querySelectorAll('.two .points')
-var ThirdTheme  = document.querySelectorAll('.three .points')
+var SecondTheme = document.querySelectorAll('.two .points')
+var ThirdTheme = document.querySelectorAll('.three .points')
 var FourTheme  = document.querySelectorAll('.four .points')
 var FiveTheme  = document.querySelectorAll('.five .points')
 
@@ -57,10 +66,10 @@ var NewButton = function(msg,id,parent) {
   var TextArea = document.createElement(parent);
   TextArea.className = "image-output";
   TextArea.id = "Qestion-Delete";
-  var TextOfQestion = document.createElement('h1');
-  TextOfQestion.textContent = msg;
-  TextOfQestion.className = 'Text-Qestion'
-  TextArea.appendChild(TextOfQestion);
+  var TextOfQuestion = document.createElement('h1');
+  TextOfQuestion.textContent = msg;
+  TextOfQuestion.className = 'Text-Qestion'
+  TextArea.appendChild(TextOfQuestion);
 
    var SomeButton = document.createElement('button');
    SomeButton.type = 'button';
@@ -73,13 +82,11 @@ var Question = function(evt,points) {
   var TextArea = document.createElement('div');
   TextArea.className = "image-output";
   TextArea.id = "Qestion-Delete";
-     var TextOfQestion = document.createElement('h1');
-     TextOfQestion.textContent = evt;
-     TextOfQestion.className = 'Text-Qestion'
-     TextArea.appendChild(TextOfQestion);
+     var TextOfQuestion = document.createElement('h1');
+     TextOfQuestion.textContent = evt;
+     TextOfQuestion.className = 'Text-Qestion'
+     TextArea.appendChild(TextOfQuestion);
 
-// NewButton('Дать очки синим!','Left-Button','div');
-// NewButton('Дать очки красным!','Right-Button'.TextArea);
    var LeftButton = document.createElement('button');
    LeftButton.type = 'button';
    LeftButton.id = "Left-Button";
@@ -107,6 +114,20 @@ document.onkeydown  = function(evt) {
   }
 }
 
+  // var TimeMassive = [];
+  // TimeMassive = Array.from (FindAllTags);
+  // TimeMassive.forEach(function (it) {
+
+  //   return it.style.cssText = it.style.cssText.replace('font-size: ' + localStorage["LocalProperty0"],'');
+  //   // it.style.cssText.replace(f,'');
+  // })
+
+  var ArrayOfQuestions = [];
+  ArrayOfQuestions = Array.from (All);
+
+  // ArrayOfQuestions.forEach(function (it) {
+
+  // })
 
 FirstTheme[0].addEventListener('click',function(evt) {
   Question(AllQuestion[0].question,AllQuestion[0].points);
@@ -191,151 +212,4 @@ FiveTheme[4].addEventListener('click',function(evt) {
 console.log('all fine')
 
 
-var Themes = ['html','python','Интернет','SCRATCH','css']
-var AllQuestion = [
-{
-  theme:'html', 
-  question: 'расшифруйте аббревиатуру http', 
-  points: 100 
-},
-{
-  theme:'html', 
-  question: 'Что на самом деле происходит, когда пользователь вводит в браузере адрес сайта и нажимаете Enter?', 
-  points: 200 
-},
-{
-  theme:'html', 
-  question: 'Где "живут" сайты?', 
-  points: 300 
-},
-{
-  theme:'html', 
-  question: 'Какой тег надо использовать для создания заголовков?', 
-  points: 400 
-},
-{
-  theme:'html', 
-  question: 'Данная служба подсказывает, какой именно сайт хочет посетить пользователь', 
-  points: 500 
-},
-{
-  theme:'html', 
-  question: 'Сколько людей нужно, чтобы создать сайт?', 
-  points: 100 
-},
-{
-  theme:'html', 
-  question: 'Люди пишут слова, а браузеру надо написать?', 
-  points: 200,
-  answer: 'тэги'
-},
-{
-  theme:'html', 
-  question: 'Какой тег надо использовать чтобы создать абзац', 
-  points: 300 
-},
-{
-  theme:'html', 
-  question: 'Для задания оформления, тегам прописывают..', 
-  points: 400,
-  answer: 'классы \ class'
-},
-{
-  theme:'html', 
-  question: 'Назовите 3-х китов, на которых держится интернет?', 
-  points: 500,
-  answer: 'html + css + js' 
-},
-{
-  theme:'загадки', 
-  question: 'Шли два отца и два сына, нашли три апельсина. Поделили – всем по одному. Как так получилось?', 
-  points: 100,
-  answer: 'шли дед, отец и сын'
-},
-{
-  theme:'загадки', 
-  question: 'Что в России на первом месте, а во Франции на втором?', 
-  points: 200,
-  anwser:' Буква Р'
-},
-{
-  theme:'загадки', 
-  question: 'Завязать можно, а развязать нельзя', 
-  points: 300,
-  answer:'разговор'
-},
-{
-  theme:'загадки', 
-  question: 'По какому пути ещё никто никогда не ходил и не ездил?', 
-  points: 400,
-  answer: 'по млечному'
-},
-{
-  theme:'загадки', 
-  question: 'Чем кончаются день и ночь?', 
-  points: 500,
-  answer: 'мягким знаком'
-},
-{
-  theme:'css', 
-  question: 'Как расшифровывается css? ', 
-  points: 100 
-},
-{
-  theme:'css', 
-  question: 'Для чего используют css?', 
-  points: 200 
-},
-{
-  theme:'css', 
-  question: 'Почему таблицу называют именно каскадной?', 
-  points: 300 
-},
-{
-  theme:'css', 
-  question: 'Итак, язык CSS состоит из ............. и свойств.', 
-  points: 400 
-},
-{
-  theme:'css', 
-  question: 'Чем в css, отличается запись .leard от #leard', 
-  points: 500 
-},
-{
-  theme:'css', 
-  question: 'css существуется для?', 
-  points: 100 
-},
-{
-  theme:'css', 
-  question: 'Чтобы придать объекту оформление нужно описать его...', 
-  points: 200 
-},
-{
-  theme:'css', 
-  question: 'При помощи background-image можно задать?', 
-  points: 300 
-},
-{
-  theme:'css', 
-  question: 'Что появится у элемента в результате свойства border: 2px solid yellow', 
-  points: 400 
-},
-{
-  theme:'css', 
-  question: 'При помощи background-repeat можно задать?', 
-  points: 500 
-}
-]
 
-// var dds = {
-//   dada: 500,
-//   mama: 1250,
-//   getFunction: function() {
-//     console.log('mama')
-//   },
-//   getPrice: function() {
-//     console.log('papa')
-//   }
-
-// }
