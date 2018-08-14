@@ -85,7 +85,6 @@ var AllQuestion = [
   answer: 'мягким знаком'
 },
 {
-<<<<<<< HEAD
   theme:'scratch', 
   question: 'Что такое scratch?', 
   points: 100 ,
@@ -146,67 +145,3 @@ var AllQuestion = [
   answer: 'сценария' 
 }
 ]
-=======
-  theme:'css', 
-  question: 'Как расшифровывается css? ', 
-  points: 100 
-},
-{
-  theme:'css', 
-  question: 'Для чего используют css?', 
-  points: 200 
-},
-{
-  theme:'css', 
-  question: 'Почему таблицу называют именно каскадной?', 
-  points: 300 
-},
-{
-  theme:'css', 
-  question: 'Итак, язык CSS состоит из ............. и свойств.', 
-  points: 400 
-},
-{
-  theme:'css', 
-  question: 'Чем в css, отличается запись .leard от #leard', 
-  points: 500 
-},
-{
-  theme:'css', 
-  question: 'css существуется для?', 
-  points: 100 
-},
-{
-  theme:'css', 
-  question: 'Чтобы придать объекту оформление нужно описать его...', 
-  points: 200 
-},
-{
-  theme:'css', 
-  question: 'При помощи background-image можно задать?', 
-  points: 300 
-},
-{
-  theme:'css', 
-  question: 'Что появится у элемента в результате свойства border: 2px solid yellow', 
-  points: 400 
-},
-{
-  theme:'css', 
-  question: 'При помощи background-repeat можно задать?', 
-  points: 500 
-}
-]
-
-// var dds = {
-//   dada: 500,
-//   mama: 1250,
-//   getFunction: function() {
-//     console.log('mama')
-//   },
-//   getPrice: function() {
-//     console.log('papa')
-//   }
-
-// }
->>>>>>> 43d91265b0ae9126756c8108ff0896286d136aeb
