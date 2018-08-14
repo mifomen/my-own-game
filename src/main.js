@@ -25,6 +25,10 @@ function addScript(src) {
   var elem = document.createElement("script");
   elem.src = src;
   document.head.appendChild(elem);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43d91265b0ae9126756c8108ff0896286d136aeb
 }
 
 document.addEventListener('DOMContentLoaded',function(evt){
@@ -211,5 +215,8 @@ FiveTheme[4].addEventListener('click',function(evt) {
 })
 console.log('all fine')
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 43d91265b0ae9126756c8108ff0896286d136aeb
