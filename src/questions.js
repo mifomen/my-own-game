@@ -1,5 +1,27 @@
+var ThemesForLoad = ['html<br>уровень 1','html<br>уровень 2','Загадки','около<br>scratch','scratch']
+
+// item=document.querySelector('.mifomen');
+//   item.innerHTML = ThemesForLoad[0];
+var items=document.querySelectorAll('.row .title');
+var LoadThemes = function (item,index) {
+  item.innerHTML = ThemesForLoad[index]
+}
+
+for (let i=0; i<=items.length; i++) {
+  LoadThemes(items[i],i);
+}
+// console.log(ThemesForLoad.length)
+// LoadThemes(items[0],0);
+// LoadThemes(items[1],1);
+// LoadThemes(items[2],2);
+// LoadThemes(items[3],3);
+// LoadThemes(items[4],4);
+
+
 
 var Themes = ['html','python','Интернет','SCRATCH','css']
+
+
 var AllQuestion = [
 {
   theme:'html', 

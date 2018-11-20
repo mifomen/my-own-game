@@ -1,14 +1,14 @@
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+// // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+// let vh = window.innerHeight * 0.01;
+// // Then we set the value in the --vh custom property to the root of the document
+// document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // We listen to the resize event
-window.addEventListener('resize', () => {
-  // We execute the same script as before
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+// window.addEventListener('resize', () => {
+//   // We execute the same script as before
+//   let vh = window.innerHeight * 0.01;
+//   document.documentElement.style.setProperty('--vh', `${vh}px`);
+// });
 
 
 var links = document.getElementsByTagName('a');
@@ -24,7 +24,7 @@ var BtnStartGame = document.getElementById("StartGame");
 function addScript(src) {
   var elem = document.createElement("script");
   elem.src = src;
-  document.head.appendChild(elem);
+  document.body.appendChild(elem);
 }
 
 document.addEventListener('DOMContentLoaded',function(evt){
@@ -33,10 +33,15 @@ document.addEventListener('DOMContentLoaded',function(evt){
 })
 
 
-BtnStartGame.addEventListener('click',function(evt){
+// BtnStartGame.addEventListener('click',function(evt){
+//   document.querySelector('.game').classList.add('hidden');
+//   document.querySelector('.Start-One').classList.remove('hidden');
+// })
+var GameBegin = function (evt) {
   document.querySelector('.game').classList.add('hidden');
   document.querySelector('.Start-One').classList.remove('hidden');
-})
+}
+
 
 var All  = document.querySelectorAll('.points');
 All.forEach(function(evt){
