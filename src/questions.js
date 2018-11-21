@@ -1,15 +1,25 @@
-var ThemesForLoad = ['html<br>уровень 1','html<br>уровень 2','Загадки','около<br>scratch','scratch']
+var ThemesForLoad = ['html <br> уровень 1','html<br>уровень 2','Загадки','около<br>scratch','scratch']
+
+
 
 // item=document.querySelector('.mifomen');
 //   item.innerHTML = ThemesForLoad[0];
 var items=document.querySelectorAll('.row .title');
-var LoadThemes = function (item,index) {
-  item.innerHTML = ThemesForLoad[index]
-}
+// var item = Array(items);
+console.log(items)
+// var LoadThemes = function (item,index) {
+//   item.textContent = ThemesForLoad[index]
+// }
 
-for (let i=0; i<=items.length; i++) {
-  LoadThemes(items[i],i);
-}
+items[0].innerHTML = ThemesForLoad[0];
+items[1].innerHTML = ThemesForLoad[1];
+items[2].innerHTML = ThemesForLoad[2];
+items[3].innerHTML = ThemesForLoad[3];
+items[4].innerHTML = ThemesForLoad[4];
+// for (let i=0; i<=items.length; i++) {
+//   LoadThemes(items[i],i);
+// }
+
 // console.log(ThemesForLoad.length)
 // LoadThemes(items[0],0);
 // LoadThemes(items[1],1);
@@ -17,9 +27,9 @@ for (let i=0; i<=items.length; i++) {
 // LoadThemes(items[3],3);
 // LoadThemes(items[4],4);
 
-
-
 var Themes = ['html','python','Интернет','SCRATCH','css']
+
+
 
 
 var AllQuestion = [
