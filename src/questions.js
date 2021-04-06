@@ -20,6 +20,9 @@ items[1].innerHTML = ThemesForLoad[1];
 items[2].innerHTML = ThemesForLoad[2];
 items[3].innerHTML = ThemesForLoad[3];
 items[4].innerHTML = ThemesForLoad[4];
+
+
+// items[4].innerHTML = "mifomen";
 // for (let i=0; i<=items.length; i++) {
 //   LoadThemes(items[i],i);
 // }
@@ -45,7 +48,7 @@ let AllQuestion = [
 {
   theme:'html', 
   question: 'Что на самом деле происходит, когда пользователь вводит в браузере адрес сайта и нажимаете Enter?', 
-  points: 200 
+  points: 400 
 },
 {
   theme:'html', 
@@ -181,3 +184,10 @@ let AllQuestion = [
   answer: 'сценария' 
 }
 ]
+
+let NamingForPoints = document.querySelectorAll('.points');
+console.log(NamingForPoints)
+
+for (let i = 0;i <= NamingForPoints.length; i++) {
+  NamingForPoints[i].textContent='' + AllQuestion[i].points;
+}
