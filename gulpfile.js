@@ -32,12 +32,7 @@ gulp.task('css', function() {
  });
 
 
-// Basic usage:
-// gulp.task('injectBrowserSync', function(){
-//   gulp.src('./index.html')
-//   .pipe(browserSyncInject({port: 505})) // BrowserSync will output the proxy port
-//   .pipe(gulp.dest('./build'));
-// });
+
 
  gulp.task('html', function() {
   return gulp.src('src/**/index.html')
@@ -75,25 +70,15 @@ gulp.task('serve', function () {
         baseDir: 'build'
       },
       notify: false,
-      open: true,
+      open: false,
       ui: false
     }),
 
-gulp.watch("src/**/*.html",  gulp.parallel('html'));
-gulp.watch("src/**/*.css",  gulp.parallel('css'));
-gulp.watch("src/**/*.main-js",  gulp.parallel('js'));
-gulp.watch("src/**/*.question.js",  gulp.parallel('js-questions'));
+gulp.watch("src/**/index.html",  gulp.parallel('html'));
+gulp.watch("src/**/style.css",  gulp.parallel('css'));
+gulp.watch("src/**/main.js",  gulp.parallel('js'));
+gulp.watch("src/**/questions.js",  gulp.parallel('js-questions'));
 
 
-  // gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload);
-  // gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload);
-  // gulp.watch("src/**/*.{sass,scss}", ["sass"]).on('change', browserSync.reload);
+ 
 });
-
-// // gulp.watch("src/**/*.html",  gulp.parallel('html'));
-// // gulp.watch("src/**/*.css",  gulp.parallel('css'));
-// // gulp.watch("src/**/*.js",  gulp.parallel('js'));
-//   // gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload);
-//   // gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload);
-//   // gulp.watch("src/**/*.{sass,scss}", ["sass"]).on('change', browserSync.reload);
-// });

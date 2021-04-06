@@ -1,5 +1,5 @@
 * {
-  outline: 2px solid darkorange;
+  outline: 2px solid white;
   outline-offset: -5px;
 }
 body {
@@ -129,6 +129,7 @@ body {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+      text-shadow: 1px 1px 1px black;
 }
 .blue,
 .all,
@@ -138,12 +139,19 @@ body {
   font-size: 3em;
   color: white;
   padding: 0.2em;
+
 }
+
+
 .red {
   border: 5px double red; 
+  background-color: red;
+  /*text-shadow: 1px 1px 1px black;*/
 }
+
 .blue {
     border: 5px double blue; 
+    background-color:#7572e3; 
 }
 .all {
   border: 5px solid white;
@@ -182,12 +190,24 @@ body {
   text-align: center;
   width: 100%;
   color: white;
+  outline: none;
+  /*font-size: 3.4em;*/
 }
 
 #Right-Button,
 #Left-Button {
-  font-size: 2.5em;
+  font-size: 3em;
 }
+
+
+#Right-Button,
+#Left-Button {
+
+  
+}
+
+
+
 
 /*@keyframes bg-color {
 0% {background: linear-gradient(45deg, #00001f 30%, #0000ff 100%);}

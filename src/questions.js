@@ -1,4 +1,8 @@
-var ThemesForLoad = ['html <br> уровень 1','html<br>уровень 2','Загадки','около<br>scratch','scratch']
+
+let Themes = ['html','python','Интернет','Около scratch','css code']
+
+
+var ThemesForLoad = [Themes[0]+ ' <br> уровень 1', Themes[0]+ '<br>уровень 2','Загадки',Themes[3],Themes[4]]
 
 
 
@@ -6,7 +10,7 @@ var ThemesForLoad = ['html <br> уровень 1','html<br>уровень 2','З
 //   item.innerHTML = ThemesForLoad[0];
 var items=document.querySelectorAll('.row .title');
 // var item = Array(items);
-console.log(items)
+// console.log(items)
 // var LoadThemes = function (item,index) {
 //   item.textContent = ThemesForLoad[index]
 // }
@@ -27,15 +31,15 @@ items[4].innerHTML = ThemesForLoad[4];
 // LoadThemes(items[3],3);
 // LoadThemes(items[4],4);
 
-var Themes = ['html','python','Интернет','SCRATCH','css']
 
 
 
 
-var AllQuestion = [
+
+let AllQuestion = [
 {
-  theme:'html', 
-  question: 'расшифруйте аббревиатуру http', 
+  theme:Themes[0], 
+  question: '123123расшифруйте аббревиатуру http', 
   points: 100 
 },
 {

@@ -17,7 +17,7 @@ for (var i = 0; i < links.length; i++) {
     evt.preventDefault();
   })
 };
-
+//
 var points = document.querySelectorAll('.points');
 var BtnStartGame = document.getElementById("StartGame");
 
@@ -70,6 +70,7 @@ var FiveTheme  = document.querySelectorAll('.five .points')
 var NewButton = function(msg,id,parent) {
   var TextArea = document.createElement(parent);
   TextArea.className = "image-output";
+  HTMLElement.tabIndex = "1";
   TextArea.id = "Qestion-Delete";
   var TextOfQuestion = document.createElement('h1');
   TextOfQuestion.textContent = msg;
@@ -95,13 +96,13 @@ var Question = function(evt,points) {
    var LeftButton = document.createElement('button');
    LeftButton.type = 'button';
    LeftButton.id = "Left-Button";
-   LeftButton.textContent = "Дать очки синим!"
+   LeftButton.textContent = "очки синим"
    TextArea.appendChild(LeftButton);
 
    var RightBUtton = document.createElement('button');
    RightBUtton.type = 'button';
    RightBUtton.id = "Right-Button";
-   RightBUtton.textContent = "Дать очки красным!"
+   RightBUtton.textContent = "очки красным"
    TextArea.appendChild(RightBUtton);
 
  document.body.appendChild(TextArea);
@@ -111,9 +112,16 @@ GetPointsButton('Right-Button',points,'.red');
 }
 
 
-var ESC_KEY_CODE=27;
+let ESC_KEY_CODE=27;
+let ENTER_KEY_CODE=13;
+let TAB_KEY_CODE=9;
+let PAGEUP_KEY_CODE=33;
+let PAGEDOWN_KEY_CODE=34;
+
+
+
 document.onkeydown  = function(evt) {
-  if (evt.keyCode == ESC_KEY_CODE) {
+  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == ENTER_KEY_CODE  || evt.keyCode == PAGEUP_KEY_CODE || evt.keyCode == PAGEDOWN_KEY_CODE) {
     var elem = document.getElementById('Qestion-Delete');
     if (elem) {elem.parentNode.removeChild(elem)}
   }
