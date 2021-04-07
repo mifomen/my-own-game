@@ -59,6 +59,7 @@ let AllQuestion = [
 {
   theme:Themes[0], 
   question: '123123расшифруйте аббревиатуру http', 
+  image:'https://stihi.ru/pics/2020/03/07/1196.jpg',
   points: 150 
 },
 {

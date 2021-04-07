@@ -94,6 +94,11 @@ var Question = function(evt,points) {
   TextOfQuestion.textContent = evt;
   TextOfQuestion.className = 'Text-Qestion'
   TextArea.appendChild(TextOfQuestion);
+let ImageOfQuestion = document.createElement('img');
+ImageOfQuestion.className = 'Image-Of-Question';
+ImageOfQuestion.src=AllQuestion[0].image;
+TextArea.appendChild(ImageOfQuestion);
+
 
   var TextCloseButton = document.createElement('span');
   TextCloseButton.className = 'TextCloseButton';

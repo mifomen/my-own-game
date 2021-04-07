@@ -280,3 +280,7 @@ transform: rotate(-45deg);
 .TextCloseButton:after:hover {
 transform: rotate(-45deg);
 }*/
+
+.Image-Of-Question {
+  width: 50%;
+}
