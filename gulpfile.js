@@ -46,7 +46,7 @@ gulp.task('css', function() {
 gulp.task('js-questions', function() {
   return gulp.src('src/**/questions.js')
   .pipe(plumber())
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(rename('questions.js'))
   .pipe(gulp.dest('./build'))
   .pipe(browserSync.reload({

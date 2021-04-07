@@ -2,7 +2,13 @@
 let Themes = ['html','python','Интернет','Около scratch','css code']
 
 
-var ThemesForLoad = [Themes[0]+ ' <br> уровень 1', Themes[0]+ '<br>уровень 2','Загадки',Themes[3],Themes[4]]
+var ThemesForLoad = [
+Themes[0]+ ' <br> уровень 1',
+ Themes[0]+ '<br>уровень 2',
+ 'Загадки',
+ Themes[3],
+ Themes[4]
+ ]
 
 
 
@@ -10,11 +16,21 @@ var ThemesForLoad = [Themes[0]+ ' <br> уровень 1', Themes[0]+ '<br>уро
 //   item.innerHTML = ThemesForLoad[0];
 var items=document.querySelectorAll('.row .title');
 // var item = Array(items);
-// console.log(items)
+console.log(items)
 // var LoadThemes = function (item,index) {
 //   item.textContent = ThemesForLoad[index]
 // }
+// console.log(items.length)
+console.log(ThemesForLoad)
 
+// for ( let i=0; i<=items.length; i++) {
+//   items[i].innerHTML = ThemesForLoad[i];
+// }
+
+// for ( item of items) {
+//  items.innerHTML = ThemesForLoad;
+
+// }
 items[0].innerHTML = ThemesForLoad[0];
 items[1].innerHTML = ThemesForLoad[1];
 items[2].innerHTML = ThemesForLoad[2];
@@ -43,12 +59,12 @@ let AllQuestion = [
 {
   theme:Themes[0], 
   question: '123123расшифруйте аббревиатуру http', 
-  points: 100 
+  points: 150 
 },
 {
   theme:'html', 
   question: 'Что на самом деле происходит, когда пользователь вводит в браузере адрес сайта и нажимаете Enter?', 
-  points: 400 
+  points: 201 
 },
 {
   theme:'html', 
@@ -186,8 +202,8 @@ let AllQuestion = [
 ]
 
 let NamingForPoints = document.querySelectorAll('.points');
-console.log(NamingForPoints)
+// console.log(NamingForPoints)
 
-for (let i = 0;i <= NamingForPoints.length; i++) {
-  NamingForPoints[i].textContent='' + AllQuestion[i].points;
+for (var  i = 0;i <= NamingForPoints.length; i++) {
+  NamingForPoints[i].textContent = AllQuestion[i].points;
 }

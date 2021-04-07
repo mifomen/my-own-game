@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded',function(evt){
 
 })
 
+// include("questions.js");
+
 
 // BtnStartGame.addEventListener('click',function(evt){
 //   document.querySelector('.game').classList.add('hidden');
@@ -132,21 +134,15 @@ let TAB_KEY_CODE=9;
 let PAGEUP_KEY_CODE=33;
 let PAGEDOWN_KEY_CODE=34;
 
-
-
 // let CloneImageDiolog = ;
 // console.log(document.querySelector('.TextCloseButton'));
-
 //  document.querySelector('.TextCloseButton').addEventListener('click',function () {
 
 //  let elem1 = document.getElementById('Qestion-Delete');
 //     if (elem1) {elem1.parentNode.removeChild(elem1)}
-
 //  });
-
-
 // TextCloseButton
-
+ // удаление окна с вопросом
 let testDiologDelete = function () {
     var elem = document.getElementById('Qestion-Delete');
     if (elem) {elem.parentNode.removeChild(elem)}
@@ -254,6 +250,18 @@ document.onkeydown  = function(evt) {
   FiveTheme[4].addEventListener('click',function(evt) {
     Question(AllQuestion[24].question,AllQuestion[24].points);
   })
+
+
+//   let NamingForPoints = document.querySelectorAll('.points');
+// console.log(NamingForPoints)
+
+
+// console.log(AllQuestions[7].points)
+// for (let i = 0;i <= NamingForPoints.length; i++) {
+//   NamingForPoints[i].textContent = '' + AllQuestion[i].points;
+// }
+
+
   console.log('all fine')
 
 
