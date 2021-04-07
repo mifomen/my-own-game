@@ -185,86 +185,119 @@ document.onkeydown  = function(evt) {
 
   // })
 
-  FirstTheme[0].addEventListener('click',function(evt) {
-    Question(AllQuestion[0].question,AllQuestion[0].points,AllQuestion[0].image);
+for (let i=0; i<FirstTheme.length; i++) {
+
+  FirstTheme[i].addEventListener('click',function(evt) {
+    Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image);
   })
-  FirstTheme[1].addEventListener('click',function(evt) {
-    Question(AllQuestion[1].question,AllQuestion[1].points,AllQuestion[1].image);
-  })
-  FirstTheme[2].addEventListener('click',function(evt) {
-    Question(AllQuestion[2].question,AllQuestion[2].points,AllQuestion[2].image);
-  })
-  FirstTheme[3].addEventListener('click',function(evt) {
-    Question(AllQuestion[3].question,AllQuestion[3].points,AllQuestion[3].image);
-  })
-  FirstTheme[4].addEventListener('click',function(evt) {
-    Question(AllQuestion[4].question,AllQuestion[4].points,AllQuestion[4].image);
-  })
+}
 
 
-  SecondTheme[0].addEventListener('click',function(evt) {
-    Question(AllQuestion[5].question,AllQuestion[5].points);
-  })
-  SecondTheme[1].addEventListener('click',function(evt) {
-    Question(AllQuestion[6].question,AllQuestion[6].points);
-  })
-  SecondTheme[2].addEventListener('click',function(evt) {
-    Question(AllQuestion[7].question,AllQuestion[7].points);
-  })
-  SecondTheme[3].addEventListener('click',function(evt) {
-    Question(AllQuestion[8].question,AllQuestion[8].points);
-  })
-  SecondTheme[4].addEventListener('click',function(evt) {
-   Question(AllQuestion[9].question,AllQuestion[9].points);
- })
+  // FirstTheme[0].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[0].question,AllQuestion[0].points,AllQuestion[0].image);
+  // })
+  // FirstTheme[1].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[1].question,AllQuestion[1].points,AllQuestion[1].image);
+  // })
+  // FirstTheme[2].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[2].question,AllQuestion[2].points,AllQuestion[2].image);
+  // })
+  // FirstTheme[3].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[3].question,AllQuestion[3].points,AllQuestion[3].image);
+  // })
+  // FirstTheme[4].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[4].question,AllQuestion[4].points,AllQuestion[4].image);
+  // })
 
-  ThirdTheme[0].addEventListener('click',function(evt) {
-    Question(AllQuestion[10].question,AllQuestion[10].points);
-  })
-  ThirdTheme[1].addEventListener('click',function(evt) {
-    Question(AllQuestion[11].question,AllQuestion[11].points);
-  })
-  ThirdTheme[2].addEventListener('click',function(evt) {
-    Question(AllQuestion[12].question,AllQuestion[12].points);
-  })
-  ThirdTheme[3].addEventListener('click',function(evt) {
-    Question(AllQuestion[13].question,AllQuestion[13].points);
-  })
-  ThirdTheme[4].addEventListener('click',function(evt) {
-    Question(AllQuestion[14].question,AllQuestion[14].points);
-  })
+for (let i=0; i<SecondTheme.length; i++) {
 
-  FourTheme[0].addEventListener('click',function(evt) {
-    Question(AllQuestion[15].question,AllQuestion[15].points);
+  SecondTheme[i].addEventListener('click',function(evt) {
+    Question(AllQuestion[i+5].question,AllQuestion[i+5].points,AllQuestion[i+5].image);
   })
-  FourTheme[1].addEventListener('click',function(evt) {
-    Question(AllQuestion[16].question,AllQuestion[16].points);
-  })
-  FourTheme[2].addEventListener('click',function(evt) {
-    Question(AllQuestion[17].question,AllQuestion[17].points);
-  })
-  FourTheme[3].addEventListener('click',function(evt) {
-    Question(AllQuestion[18].question,AllQuestion[18].points);
-  })
-  FourTheme[4].addEventListener('click',function(evt) {
-    Question(AllQuestion[19].question,AllQuestion[19].points);
-  })
+}
 
-  FiveTheme[0].addEventListener('click',function(evt) {
-    Question(AllQuestion[20].question,AllQuestion[20].points);
+
+ //  SecondTheme[0].addEventListener('click',function(evt) {
+ //    Question(AllQuestion[5].question,AllQuestion[5].pointsюAllQuestion[5].image);
+ //  })
+ //  SecondTheme[1].addEventListener('click',function(evt) {
+ //    Question(AllQuestion[6].question,AllQuestion[6].points);
+ //  })
+ //  SecondTheme[2].addEventListener('click',function(evt) {
+ //    Question(AllQuestion[7].question,AllQuestion[7].points);
+ //  })
+ //  SecondTheme[3].addEventListener('click',function(evt) {
+ //    Question(AllQuestion[8].question,AllQuestion[8].points);
+ //  })
+ //  SecondTheme[4].addEventListener('click',function(evt) {
+ //   Question(AllQuestion[9].question,AllQuestion[9].points);
+ // })
+
+for (let i=0; i<ThirdTheme.length; i++) {
+
+  ThirdTheme[i].addEventListener('click',function(evt) {
+    Question(AllQuestion[i+10].question,AllQuestion[i+10].points,AllQuestion[i+10].image);
   })
-  FiveTheme[1].addEventListener('click',function(evt) {
-    Question(AllQuestion[21].question,AllQuestion[21].points);
+}
+// }
+
+//   ThirdTheme[0].addEventListener('click',function(evt) {
+//     Question(AllQuestion[10].question,AllQuestion[10].points);
+//   })
+//   ThirdTheme[1].addEventListener('click',function(evt) {
+//     Question(AllQuestion[11].question,AllQuestion[11].points);
+//   })
+//   ThirdTheme[2].addEventListener('click',function(evt) {
+//     Question(AllQuestion[12].question,AllQuestion[12].points);
+//   })
+//   ThirdTheme[3].addEventListener('click',function(evt) {
+//     Question(AllQuestion[13].question,AllQuestion[13].points);
+//   })
+//   ThirdTheme[4].addEventListener('click',function(evt) {
+//     Question(AllQuestion[14].question,AllQuestion[14].points);
+//   })
+for (let i=0; i<ThirdTheme.length; i++) {
+ FourTheme[i].addEventListener('click',function(evt) {
+    Question(AllQuestion[i+15].question,AllQuestion[i+15].points,AllQuestion[i+15].image);
   })
-  FiveTheme[2].addEventListener('click',function(evt) {
-    Question(AllQuestion[22].question,AllQuestion[22].points);
+}
+
+  // FourTheme[0].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[15].question,AllQuestion[15].points);
+  // })
+  // FourTheme[1].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[16].question,AllQuestion[16].points);
+  // })
+  // FourTheme[2].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[17].question,AllQuestion[17].points);
+  // })
+  // FourTheme[3].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[18].question,AllQuestion[18].points);
+  // })
+  // FourTheme[4].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[19].question,AllQuestion[19].points);
+  // })
+for (let i=0; i<ThirdTheme.length; i++) {
+FiveTheme[i].addEventListener('click',function(evt) {
+    Question(AllQuestion[i+20].question,AllQuestion[i+20].points,AllQuestion[i+20].image);
   })
-  FiveTheme[3].addEventListener('click',function(evt) {
-    Question(AllQuestion[23].question,AllQuestion[23].points);
-  })
-  FiveTheme[4].addEventListener('click',function(evt) {
-    Question(AllQuestion[24].question,AllQuestion[24].points);
-  })
+}
+
+  // FiveTheme[0].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[20].question,AllQuestion[20].points);
+  // })
+  // FiveTheme[1].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[21].question,AllQuestion[21].points);
+  // })
+  // FiveTheme[2].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[22].question,AllQuestion[22].points);
+  // })
+  // FiveTheme[3].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[23].question,AllQuestion[23].points);
+  // })
+  // FiveTheme[4].addEventListener('click',function(evt) {
+  //   Question(AllQuestion[24].question,AllQuestion[24].points);
+  // })
 
 
 //   let NamingForPoints = document.querySelectorAll('.points');
