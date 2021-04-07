@@ -202,10 +202,18 @@ body {
 
 #Right-Button,
 #Left-Button {
-
+position: absolute;
+bottom: 2%;
+min-width: 40%;
   
 }
+#Right-Button {
+right: 2%;
 
+}
+#Left-Button {
+  left:2%;
+}
 
 
 
@@ -282,5 +290,8 @@ transform: rotate(-45deg);
 }*/
 
 .Image-Of-Question {
-  width: 50%;
+  position: relative;
+  top:-10%;
+  width: 65%;
+  height: auto;
 }

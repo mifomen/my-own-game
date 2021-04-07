@@ -85,7 +85,7 @@ var NewButton = function(msg,id,parent) {
   parent.appendChild(SomeButton);
 }
 
-var Question = function(evt,points) {
+var Question = function(evt,points,imageSrc) {
   var TextArea = document.createElement('div');
   TextArea.className = "image-output";
   TextArea.id = "Qestion-Delete";
@@ -94,10 +94,13 @@ var Question = function(evt,points) {
   TextOfQuestion.textContent = evt;
   TextOfQuestion.className = 'Text-Qestion'
   TextArea.appendChild(TextOfQuestion);
+
+  if ( imageSrc !== '' ) {
 let ImageOfQuestion = document.createElement('img');
 ImageOfQuestion.className = 'Image-Of-Question';
-ImageOfQuestion.src=AllQuestion[0].image;
+ImageOfQuestion.src=imageSrc;
 TextArea.appendChild(ImageOfQuestion);
+} else { } 
 
 
   var TextCloseButton = document.createElement('span');
@@ -183,19 +186,19 @@ document.onkeydown  = function(evt) {
   // })
 
   FirstTheme[0].addEventListener('click',function(evt) {
-    Question(AllQuestion[0].question,AllQuestion[0].points);
+    Question(AllQuestion[0].question,AllQuestion[0].points,AllQuestion[0].image);
   })
   FirstTheme[1].addEventListener('click',function(evt) {
-    Question(AllQuestion[1].question,AllQuestion[1].points);
+    Question(AllQuestion[1].question,AllQuestion[1].points,AllQuestion[1].image);
   })
   FirstTheme[2].addEventListener('click',function(evt) {
-    Question(AllQuestion[2].question,AllQuestion[2].points);
+    Question(AllQuestion[2].question,AllQuestion[2].points,AllQuestion[2].image);
   })
   FirstTheme[3].addEventListener('click',function(evt) {
-    Question(AllQuestion[3].question,AllQuestion[3].points);
+    Question(AllQuestion[3].question,AllQuestion[3].points,AllQuestion[3].image);
   })
   FirstTheme[4].addEventListener('click',function(evt) {
-    Question(AllQuestion[4].question,AllQuestion[4].points);
+    Question(AllQuestion[4].question,AllQuestion[4].points,AllQuestion[4].image);
   })
 
 

@@ -4,11 +4,11 @@ let Themes = ['html','python','Интернет','Около scratch','css code'
 
 var ThemesForLoad = [
 Themes[0]+ ' <br> уровень 1',
- Themes[0]+ '<br>уровень 2',
- 'Загадки',
- Themes[3],
- Themes[4]
- ]
+Themes[0]+ '<br>уровень 2',
+'Загадки',
+Themes[3],
+Themes[4]
+]
 
 
 
@@ -65,138 +65,163 @@ let AllQuestion = [
 {
   theme:'html', 
   question: 'Что на самом деле происходит, когда пользователь вводит в браузере адрес сайта и нажимаете Enter?', 
+  image:'',
   points: 201 
 },
 {
   theme:'html', 
-  question: 'Где "живут" сайты?', 
+  question: 'Где "живут" сайты?',
+  image:'',
   points: 300 
 },
 {
   theme:'html', 
-  question: 'Какой тег надо использовать для создания заголовков?', 
+  question: 'Какой тег надо использовать для создания заголовков?',
+  image:'', 
   points: 400 
 },
 {
   theme:'html', 
   question: 'Данная служба подсказывает, какой именно сайт хочет посетить пользователь', 
+  image:'',
   points: 500 
 },
 {
   theme:'html', 
   question: 'Сколько людей нужно, чтобы создать сайт?', 
+  image:'',
+  image:'',
   points: 100 
 },
 {
   theme:'html', 
   question: 'Люди пишут слова, а браузеру надо написать?', 
+  image:'',
   points: 200,
   answer: 'тэги'
 },
 {
   theme:'html', 
   question: 'Какой тег надо использовать чтобы создать абзац', 
+  image:'',
   points: 300 
 },
 {
   theme:'html', 
   question: 'Для задания оформления, тегам прописывают..', 
+  image:'',
   points: 400,
   answer: 'классы \ class'
 },
 {
   theme:'html', 
   question: 'Назовите 3-х китов, на которых держится интернет?', 
+  image:'',
   points: 500,
   answer: 'html + css + js' 
 },
 {
   theme:'загадки', 
-  question: 'Шли два отца и два сына, нашли три апельсина. Поделили – всем по одному. Как так получилось?', 
+  question: 'Шли два отца и два сына, нашли три апельсина. Поделили – всем по одному. Как  так получилось?', 
+  image:'',
   points: 100,
   answer: 'шли дед, отец и сын'
 },
 {
   theme:'загадки', 
   question: 'Что в России на первом месте, а во Франции на втором?', 
+  image:'',
   points: 200,
   anwser:' Буква Р'
 },
 {
   theme:'загадки', 
   question: 'Завязать можно, а развязать нельзя', 
+  image:'',
   points: 300,
   answer:'разговор'
 },
 {
   theme:'загадки', 
   question: 'По какому пути ещё никто никогда не ходил и не ездил?', 
+  image:'',
   points: 400,
   answer: 'по млечному'
 },
 {
   theme:'загадки', 
   question: 'Чем кончаются день и ночь?', 
+  image:'',
   points: 500,
   answer: 'мягким знаком'
 },
 {
   theme:'scratch', 
   question: 'Что такое scratch?', 
+  image:'',
   points: 100 ,
   answer: 'песочница по програмимрованию'
 },
 {
   theme:'scratch', 
   question: 'Для чего используют scratch?', 
+  image:'',
   points: 200,
   answer: 'создавать простые сценарии или игры'
 },
 {
   theme:'scratch', 
   question: 'Для удобства внедряют имеено их... ',
+  image:'',
   points: 300,
   answer: 'переменные'
 },
 {
   theme:'scratch', 
   question: 'Чтобы обработать событие нужно добавить..',
+  image:'',
   points: 400,
   answer: 'сенсор'
 },
 {
   theme:'scratch', 
   question: 'Чтобы писать кода меньше используют....', 
+  image:'',
   points: 500,
   answer: 'циклы'
 },
 {
   theme:'code', 
   question: 'как называются объекты выполняющие команды?', 
+  image:'',
   points: 100,
   answer: 'исполнители, роботы'
 },
 {
   theme:'code', 
   question: 'задать поведение можно спомощью....', 
+  image:'',
   points: 200,
   answer: 'сценария'
 },
 {
   theme:'code', 
   question: 'когда мы пишем поведение, мы пишем ...', 
+  image:'',
   points: 300,
   answer: 'код' 
 },
 {
   theme:'code', 
   question: 'Что появится у элемента в результате свойства border: 2px solid yellow', 
+  image:'',
   points: 400,
   answer: 'сценария' 
 },
 {
   theme:'code', 
   question: 'При помощи background-repeat можно задать?', 
+  image:'',
   points: 501,
   answer: 'сценария' 
 }
