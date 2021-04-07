@@ -203,7 +203,6 @@ let AllQuestion = [
 
 let NamingForPoints = document.querySelectorAll('.points');
 // console.log(NamingForPoints)
-
 for (var  i = 0;i < NamingForPoints.length; i++) {
   NamingForPoints[i].textContent = AllQuestion[i].points;
 }
