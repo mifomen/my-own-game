@@ -22,7 +22,7 @@ var points = document.querySelectorAll('.points');
 var BtnStartGame = document.getElementById("StartGame");
 
 function addScript(src) {
-  var elem = document.createElement("script");
+  let elem = document.createElement("script");
   elem.src = src;
   document.body.appendChild(elem);
 }
@@ -122,6 +122,13 @@ var Question = function(evt,points) {
     if (elem1) {elem1.parentNode.removeChild(elem1)}
 
  });
+
+//   PointsButton.addEventListener('click',function (evt) {
+//   var WhoGetPoints = document.querySelector(team); 
+//   if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
+//   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
+//   PointsButton.disabled = true;
+// });
 
   GetPointsButton('Left-Button',points,'.blue');
   GetPointsButton('Right-Button',points,'.red');

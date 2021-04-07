@@ -16,26 +16,26 @@ Themes[0]+ ' <br> уровень 1',
 //   item.innerHTML = ThemesForLoad[0];
 var items=document.querySelectorAll('.row .title');
 // var item = Array(items);
-console.log(items)
+// console.log(items)
 // var LoadThemes = function (item,index) {
 //   item.textContent = ThemesForLoad[index]
 // }
 // console.log(items.length)
-console.log(ThemesForLoad)
+// console.log(ThemesForLoad)
 
-// for ( let i=0; i<=items.length; i++) { //почему не работает....
-//   items[i].innerHTML = ThemesForLoad[i];
-// }
+for ( let i=0; i<items.length; i++) { //почему не работает....
+  items[i].innerHTML = ThemesForLoad[i];
+}
 
 // for ( item of items) {
 //  items.innerHTML = ThemesForLoad;
 
 // }
-items[0].innerHTML = ThemesForLoad[0];
-items[1].innerHTML = ThemesForLoad[1];
-items[2].innerHTML = ThemesForLoad[2];
-items[3].innerHTML = ThemesForLoad[3];
-items[4].innerHTML = ThemesForLoad[4];
+// items[0].innerHTML = ThemesForLoad[0];
+// items[1].innerHTML = ThemesForLoad[1];
+// items[2].innerHTML = ThemesForLoad[2];
+// items[3].innerHTML = ThemesForLoad[3];
+// items[4].innerHTML = ThemesForLoad[4];
 
 
 // items[4].innerHTML = "mifomen";
@@ -196,7 +196,7 @@ let AllQuestion = [
 {
   theme:'code', 
   question: 'При помощи background-repeat можно задать?', 
-  points: 500,
+  points: 501,
   answer: 'сценария' 
 }
 ]
@@ -204,6 +204,6 @@ let AllQuestion = [
 let NamingForPoints = document.querySelectorAll('.points');
 // console.log(NamingForPoints)
 
-for (var  i = 0;i <= NamingForPoints.length; i++) {
+for (var  i = 0;i < NamingForPoints.length; i++) {
   NamingForPoints[i].textContent = AllQuestion[i].points;
 }
