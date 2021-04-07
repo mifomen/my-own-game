@@ -23,7 +23,7 @@ console.log(items)
 // console.log(items.length)
 console.log(ThemesForLoad)
 
-// for ( let i=0; i<=items.length; i++) {
+// for ( let i=0; i<=items.length; i++) { //почему не работает....
 //   items[i].innerHTML = ThemesForLoad[i];
 // }
 
