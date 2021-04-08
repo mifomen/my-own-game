@@ -126,6 +126,12 @@ gulp.task('clear', function() {
     'js-questions'
     ));
 
+gulp.task('final', function(){
+  return gulp.src('./build/*.*')
+      .pipe(gulp.dest('../mifomen.github.io/my-own-game'));
+});
+
+
 gulp.task('serve', function () {
 
  browserSync.init({
