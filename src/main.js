@@ -96,11 +96,11 @@ var Question = function(evt,points,imageSrc) {
   TextArea.appendChild(TextOfQuestion);
 
   if ( imageSrc !== '' ) {
-let ImageOfQuestion = document.createElement('img');
-ImageOfQuestion.className = 'Image-Of-Question';
-ImageOfQuestion.src=imageSrc;
-TextArea.appendChild(ImageOfQuestion);
-} else { } 
+    let ImageOfQuestion = document.createElement('img');
+    ImageOfQuestion.className = 'Image-Of-Question';
+    ImageOfQuestion.src=imageSrc;
+    TextArea.appendChild(ImageOfQuestion);
+  } else { } 
 
 
   var TextCloseButton = document.createElement('span');
@@ -127,10 +127,10 @@ TextArea.appendChild(ImageOfQuestion);
 
   document.body.appendChild(TextArea);
 
- document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
+  document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
 
- let elem1 = document.getElementById('Qestion-Delete');
-    if (elem1) {elem1.parentNode.removeChild(elem1)}
+   let elem1 = document.getElementById('Qestion-Delete');
+   if (elem1) {elem1.parentNode.removeChild(elem1)}
 
  });
 
@@ -141,8 +141,8 @@ TextArea.appendChild(ImageOfQuestion);
 //   PointsButton.disabled = true;
 // });
 
-  GetPointsButton('Left-Button',points,'.blue');
-  GetPointsButton('Right-Button',points,'.red');
+GetPointsButton('Left-Button',points,'.blue');
+GetPointsButton('Right-Button',points,'.red');
 }
 
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
@@ -160,9 +160,9 @@ let PAGEDOWN_KEY_CODE=40; //34
 //  });
 // TextCloseButton
  // удаление окна с вопросом
-let testDiologDelete = function () {
-    var elem = document.getElementById('Qestion-Delete');
-    if (elem) {elem.parentNode.removeChild(elem)}
+ let testDiologDelete = function () {
+  var elem = document.getElementById('Qestion-Delete');
+  if (elem) {elem.parentNode.removeChild(elem)}
 }
 
 document.onkeydown  = function(evt) {
@@ -186,7 +186,7 @@ document.onkeydown  = function(evt) {
   // ArrayOfQuestions.forEach(function (it) {
 
   // })
-let AllButtons = document.querySelectorAll('.points');
+  let AllButtons = document.querySelectorAll('.points');
 // console.log(AllButtons)
 
 for (let i=0; i<AllButtons.length; i++) {
@@ -217,4 +217,4 @@ for (let i=0; i<AllButtons.length; i++) {
 
 // }
 
-  console.log('all fine')
+console.log('all fine')
