@@ -146,11 +146,11 @@ GetPointsButton('Right-Button',points,'.red');
 }
 
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
-let ESC_KEY_CODE=27;
-let ENTER_KEY_CODE=13;
-let TAB_KEY_CODE=9; //9
-let UP_ARROW_KEY_CODE=38; //33
-let DOWN_ARROW_KEY_CODE=40; //34
+let ESC_KEY_CODE = 27;
+let ENTER_KEY_CODE = 13;
+let TAB_KEY_CODE = 9; //9
+let UP_ARROW_KEY_CODE = 38; //33
+let DOWN_ARROW_KEY_CODE = 40; //34
 // let CloneImageDiolog = ;
 // console.log(document.querySelector('.TextCloseButton'));
 //  document.querySelector('.TextCloseButton').addEventListener('click',function () {
@@ -172,7 +172,7 @@ document.onkeydown  = function(evt) {
   }
 
   if (evt.keyCode == UP_ARROW_KEY_CODE ) {
-    let elem = document.getElementById('Left-Button');
+    let elem = document.getElementById('Right-Button');
     if (elem) { elem.focus() }
   }
 
