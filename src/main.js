@@ -142,13 +142,12 @@ TextArea.appendChild(ImageOfQuestion);
   GetPointsButton('Right-Button',points,'.red');
 }
 
-
+//code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
 let ESC_KEY_CODE=27;
 let ENTER_KEY_CODE=13;
-let TAB_KEY_CODE=9;
-let PAGEUP_KEY_CODE=33;
-let PAGEDOWN_KEY_CODE=34;
-
+let TAB_KEY_CODE=38; //9
+let PAGEUP_KEY_CODE=37;//33
+let PAGEDOWN_KEY_CODE=40; //34
 // let CloneImageDiolog = ;
 // console.log(document.querySelector('.TextCloseButton'));
 //  document.querySelector('.TextCloseButton').addEventListener('click',function () {
@@ -164,7 +163,7 @@ let testDiologDelete = function () {
 }
 
 document.onkeydown  = function(evt) {
-  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == ENTER_KEY_CODE  || evt.keyCode == PAGEUP_KEY_CODE || evt.keyCode == PAGEDOWN_KEY_CODE) {
+  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == ENTER_KEY_CODE  || evt.keyCode == PAGEUP_KEY_CODE || evt.keyCode == PAGEDOWN_KEY_CODE || evt.keyCode== TAB_KEY_CODE) {
     var elem = document.getElementById('Qestion-Delete');
     if (elem) {elem.parentNode.removeChild(elem)}
   }
