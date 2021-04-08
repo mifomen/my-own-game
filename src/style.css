@@ -207,8 +207,16 @@ width: 100%;*/
 #Right-Button,
 #Left-Button {
   font-size: 3em;
+  border:2px solid trasparent;
 }
 
+#Right-Button:hover,
+#Left-Button:hover,
+#Right-Button:focus,
+#Left-Button:focus
+ {
+  border:2px solid black;
+}
 
 #Right-Button,
 #Left-Button {

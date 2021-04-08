@@ -72,7 +72,7 @@ var GetPointsButton = function (FindButton,points,team) {
 var NewButton = function(msg,id,parent) {
   var TextArea = document.createElement(parent);
   TextArea.className = "image-output";
-  HTMLElement.tabIndex = "1";
+  TextArea.tabIndex = "2";
   TextArea.id = "Qestion-Delete";
 
 
@@ -113,12 +113,15 @@ TextArea.appendChild(ImageOfQuestion);
   var LeftButton = document.createElement('button');
   LeftButton.type = 'button';
   LeftButton.id = "Left-Button";
+  LeftButton.tabIndex = "2";
   LeftButton.textContent = "очки синим"
   TextArea.appendChild(LeftButton);
 
   var RightBUtton = document.createElement('button');
   RightBUtton.type = 'button';
   RightBUtton.id = "Right-Button";
+  //tabindex
+  RightBUtton.tabIndex = "2";
   RightBUtton.textContent = "очки красным"
   TextArea.appendChild(RightBUtton);
 
@@ -163,7 +166,7 @@ let testDiologDelete = function () {
 }
 
 document.onkeydown  = function(evt) {
-  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == ENTER_KEY_CODE  || evt.keyCode == PAGEUP_KEY_CODE || evt.keyCode == PAGEDOWN_KEY_CODE || evt.keyCode== TAB_KEY_CODE) {
+  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == PAGEUP_KEY_CODE || evt.keyCode == PAGEDOWN_KEY_CODE) {
     var elem = document.getElementById('Qestion-Delete');
     if (elem) {elem.parentNode.removeChild(elem)}
   }
