@@ -72,7 +72,7 @@ var GetPointsButton = function (FindButton,points,team) {
 var NewButton = function(msg,id,parent) {
   var TextArea = document.createElement(parent);
   TextArea.className = "image-output";
-  TextArea.tabIndex = "2";
+  TextArea.tabIndex = "1";
   TextArea.id = "Qestion-Delete";
 
 
@@ -113,7 +113,7 @@ var Question = function(evt,points,imageSrc) {
   var LeftButton = document.createElement('button');
   LeftButton.type = 'button';
   LeftButton.id = "Left-Button";
-  LeftButton.tabIndex = "2";
+  LeftButton.tabIndex = "1";
   LeftButton.textContent = "очки синим"
   TextArea.appendChild(LeftButton);
 
@@ -121,7 +121,7 @@ var Question = function(evt,points,imageSrc) {
   RightButton.type = 'button';
   RightButton.id = "Right-Button";
   //tabindex
-  RightButton.tabIndex = "2";
+  RightButton.tabIndex = "1";
   RightButton.textContent = "очки красным"
   TextArea.appendChild(RightButton);
 
