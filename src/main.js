@@ -117,13 +117,13 @@ var Question = function(evt,points,imageSrc) {
   LeftButton.textContent = "очки синим"
   TextArea.appendChild(LeftButton);
 
-  var RightBUtton = document.createElement('button');
-  RightBUtton.type = 'button';
-  RightBUtton.id = "Right-Button";
+  var RightButton = document.createElement('button');
+  RightButton.type = 'button';
+  RightButton.id = "Right-Button";
   //tabindex
-  RightBUtton.tabIndex = "2";
-  RightBUtton.textContent = "очки красным"
-  TextArea.appendChild(RightBUtton);
+  RightButton.tabIndex = "2";
+  RightButton.textContent = "очки красным"
+  TextArea.appendChild(RightButton);
 
   document.body.appendChild(TextArea);
 
@@ -148,9 +148,9 @@ GetPointsButton('Right-Button',points,'.red');
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
 let ESC_KEY_CODE=27;
 let ENTER_KEY_CODE=13;
-let TAB_KEY_CODE=38; //9
-let PAGEUP_KEY_CODE=37;//33
-let PAGEDOWN_KEY_CODE=40; //34
+let TAB_KEY_CODE=9; //9
+let UP_ARROW_KEY_CODE=38; //33
+let DOWN_ARROW_KEY_CODE=40; //34
 // let CloneImageDiolog = ;
 // console.log(document.querySelector('.TextCloseButton'));
 //  document.querySelector('.TextCloseButton').addEventListener('click',function () {
@@ -166,10 +166,23 @@ let PAGEDOWN_KEY_CODE=40; //34
 }
 
 document.onkeydown  = function(evt) {
-  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == PAGEUP_KEY_CODE || evt.keyCode == PAGEDOWN_KEY_CODE) {
+  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == TAB_KEY_CODE ) {
     var elem = document.getElementById('Qestion-Delete');
     if (elem) {elem.parentNode.removeChild(elem)}
   }
+
+  if (evt.keyCode == UP_ARROW_KEY_CODE ) {
+    let elem = document.getElementById('Left-Button');
+    if (elem) { elem.focus() }
+  }
+
+  if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
+    let elem = document.getElementById('Right-Button');
+    if (elem) { elem.focus() }
+  }
+
+
+
 }
 
   // var TimeMassive = [];
