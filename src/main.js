@@ -91,7 +91,7 @@ var Question = function(evt,points,imageSrc) {
   TextArea.id = "Qestion-Delete";
 
   var TextOfQuestion = document.createElement('h1');
-  TextOfQuestion.textContent = evt;
+  TextOfQuestion.innerHTML = evt;
   TextOfQuestion.className = 'Text-Qestion'
   TextArea.appendChild(TextOfQuestion);
 
