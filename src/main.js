@@ -231,7 +231,7 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
 
   
   
- if (Answer !== '') {ShowAnswer(Answer,ImageIfAnswer)}
+ if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(Answer,ImageIfAnswer)}
       StayOfCloseAnswer = 1;
  
   });
