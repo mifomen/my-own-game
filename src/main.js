@@ -226,7 +226,7 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
  let elem1 = document.getElementById('Qestion-Delete');
    if (elem1) {elem1.parentNode.removeChild(elem1) 
     StayOfCloseAnswer=1;
-    console.log(StayOfCloseAnswer)
+    // console.log(StayOfCloseAnswer)
   }
 
   
@@ -285,7 +285,7 @@ document.onkeydown  = function(evt) {
     var elem = document.getElementById('Qestion-Delete');
     if (elem) {elem.parentNode.removeChild(elem)
      StayOfCloseAnswer=1;
-     console.log(StayOfCloseAnswer)
+     // console.log(StayOfCloseAnswer)
    }
    var elem = document.querySelector('.AnswerImage');
    if (elem) {elem.parentNode.removeChild(elem)
@@ -394,7 +394,7 @@ for (let i=0; i<AllButtons.length; i++) {
   AllButtons[i].addEventListener('click',function(evt) {
     Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image,AllQuestion[i].audio,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer);
     StayOfCloseAnswer=0;
-    console.log(StayOfCloseAnswer)
+    // console.log(StayOfCloseAnswer)
   })
   
 }
