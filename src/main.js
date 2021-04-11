@@ -11,12 +11,12 @@
 // });
 
 
-var links = document.getElementsByTagName('a');
-for (var i = 0; i < links.length; i++) {
-  links[i].addEventListener('click',function (evt) {
-    evt.preventDefault();
-  })
-};
+// var links = document.getElementsByTagName('a');
+// for (var i = 0; i < links.length; i++) {
+//   links[i].addEventListener('click',function (evt) {
+//     evt.preventDefault();
+//   })
+// };
 //
 var points = document.querySelectorAll('.points');
 var BtnStartGame = document.getElementById("StartGame");
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded',function(evt){
 // include("questions.js");
 
 
+var StayOfCloseAnswer=0;
 // BtnStartGame.addEventListener('click',function(evt){
 //   document.querySelector('.game').classList.add('hidden');
 //   document.querySelector('.Start-One').classList.remove('hidden');
@@ -61,12 +62,37 @@ var FourTheme  = document.querySelectorAll('.four .points')
 var FiveTheme  = document.querySelectorAll('.five .points')
 
 var GetPointsButton = function (FindButton,points,team) {
- var PointsButton = document.getElementById(FindButton);
+ let PointsButton = document.getElementById(FindButton);
  PointsButton.addEventListener('click',function (evt) {
+
   var WhoGetPoints = document.querySelector(team); 
   if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
   PointsButton.disabled = true;
+  if (team==='.red') {
+    document.getElementById('Right-Button-Minus').disabled = true;
+  } else {
+    if (team==='.blue') {
+      document.getElementById('Left-Button-Minus').disabled = true;
+    } 
+  }
+});
+};
+var LosePointsButton = function (FindButton,points,team) {
+ let PointsButton = document.getElementById(FindButton);
+ PointsButton.addEventListener('click',function (evt) {
+
+  var WhoGetPoints = document.querySelector(team); 
+  if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
+  WhoGetPoints.textContent = Number(WhoGetPoints.textContent) - Number(points)
+  PointsButton.disabled = true;
+  if (team==='.red') {
+    document.getElementById('Right-Button').disabled = true;
+  } else {
+    if (team==='.blue') {
+      document.getElementById('Left-Button').disabled = true;
+    } 
+  }
 });
 };
 var NewButton = function(msg,id,parent) {
@@ -85,7 +111,45 @@ var NewButton = function(msg,id,parent) {
   parent.appendChild(SomeButton);
 }
 
-var Question = function(evt,points,imageSrc) {
+
+var ShowAnswer = function(Answer,imageSrcOfAnswer) {
+  var AreaForAnswer = document.createElement('div');
+  AreaForAnswer.className = "AnswerImage";
+  AreaForAnswer.id = "AnswerSee";
+
+    let AnswerMsg = document.createElement('span');
+  AnswerMsg.innerHTML = 'ответ:<br>';
+  AnswerMsg.className = 'AnswerMsg'
+AreaForAnswer.appendChild(AnswerMsg);
+
+  if ( imageSrcOfAnswer !== '' ) {
+    let imageOfAnswer = document.createElement('img');
+    imageOfAnswer.className = 'Image-Of-Answer';
+    imageOfAnswer.src=imageSrcOfAnswer;
+    AreaForAnswer.appendChild(imageOfAnswer);
+  } 
+  var AnswerCloseButton = document.createElement('span');
+  AnswerCloseButton.className = 'AnswerCloseButton';
+  AnswerCloseButton.innerHTML = 'крест';
+  // AnswerCloseButton.textContent = 'крест';
+  AnswerCloseButton.addEventListener('click', function () {
+   if (document.querySelector('.AnswerImage')) {document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage')) }
+
+ })
+  AreaForAnswer.appendChild(AnswerCloseButton);
+
+
+
+  var TextOfAnswer = document.createElement('h1');
+  TextOfAnswer.innerHTML = Answer;
+  TextOfAnswer.className = 'Text_Of_Answer'
+  AreaForAnswer.appendChild(TextOfAnswer);
+
+  document.body.appendChild(AreaForAnswer);
+}
+
+// ShowAnswer(AllQuestion[0].answer)
+var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   var TextArea = document.createElement('div');
   TextArea.className = "image-output";
   TextArea.id = "Qestion-Delete";
@@ -98,9 +162,21 @@ var Question = function(evt,points,imageSrc) {
   if ( imageSrc !== '' ) {
     let ImageOfQuestion = document.createElement('img');
     ImageOfQuestion.className = 'Image-Of-Question';
+
     ImageOfQuestion.src=imageSrc;
+       ImageOfQuestion.width ='45%';
     TextArea.appendChild(ImageOfQuestion);
   } else { } 
+
+  if ( audioSrc !== '' ) {
+    let AudioForQuestion = document.createElement('audio');
+    AudioForQuestion.controls = true;
+    AudioForQuestion.className = 'Audio-Of-Question';
+    AudioForQuestion.src=audioSrc;
+    AudioForQuestion.volume = 0.1;
+    TextArea.appendChild(AudioForQuestion);
+  } else { } 
+
 
 
   var TextCloseButton = document.createElement('span');
@@ -110,29 +186,60 @@ var Question = function(evt,points,imageSrc) {
   TextCloseButton.textContent = 'крест';
   TextArea.appendChild(TextCloseButton);
 
+
+  var LeftButtonMinus = document.createElement('button');
+  LeftButtonMinus.type = 'button';
+  LeftButtonMinus.id = "Left-Button-Minus";
+  LeftButtonMinus.className = 'VoteButton';
+  LeftButtonMinus.tabIndex = "1";
+  LeftButtonMinus.textContent = " - синим"
+  TextArea.appendChild(LeftButtonMinus);
+
   var LeftButton = document.createElement('button');
   LeftButton.type = 'button';
   LeftButton.id = "Left-Button";
+  LeftButton.className = 'VoteButton';
   LeftButton.tabIndex = "1";
-  LeftButton.textContent = "очки синим"
+  LeftButton.textContent = "+  синим"
   TextArea.appendChild(LeftButton);
+
+  var RightButtonPlus = document.createElement('button');
+  RightButtonPlus.type = 'button';
+  RightButtonPlus.id = "Right-Button-Minus";
+  RightButtonPlus.className = 'VoteButton';
+  //tabindex
+  RightButtonPlus.tabIndex = "1";
+  RightButtonPlus.textContent = "- красным"
+  TextArea.appendChild(RightButtonPlus);
 
   var RightButton = document.createElement('button');
   RightButton.type = 'button';
   RightButton.id = "Right-Button";
+  RightButton.className = 'VoteButton';
   //tabindex
   RightButton.tabIndex = "1";
-  RightButton.textContent = "очки красным"
+  RightButton.textContent = "+ красным"
   TextArea.appendChild(RightButton);
 
   document.body.appendChild(TextArea);
-
   document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
+ let elem1 = document.getElementById('Qestion-Delete');
+   if (elem1) {elem1.parentNode.removeChild(elem1) 
+    StayOfCloseAnswer=1;
+    console.log(StayOfCloseAnswer)
+  }
 
-   let elem1 = document.getElementById('Qestion-Delete');
-   if (elem1) {elem1.parentNode.removeChild(elem1)}
+  
+  
+ if (Answer !== '') {ShowAnswer(Answer,ImageIfAnswer)}
+      StayOfCloseAnswer = 1;
+ 
+  });
 
- });
+  
+
+
+
 
 //   PointsButton.addEventListener('click',function (evt) {
 //   var WhoGetPoints = document.querySelector(team); 
@@ -143,6 +250,9 @@ var Question = function(evt,points,imageSrc) {
 
 GetPointsButton('Left-Button',points,'.blue');
 GetPointsButton('Right-Button',points,'.red');
+
+LosePointsButton ('Left-Button-Minus',points,'.blue')
+LosePointsButton ('Right-Button-Minus',points,'.red')
 }
 
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
@@ -165,25 +275,102 @@ let DOWN_ARROW_KEY_CODE = 40; //34
   if (elem) {elem.parentNode.removeChild(elem)}
 }
 
+let StayOfButton;
+let StayOfButtonRightSide=1;
+var  ArrayOfButtonsVote;
+// console.log(StayOfButton)
 document.onkeydown  = function(evt) {
   if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == TAB_KEY_CODE ) {
+
     var elem = document.getElementById('Qestion-Delete');
-    if (elem) {elem.parentNode.removeChild(elem)}
-  }
+    if (elem) {elem.parentNode.removeChild(elem)
+     StayOfCloseAnswer=1;
+     console.log(StayOfCloseAnswer)
+   }
+   var elem = document.querySelector('.AnswerImage');
+   if (elem) {elem.parentNode.removeChild(elem)
 
-  if (evt.keyCode == UP_ARROW_KEY_CODE ) {
-    let elem = document.getElementById('Right-Button');
-    if (elem) { elem.focus() }
-  }
+   }
 
-  if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
-    let elem = document.getElementById('Right-Button');
-    if (elem) { elem.focus() }
-  }
+ }
 
+ if (evt.keyCode == UP_ARROW_KEY_CODE ) {
+   if (document.querySelector('.image-output')) {
+    ArrayOfButtonsVote = document.querySelectorAll('.VoteButton');
 
+ // console.log(ArrayOfButtonsVote)
+ StayOfButton=0;
 
+ ArrayOfButtonsVote[1].focus()
+  // console.log(StayOfButton)
 }
+  // if (StayOfButton>3) {StayOfButton=0}
+  //   if (StayOfButton==0) {
+  //     ArrayOfButtonsVote[0].focus() 
+  //     StayOfButton++
+  //   } else {
+  //     if (StayOfButton==1) {
+  //       ArrayOfButtonsVote[1].focus() 
+  //       StayOfButton++
+  //     }  else {
+  //       if (StayOfButton==2) {
+  //         ArrayOfButtonsVote[2].focus() 
+  //         StayOfButton++
+  //       }  else {
+  //         if (StayOfButton==3) {
+  //           ArrayOfButtonsVote[3].focus() 
+  //           StayOfButton=0
+  //         } 
+  //       }
+  //     } 
+  //   }
+  // }
+}
+
+
+// // StayOfButton = 1;
+// if (StayOfButton === 1) { 
+//  if (document.getElementById('Left-Button')) {
+//   document.getElementById('Left-Button').focus()
+//     console.log('StayOfButton' + '  ' + StayOfButton)
+//   StayOfButton = 0
+// }
+
+// } else {
+//  if (document.getElementById('Left-Button-Minus')) {
+//     document.getElementById('Left-Button-Minus').focus() 
+//        console.log('StayOfButton' + '  ' + StayOfButton)
+//     StayOfButton = 1
+// }
+// }
+if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
+}
+}
+
+
+
+
+// // StayOfButton = 1;
+// if (StayOfButtonRightSide === 1) { 
+//  if (document.getElementById('Right-Button')) {
+//   document.getElementById('Right-Button').focus()
+//       console.log('StayOfButtonRightSide' + '  ' + StayOfButtonRightSide)
+//   StayOfButtonRightSide = 0
+// }
+
+// } else {
+//  if (document.getElementById('Right-Button-Minus')) {
+//     document.getElementById('Right-Button-Minus').focus() 
+//     console.log('StayOfButtonRightSide' + '  ' + StayOfButtonRightSide)
+//     StayOfButtonRightSide = 1
+// }
+// }
+// } 
+
+
+
+
+
 
   // var TimeMassive = [];
   // TimeMassive = Array.from (FindAllTags);
@@ -205,29 +392,13 @@ document.onkeydown  = function(evt) {
 for (let i=0; i<AllButtons.length; i++) {
 
   AllButtons[i].addEventListener('click',function(evt) {
-    Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image);
+    Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image,AllQuestion[i].audio,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer);
+    StayOfCloseAnswer=0;
+    console.log(StayOfCloseAnswer)
   })
   
 }
 
-// for (let i=0; i<FirstTheme.length; i++) {
 
-//   FirstTheme[i].addEventListener('click',function(evt) {
-//     Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image);
-//   })
-//     SecondTheme[i].addEventListener('click',function(evt) {
-//     Question(AllQuestion[i+5].question,AllQuestion[i+5].points,AllQuestion[i+5].image);
-//   })
-//       ThirdTheme[i].addEventListener('click',function(evt) {
-//     Question(AllQuestion[i+10].question,AllQuestion[i+10].points,AllQuestion[i+10].image);
-//   })
-//        FourTheme[i].addEventListener('click',function(evt) {
-//     Question(AllQuestion[i+15].question,AllQuestion[i+15].points,AllQuestion[i+15].image);
-//   })
-//  FiveTheme[i].addEventListener('click',function(evt) {
-//     Question(AllQuestion[i+20].question,AllQuestion[i+20].points,AllQuestion[i+20].image);
-//   })
-
-// }
 
 console.log('all fine')

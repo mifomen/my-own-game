@@ -164,13 +164,14 @@ width: 100%;*/
   display: none;
 }
 
-.image-output {
+.image-output,
+.AnswerImage {
   transition: 1500ms ease;
   border:22px solid white;
   position:  fixed;
   width: 80vw;
 
-  top: 7vh;
+  top: 10vh;
 
   height: 80%;
   height: 80vh;
@@ -181,14 +182,24 @@ width: 100%;*/
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
   /*align-content: center;*/
   align-items: center;
   padding:1%;
  
 
 }
-.Text-Qestion {
+.AnswerImage {
+  z-index: 10;
+  width: 60%;
+  flex-direction: column;
+    justify-content: space-around;
+}
+
+.Text-Qestion,
+.Text_Of_Answer,
+.AnswerMsg {
   /*margin:auto;*/
   padding:0;
   align-self: center;
@@ -202,35 +213,55 @@ width: 100%;*/
   1px -1px 1px black,
   -1px 1px 1px black;
   z-index: 15;
+
+}
+.Text_Of_Answer {
+  font-size: 2em;
+
 }
 
 #Right-Button,
-#Left-Button {
-  font-size: 3em;
-  border:5px solid transparent;
+#Left-Button,
+#Right-Button-Minus,
+#Left-Button-Minus {
+  font-size: 2.3em;
+  border:15px solid transparent;
 }
 
 #Right-Button:hover,
 #Left-Button:hover,
 #Right-Button:focus,
-#Left-Button:focus
+#Left-Button:focus,
+#Right-Button-Minus:hover,
+#Left-Button-Minus:hover,
+#Right-Button-Minus:focus,
+#Left-Button-Minus:focus
  {
-  border: 5px solid black;
+  border: 15px solid black;
 }
 
 #Right-Button,
-#Left-Button {
+#Left-Button,
+#Left-Button-Minus,
+#Right-Button-Minus {
   position: absolute;
-  bottom: 2%;
+  bottom: 1%;
   min-width: 40%;
   
 }
-#Right-Button {
+#Right-Button,
+#Right-Button-Minus {
   right: 2%;
-
 }
-#Left-Button {
+#Left-Button,
+#Left-Button-Minus {
   left:2%;
+}
+#Left-Button-Minus, 
+ #Right-Button-Minus { 
+  bottom: 12%;
+  min-width: 40%;
+  /*font-size: 2.5em;*/
 }
 
 
@@ -254,7 +285,8 @@ width: 100%;*/
 
 
 
-.TextCloseButton {
+.TextCloseButton,
+.AnswerCloseButton {
 
   position: absolute;
   top:2%;
@@ -268,7 +300,8 @@ width: 100%;*/
 
 
 
-.TextCloseButton {
+.TextCloseButton,
+.AnswerCloseButton {
   position: absolute;
   right: 5%;
   top: 5%;
@@ -285,7 +318,14 @@ width: 100%;*/
   transform: rotate(360deg);
   transition: 300ms ease;
 }
-.TextCloseButton:before, .TextCloseButton:after {
+.AnswerCloseButton:hover {
+  transform: rotate(-360deg);
+  transition: 300ms ease;
+}
+.TextCloseButton:before, 
+.TextCloseButton:after,
+.AnswerCloseButton:after,
+.AnswerCloseButton:before {
   position: absolute;
   left: 15px;
   content: ' ';
@@ -294,10 +334,12 @@ width: 100%;*/
   background-color: white;
   z-index: 20;
 }
-.TextCloseButton:before {
+.TextCloseButton:before,
+.AnswerCloseButton:before  {
   transform: rotate(45deg);
 }
-.TextCloseButton:after {
+.TextCloseButton:after,
+.AnswerCloseButton:after {
   transform: rotate(-45deg);
 }
 
@@ -309,13 +351,30 @@ transform: rotate(-45deg);
 }*/
 
 .Image-Of-Question {
+    position: relative;
+  top:-20%;
+  width: 25%;
+
+  z-index: 15;
+}
+.Image-Of-Answer {
   position: relative;
   top:-10%;
   width: 65%;
   height: auto;
-
+  z-index: 15;
 }
-
+.Image-Of-Answer {
+  top:5%;
+}
+.Audio-Of-Question  {
+  /*border:2px solid green;*/
+  width: 40%;
+  transform: scale(1.5);
+  outline: none;
+  /*min-height: 80vh;*/
+    /*z-index: 15;*/
+}
 /*body {
     background: linear-gradient(233deg, rgba(3,3,73,1),rgba(3,3,123,1),rgba(3,3,73,1));
     background-size: 600% 600%;
