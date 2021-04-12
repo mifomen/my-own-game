@@ -24,22 +24,26 @@
 // ]
 
 var Themes = [
+'М+И+Ф',
 'Всего понемногу',
 'Задачи в стихах',
-'Загадки',
-'М+И+Ф',
-'Анаграммы'
+'Анаграммы',
+"Загадки",
 ]
-function compareNumeric1(a, b) {
-  if (a.theme < b.theme) return -1
-    if (a.theme > b.theme) return 1 
-      return 0;
-  }
-
-  // ThemesObj.sort(compareNumeric1);
+// for (theme of Themes) {
+//   console.log(theme)
+// }
 console.log(Themes)
 Themes.sort();
 console.log(Themes)
+// function compareNumeric1(a, b) {
+//   if (a.theme < b.theme) return -1
+//     if (a.theme > b.theme) return 1 
+//       return 0;
+//   }
+
+//   // ThemesObj.sort(compareNumeric1);
+
 // ThemesObj.sort(function(a, b) {
 //   if (a.name > b.name) return 1
 //     if (a.name < b.name) return -1 
@@ -52,7 +56,7 @@ console.log(Themes)
 
 var AllQuestion = [
 { //1
-  theme: Themes[0], 
+  theme: Themes[1], 
   question: 'От какого слова происходит название ХАКЕР (hacker)',
   image:'', //https://stihi.ru/pics/2020/03/07/1196.jpg
   audio:'', 
@@ -61,7 +65,7 @@ var AllQuestion = [
   answer:'Русское слово хакер произошло от английского hacker = английский глагол to hack (рубить, кромсать) + er (суффикс для образования производителя действия). Первоначально хакерами называли программистов, которые исправляли ошибки в ПО каким-либо быстрым, но не всегда корректным способом'
 },
 { //2
-  theme:Themes[0], 
+  theme:Themes[1], 
   question: 'Какое наименьшее целое положительное число вы можете написать двумя цифрами', 
   image:'',
   audio:'',
@@ -292,7 +296,9 @@ function compareNumeric(a, b) {
   // if (a.theme == b.theme || a.points < b.points)  return 1;
   return 0
 }
-
+console.log(AllQuestion)
+AllQuestion.sort(compareNumeric);
+console.log(AllQuestion.sort(compareNumeric))
 
 
 // for ( let i=0; i<items.length; i++) {
@@ -302,28 +308,30 @@ function compareNumeric(a, b) {
 // let arr = [ 17, 2, 15 ];
 
 // метод сортирует содержимое arr
-console.log(AllQuestion)
-// AllQuestion.sort((prev, next) => prev.points - next.points );
-AllQuestion.sort(compareNumeric);
-console.log(AllQuestion)
+
 // console.log( arr );  // 1, 15, 2
 
 for ( let i = 0; i < Themes.length; i++) {
 
-AllQuestion[i].theme = Themes[i];
-AllQuestion[i+1].theme = Themes[i];
-AllQuestion[i+2].theme = Themes[i];
-AllQuestion[i+3].theme = Themes[i];
-AllQuestion[i+4].theme = Themes[i];
+// AllQuestion[i].theme = Themes[i];
+// AllQuestion[i+1].theme = Themes[i];
+// AllQuestion[i+2].theme = Themes[i];
+// AllQuestion[i+3].theme = Themes[i];
+// AllQuestion[i+4].theme = Themes[i];
 
 }
-let items = document.querySelectorAll('.title-theme');
-// console.log(items)
 
+let items = document.querySelectorAll('.title-theme');
+console.log(items)
 for ( let i = 0; i < items.length; i++) {
   items[i].textContent = Themes[i];
+// items[i+1].theme = Themes[i];
+// items[i+2].theme = Themes[i];
+// items[i+3].theme = Themes[i];
+// items[i+4].theme = Themes[i];
 
 }
+  items[3].textContent = AllQuestion[19].theme;
 
 
 let NamingForPoints = document.querySelectorAll('.points');
