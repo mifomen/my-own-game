@@ -9,7 +9,7 @@
 //   let vh = window.innerHeight * 0.01;
 //   document.documentElement.style.setProperty('--vh', `${vh}px`);
 // });
-
+// window.storage.globalVar = AllQuestion.length;
 
 // var links = document.getElementsByTagName('a');
 // for (var i = 0; i < links.length; i++) {
@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded',function(evt){
   addScript('questions.js');
 })
 
+
+
 // console.log(AllQuestion.length)
 
 
@@ -40,30 +42,35 @@ var RowForPoints = document.createElement('div');
   RowForPoints.className = 'row'
 var RowTitle = document.createElement('h1');
   RowTitle.textContent = '';
+  // RowTitle.dataset.theme = NameOfTheme;
   RowTitle.innerHTML = ' '
-  RowTitle.className = 'title'
+  RowTitle.className = 'title-theme'
   RowForPoints.appendChild(RowTitle);
 var NewButtonForPointsF  =  function (evt) {
 let RowButtonPoints = document.createElement('button');
-  RowButtonPoints.textContent = 'mifomen';
+  RowButtonPoints.textContent = 't1';
   RowButtonPoints.type = "button"
   RowButtonPoints.className = 'points'
   RowForPoints.appendChild(RowButtonPoints);
 }
-  NewButtonForPointsF();
-  NewButtonForPointsF();
-  NewButtonForPointsF();
-  NewButtonForPointsF();
-  NewButtonForPointsF();
+
+for (let j =0; j< evt; j++) {
+  // console.log('j= ' + j)
+    NewButtonForPointsF();
+}
 FindLastButton.appendChild(RowForPoints);
-console.log('NewRowOfButtons')
+// console.log('NewRowOfButtons')
 }
 
-NewRowOfButtons ();
-NewRowOfButtons ();
-NewRowOfButtons ();
-NewRowOfButtons ();
-NewRowOfButtons ();
+ let NumberInRow = localStorage.getItem('NumberInRow');
+for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
+  // console.log('j= ' + j)
+  NewRowOfButtons (NumberInRow);
+
+}
+
+// var localVar = window.storage.globalVar;
+// console.log('localStorage.getItem(length)' + ' ' + localStorage.getItem('length'))
 
 var StayOfCloseAnswer=0;
 // BtnStartGame.addEventListener('click',function(evt){
@@ -403,9 +410,7 @@ if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
 // }
 // } 
 
-window.storage = {}
 
-console.log(window.storage.globalVar)
 
 
 
@@ -419,10 +424,11 @@ console.log(window.storage.globalVar)
   //   // it.style.cssText.replace(f,'');
   // })
 
-  var ArrayOfQuestions = [];
-  ArrayOfQuestions = Array.from (All);
+  // var ArrayOfQuestions = [];
+  // ArrayOfQuestions = Array.from (All);
 
   let AllButtons = document.querySelectorAll('.points');
+  // console.log(AllButtons)
   for (let i=0; i<AllButtons.length; i++) {
 
     AllButtons[i].addEventListener('click',function(evt) {
@@ -434,6 +440,16 @@ console.log(window.storage.globalVar)
 
   }
 
+  // for (AllQuestio of AllQuestion) {
+
+  //   AllButtons.addEventListener('click',function(evt) {
+  //     // ShowAnswer(,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
+  //     Question(AllQuestion.question,AllQuestion.points,AllQuestion.image,AllQuestion.audio,AllQuestion.answer,AllQuestion.imageOfAnswer);
+
+  //     StayOfCloseAnswer=0;
+  //   })
+
+  // }
 
 
 
