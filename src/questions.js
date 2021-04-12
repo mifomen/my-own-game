@@ -360,7 +360,7 @@ let AllQuestion = [
   question: ' Вначале - двойка.<br> Далее - мужчина,<br>Высокого он титула<br> и чина.<br>А слово целиком - обозначенье,<br>Дробящее на дозы <br>обученье.', 
   image:'',
   audio:'',
-  points: 200,
+  points: 100,
   imageOfAnswer:'',
   answer: 'параграф' 
 },
@@ -369,7 +369,7 @@ let AllQuestion = [
   question: 'Читаем мы направо смело -<br>Геометрическое тело.<br>Прочтём же справа мы налево -<br>Увидим разновидность древа.', 
   image:'',
   audio:'',
-  points: 300,
+  points: 200,
   imageOfAnswer:'',
   answer: 'куб - бук' 
 },
