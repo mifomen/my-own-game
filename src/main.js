@@ -32,9 +32,6 @@ document.addEventListener('DOMContentLoaded',function(evt){
 
 })
 
-// include("questions.js");
-
-
 var StayOfCloseAnswer=0;
 // BtnStartGame.addEventListener('click',function(evt){
 //   document.querySelector('.game').classList.add('hidden');
@@ -83,6 +80,7 @@ var LosePointsButton = function (FindButton,points,team) {
  PointsButton.addEventListener('click',function (evt) {
 
   var WhoGetPoints = document.querySelector(team); 
+
   if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) - Number(points)
   PointsButton.disabled = true;
@@ -112,15 +110,15 @@ var NewButton = function(msg,id,parent) {
 }
 
 
-var ShowAnswer = function(Answer,imageSrcOfAnswer) {
+var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   var AreaForAnswer = document.createElement('div');
   AreaForAnswer.className = "AnswerImage";
   AreaForAnswer.id = "AnswerSee";
 
-    let AnswerMsg = document.createElement('span');
+  let AnswerMsg = document.createElement('span');
   AnswerMsg.innerHTML = 'ответ:<br>';
   AnswerMsg.className = 'AnswerMsg'
-AreaForAnswer.appendChild(AnswerMsg);
+  AreaForAnswer.appendChild(AnswerMsg);
 
   if ( imageSrcOfAnswer !== '' ) {
     let imageOfAnswer = document.createElement('img');
@@ -145,7 +143,50 @@ AreaForAnswer.appendChild(AnswerMsg);
   TextOfAnswer.className = 'Text_Of_Answer'
   AreaForAnswer.appendChild(TextOfAnswer);
 
+
+  var LeftButtonMinus = document.createElement('button');
+  LeftButtonMinus.type = 'button';
+  LeftButtonMinus.id = "Left-Button-Minus";
+  LeftButtonMinus.className = 'VoteButton';
+  LeftButtonMinus.tabIndex = "1";
+  LeftButtonMinus.textContent = " - синим"
+  AreaForAnswer.appendChild(LeftButtonMinus);
+
+  var LeftButton = document.createElement('button');
+  LeftButton.type = 'button';
+  LeftButton.id = "Left-Button";
+  LeftButton.className = 'VoteButton';
+  LeftButton.tabIndex = "1";
+  LeftButton.textContent = "+  синим"
+  AreaForAnswer.appendChild(LeftButton);
+
+  var RightButtonPlus = document.createElement('button');
+  RightButtonPlus.type = 'button';
+  RightButtonPlus.id = "Right-Button-Minus";
+  RightButtonPlus.className = 'VoteButton';
+  //tabindex
+  RightButtonPlus.tabIndex = "1";
+  RightButtonPlus.textContent = "- красным"
+  AreaForAnswer.appendChild(RightButtonPlus);
+
+  var RightButton = document.createElement('button');
+  RightButton.type = 'button';
+  RightButton.id = "Right-Button";
+  RightButton.className = 'VoteButton';
+  //tabindex
+  RightButton.tabIndex = "1";
+  RightButton.textContent = "+ красным"
+  AreaForAnswer.appendChild(RightButton);
+  
+
   document.body.appendChild(AreaForAnswer);
+
+  GetPointsButton('Left-Button',points,'.blue');
+  GetPointsButton('Right-Button',points,'.red');
+
+  LosePointsButton ('Left-Button-Minus',points,'.blue')
+  LosePointsButton ('Right-Button-Minus',points,'.red')
+
 }
 
 // ShowAnswer(AllQuestion[0].answer)
@@ -164,9 +205,9 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
     ImageOfQuestion.className = 'Image-Of-Question';
 
     ImageOfQuestion.src=imageSrc;
-       ImageOfQuestion.width ='45%';
+    ImageOfQuestion.width ='45%';
     TextArea.appendChild(ImageOfQuestion);
-  } else { } 
+  } 
 
   if ( audioSrc !== '' ) {
     let AudioForQuestion = document.createElement('audio');
@@ -175,66 +216,28 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
     AudioForQuestion.src=audioSrc;
     AudioForQuestion.volume = 0.1;
     TextArea.appendChild(AudioForQuestion);
-  } else { } 
-
-
+  } 
 
   var TextCloseButton = document.createElement('span');
   TextCloseButton.className = 'TextCloseButton';
   TextCloseButton.innerHTML = 'крест';
-  // TextCloseButton.Click = testDiologDelete();
   TextCloseButton.textContent = 'крест';
   TextArea.appendChild(TextCloseButton);
 
-
-  var LeftButtonMinus = document.createElement('button');
-  LeftButtonMinus.type = 'button';
-  LeftButtonMinus.id = "Left-Button-Minus";
-  LeftButtonMinus.className = 'VoteButton';
-  LeftButtonMinus.tabIndex = "1";
-  LeftButtonMinus.textContent = " - синим"
-  TextArea.appendChild(LeftButtonMinus);
-
-  var LeftButton = document.createElement('button');
-  LeftButton.type = 'button';
-  LeftButton.id = "Left-Button";
-  LeftButton.className = 'VoteButton';
-  LeftButton.tabIndex = "1";
-  LeftButton.textContent = "+  синим"
-  TextArea.appendChild(LeftButton);
-
-  var RightButtonPlus = document.createElement('button');
-  RightButtonPlus.type = 'button';
-  RightButtonPlus.id = "Right-Button-Minus";
-  RightButtonPlus.className = 'VoteButton';
-  //tabindex
-  RightButtonPlus.tabIndex = "1";
-  RightButtonPlus.textContent = "- красным"
-  TextArea.appendChild(RightButtonPlus);
-
-  var RightButton = document.createElement('button');
-  RightButton.type = 'button';
-  RightButton.id = "Right-Button";
-  RightButton.className = 'VoteButton';
-  //tabindex
-  RightButton.tabIndex = "1";
-  RightButton.textContent = "+ красным"
-  TextArea.appendChild(RightButton);
-
   document.body.appendChild(TextArea);
   document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
- let elem1 = document.getElementById('Qestion-Delete');
+   let elem1 = document.getElementById('Qestion-Delete');
    if (elem1) {elem1.parentNode.removeChild(elem1) 
     StayOfCloseAnswer=1;
     // console.log(StayOfCloseAnswer)
   }
 
   
-  
- if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(Answer,ImageIfAnswer)}
-      StayOfCloseAnswer = 1;
- 
-  });
+  ShowAnswer(points,Answer,ImageIfAnswer)
+  // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
+    StayOfCloseAnswer = 1;
+
+});
 
   
 
@@ -248,11 +251,11 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
 //   PointsButton.disabled = true;
 // });
 
-GetPointsButton('Left-Button',points,'.blue');
-GetPointsButton('Right-Button',points,'.red');
+// GetPointsButton('Left-Button',points,'.blue');
+// GetPointsButton('Right-Button',points,'.red');
 
-LosePointsButton ('Left-Button-Minus',points,'.blue')
-LosePointsButton ('Right-Button-Minus',points,'.red')
+// LosePointsButton ('Left-Button-Minus',points,'.blue')
+// LosePointsButton ('Right-Button-Minus',points,'.red')
 }
 
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
@@ -383,22 +386,17 @@ if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
   var ArrayOfQuestions = [];
   ArrayOfQuestions = Array.from (All);
 
-  // ArrayOfQuestions.forEach(function (it) {
-
-  // })
   let AllButtons = document.querySelectorAll('.points');
-// console.log(AllButtons)
+  for (let i=0; i<AllButtons.length; i++) {
 
-for (let i=0; i<AllButtons.length; i++) {
+    AllButtons[i].addEventListener('click',function(evt) {
+      // ShowAnswer(,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
+      Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image,AllQuestion[i].audio,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer);
 
-  AllButtons[i].addEventListener('click',function(evt) {
-    Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image,AllQuestion[i].audio,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer);
-    StayOfCloseAnswer=0;
-    // console.log(StayOfCloseAnswer)
-  })
-  
-}
+      StayOfCloseAnswer=0;
+    })
 
+  }
 
 
-console.log('all fine')
+  console.log('all fine')
