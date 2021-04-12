@@ -55,11 +55,11 @@ All.forEach(function(evt){
 });
 
 var All = document.querySelectorAll('.game .points')
-var FirstTheme  = document.querySelectorAll('.one .points')
-var SecondTheme = document.querySelectorAll('.two .points')
-var ThirdTheme = document.querySelectorAll('.three .points')
-var FourTheme  = document.querySelectorAll('.four .points')
-var FiveTheme  = document.querySelectorAll('.five .points')
+// var FirstTheme  = document.querySelectorAll('.one .points')
+// var SecondTheme = document.querySelectorAll('.two .points')
+// var ThirdTheme = document.querySelectorAll('.three .points')
+// var FourTheme  = document.querySelectorAll('.four .points')
+// var FiveTheme  = document.querySelectorAll('.five .points')
 
 var GetPointsButton = function (FindButton,points,team) {
  let PointsButton = document.getElementById(FindButton);
