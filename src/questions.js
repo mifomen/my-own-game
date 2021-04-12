@@ -7,6 +7,12 @@ let Themes = [
 'Всего понемногу'
 ]
 
+window.storage.globalVar = AllQuestion.length;
+ let name = function () {
+var localVar = window.storage.globalVar;
+console.log(localVar)
+}
+name()
 
 var ThemesForLoad = [
 Themes[0],
@@ -15,6 +21,7 @@ Themes[2],
 Themes[3],
 Themes[4]
 ]
+
 
 
 
@@ -33,7 +40,7 @@ for ( let i=0; i<items.length; i++) {
   items[i].innerHTML = ThemesForLoad[i];
 }
 
-let AllQuestion = [
+var AllQuestion = [
 { //1
   theme:Themes[0], 
   question: 'От какого слова происходит название ХАКЕР (hacker)',
@@ -123,7 +130,7 @@ let AllQuestion = [
   audio:'',
   points: 500,
   imageOfAnswer:'',
-  answer: 'html + css + js' 
+  answer: '210 или 150' 
 },
 { //11
   theme:'загадки', 
@@ -263,20 +270,19 @@ let AllQuestion = [
 ]
 
 let NamingForPoints = document.querySelectorAll('.points');
-// console.log(NamingForPoints)
+console.log(NamingForPoints)
 for (var  i = 0;i < NamingForPoints.length; i++) {
   NamingForPoints[i].textContent = AllQuestion[i].points;
 }
-
+//test mifomen
 
 for ( let i=0; i<5; i++) {
-
-
-
   for ( let j=0; j<AllQuestion.length; j++) {
     AllQuestion[i].theme = Themes[j]
   }
 
 }
+
+
 
 // console.log(AllQuestion)

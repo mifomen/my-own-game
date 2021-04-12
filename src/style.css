@@ -202,6 +202,13 @@ width: 100%;*/
  
 
 }
+
+.AnswerImage * {
+  paddin:0;
+  margin:0;
+    /*flex-direction: column;*/
+  /*justify-content: flex-end;*/
+}
 .AnswerImage {
   z-index: 10;
   width: 60%;
@@ -228,15 +235,20 @@ width: 100%;*/
 
 }
 .Text_Of_Answer {
+  position: relative;
   font-size: 2em;
+  top: -25vh;
 
+}
+.AnswerMsg {
+  font-size: 2em;
 }
 
 #Right-Button,
 #Left-Button,
 #Right-Button-Minus,
 #Left-Button-Minus {
-  font-size: 2.3em;
+  font-size: 2em;
   border:15px solid transparent;
 }
 
@@ -258,7 +270,7 @@ width: 100%;*/
 #Right-Button-Minus {
   position: absolute;
   bottom: 1%;
-  min-width: 40%;
+  min-width: 30%;
   
 }
 #Right-Button,
@@ -272,7 +284,7 @@ width: 100%;*/
 #Left-Button-Minus, 
  #Right-Button-Minus { 
   bottom: 12%;
-  min-width: 40%;
+  min-width: 30%;
   /*font-size: 2.5em;*/
 }
 
@@ -372,7 +384,7 @@ transform: rotate(-45deg);
 .Image-Of-Answer {
   position: relative;
   top:-10%;
-  width: 65%;
+  width: 45%;
   height: auto;
   z-index: 15;
 }

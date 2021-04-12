@@ -29,8 +29,41 @@ function addScript(src) {
 
 document.addEventListener('DOMContentLoaded',function(evt){
   addScript('questions.js');
-
 })
+
+// console.log(AllQuestion.length)
+
+
+let NewRowOfButtons = function (evt) {
+let FindLastButton = document.querySelector('.Start-One');
+var RowForPoints = document.createElement('div');
+  RowForPoints.className = 'row'
+var RowTitle = document.createElement('h1');
+  RowTitle.textContent = '';
+  RowTitle.innerHTML = ' '
+  RowTitle.className = 'title'
+  RowForPoints.appendChild(RowTitle);
+var NewButtonForPointsF  =  function (evt) {
+let RowButtonPoints = document.createElement('button');
+  RowButtonPoints.textContent = 'mifomen';
+  RowButtonPoints.type = "button"
+  RowButtonPoints.className = 'points'
+  RowForPoints.appendChild(RowButtonPoints);
+}
+  NewButtonForPointsF();
+  NewButtonForPointsF();
+  NewButtonForPointsF();
+  NewButtonForPointsF();
+  NewButtonForPointsF();
+FindLastButton.appendChild(RowForPoints);
+console.log('NewRowOfButtons')
+}
+
+NewRowOfButtons ();
+NewRowOfButtons ();
+NewRowOfButtons ();
+NewRowOfButtons ();
+NewRowOfButtons ();
 
 var StayOfCloseAnswer=0;
 // BtnStartGame.addEventListener('click',function(evt){
@@ -128,8 +161,8 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   } 
   var AnswerCloseButton = document.createElement('span');
   AnswerCloseButton.className = 'AnswerCloseButton';
-  AnswerCloseButton.innerHTML = 'крест';
-  // AnswerCloseButton.textContent = 'крест';
+  AnswerCloseButton.innerHTML = 'крест ответ';
+  // AnswerCloseButton.textContent = 'крест ответ';
   AnswerCloseButton.addEventListener('click', function () {
    if (document.querySelector('.AnswerImage')) {document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage')) }
 
@@ -235,7 +268,7 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   
   ShowAnswer(points,Answer,ImageIfAnswer)
   // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
-    StayOfCloseAnswer = 1;
+  StayOfCloseAnswer = 1;
 
 });
 
@@ -294,10 +327,10 @@ document.onkeydown  = function(evt) {
    if (elem) {elem.parentNode.removeChild(elem)
 
    }
+    // ShowAnswer(points,Answer,ImageIfAnswer)
+  }
 
- }
-
- if (evt.keyCode == UP_ARROW_KEY_CODE ) {
+  if (evt.keyCode == UP_ARROW_KEY_CODE ) {
    if (document.querySelector('.image-output')) {
     ArrayOfButtonsVote = document.querySelectorAll('.VoteButton');
 
@@ -370,6 +403,9 @@ if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
 // }
 // } 
 
+window.storage = {}
+
+console.log(window.storage.globalVar)
 
 
 
@@ -397,6 +433,17 @@ if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
     })
 
   }
+
+
+
+
+// var x = AllQuestion.length, y = 5;
+
+// for (let i=0; i<Math.floor(x/y); i++) {
+//   console.log(i)
+//   NewRowOfButtons ();
+// }
+
 
 
   console.log('all fine')
