@@ -35,9 +35,9 @@ var Themes = [
 // for (theme of Themes) {
 //   console.log(theme)
 // }
-console.log(Themes)
+// console.log(Themes)
 // Themes.sort();
-console.log(Themes)
+// console.log(Themes)
 // function compareNumeric1(a, b) {
 //   if (a.theme < b.theme) return -1
 //     if (a.theme > b.theme) return 1 
@@ -343,9 +343,9 @@ function compareNumeric(a, b) {
   // if (a.theme == b.theme || a.points < b.points)  return 1;
   return 0
 }
-console.log(AllQuestion)
+// console.log(AllQuestion)
 AllQuestion.sort(compareNumeric);
-console.log(AllQuestion.sort(compareNumeric))
+// console.log(AllQuestion.sort(compareNumeric))
 
 
 // for ( let i=0; i<items.length; i++) {
@@ -357,7 +357,7 @@ console.log(AllQuestion.sort(compareNumeric))
 // метод сортирует содержимое arr
 
 // console.log( arr );  // 1, 15, 2
-console.log(Themes.length)
+// console.log(Themes.length)
 for ( let i = 0; i < Themes.length; i++) {
 
 // AllQuestion[i+5].theme = Themes[i];
@@ -369,7 +369,7 @@ for ( let i = 0; i < Themes.length; i++) {
 }
 
 let items = document.querySelectorAll('.title-theme');
-console.log(items)
+// console.log(items)
 for ( let i = 0; i < items.length; i++) {
   // items[i].textContent = Themes[i];
   // items[i].textContent = 't1'
@@ -394,4 +394,4 @@ for ( let i=0; i<5; i++) {
   }
 }
 
-console.log(AllQuestion)
+// console.log(AllQuestion)
