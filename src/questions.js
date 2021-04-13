@@ -24,13 +24,12 @@
 // ]
 
 var Themes = [
-'М+И+Ф',
-'Задачи в стихах',
-'Загадки',
-'Анаграммы',
-"Всего понемногу",
-'новая тема 6'
-
+'Войны Древней Греции ', //0
+'Города Древнейшей Греции', //1
+'Древнегреческая мифология', //2
+'Олимпийские игры', //3
+'Словарь', //4
+'Александр Македонский' //5
 ]
 // for (theme of Themes) {
 //   console.log(theme)
@@ -59,233 +58,280 @@ var Themes = [
 var AllQuestion = [
 { //1
   theme: Themes[0], 
-  question: 'От какого слова происходит название ХАКЕР (hacker)',
-  image:'', //https://stihi.ru/pics/2020/03/07/1196.jpg
+  question: 'Наиболее подробное изложение событий этой войны содержится в 2-х поэмах — «Илиаде» и «Одиссее»',
+  image:'https://puu.sh/Hy081/294ac33e9d.png', //https://stihi.ru/pics/2020/03/07/1196.jpg
   audio:'', 
-  points: 100,
+  points: 10,
   imageOfAnswer:'',
-  answer:'Русское слово хакер произошло от английского hacker = английский глагол to hack (рубить, кромсать) + er (суффикс для образования производителя действия).'
+  answer:'Троянская война'
 },
 { //2
   theme:Themes[0], 
-  question: 'Какое наименьшее целое положительное число вы можете написать двумя цифрами', 
-  image:'',
+  question: 'Во время греко-персидских войн этот небольшой отряд ненадолго сдержал войска персов от вторжения в Грецию. Что это был за отряд?', 
+  image:'https://puu.sh/Hy0bH/cbb56a503f.png',
   audio:'',
-  points: 250,
+  points: 20,
   imageOfAnswer:'',
-  answer:'1/1 2/2 3/3 … 9/9 или 10 20 30 40 … 90'
+  answer:'300 спартанцев'
 },
 { //3
   theme:Themes[0], 
-  question: 'Какой угол составляют между собой стрелки часов? Ответ нужно  дать не пользуясь транспортиром ',
-  image:'https://puu.sh/HxhhW/c274013cc2.png',
+  question: 'Какое расстояние было между полем боя Марафонской битвы и Афинами?',
+  image:'',
   audio:'',
-  points: 300,
-  imageOfAnswer:'',
+  points: 30,
+  imageOfAnswer:'42 км',
   answer:'1'
 },
 { //4
   theme:Themes[0], 
-  question: 'ENIAC был построен на вакуумных лампах. Сколько ламп было в ENIAC',
+  question: 'В героических сказаниях древних греков он является храбрейшим из героев, участвовавших в Троянской войне. Назовите его.',
   image:'',
   audio:'', 
-  points: 400,
-  imageOfAnswer:'https://puu.sh/HxhmX/5937250f65.png',
-  answer:'В нем было 17000 ламп'
+  points: 40,
+  imageOfAnswer:'',
+  answer:'Ахиллес'
 },
 { //5
   theme:Themes[0], 
-  question: 'Он был убит римским воином, когда чертил на песке геометрические фигуры. Ему приписывают крылатую фразу «Дайте мне точку опоры, и я переверну Землю!»', 
+  question: 'За несколько лет до начала греко-персидских войн персы завоевали весь полуостров Малая Азия, но город Троя не был захвачен. Почему?', 
   image:'',
   audio:'',
-  points: 500,
+  points: 50,
   imageOfAnswer:'',
-  answer:'Архимед <br> (21 год до н.э.)'
+  answer:'Он был разрушен еще во время Троянской войны'
 },
 { //6
   theme:Themes[1], 
-  question: 'Кай для Снежной Королевы<br>Кресло выложил из льда.<br>Он работал три недели – <br>Кресло вышло хоть куда!<br>Отвечайте поскорей,<br>Сколько Кай потратил дней?', 
+  question: 'В этом городе существовала традиция: слабых и немощных детей кидали в «апотеты», пропасть возле Тайгета.', 
   image:'',
   audio:'',
-  points: 200,
+  points: 10,
   imageOfAnswer:'',
-  answer: 21
+  answer: 'В Спарте'
 },
 { //7
   theme:Themes[1],   
-  question: 'Джин в бутылке сидит,<br>Горько плачет и грустит:<br>«Здесь уже я триста лет,<br>И на волю хода нет!»<br>Будет ваш ответ каков,<br>Если через семь веков<br>Джина выпустит мой дед,<br>Сколько Джину будет лет?', 
-  image:'',
+  question: 'В этом городе находится Акрополь', 
+  image:'https://puu.sh/Hy0jJ/62462d922d.png',
   audio:'',
-  points: 100,
+  points: 20,
   imageOfAnswer:'',
-  answer: '1000'
+  answer: 'В Афинах'
 },
 { //8
   theme:Themes[1],   
-  question: 'Три маленьких гнома трудились, устали:<br>Книги волшебные переплетали.<br>Сели гномы отдыхать,<br>Самый младший стал считать.<br>Насчитал он всего<br>По тридцать штук на каждого,<br>Десять книг в остатке.<br>Сколько всего книг, ребятки?', 
+  question: 'В каком городе Древней Греции было два царя?', 
   image:'',
   audio:'',
-  points: 300,
+  points: 30,
   imageOfAnswer:'',
-  answer:'100'
+  answer:'В Спарте'
 },
 { //9
   theme:Themes[1],  
-  question: 'Сто двадцать Бабок-Ежек<br>Пустились в перелет.<br>Двадцать в своих ступах<br>Вырвались вперед.<br>Вы, наверно, догадались,<br>Сколько позади осталось?', 
+  question: 'Этот город был столицей острова Крит', 
   image:'',
   audio:'',
-  points: 400,
+  points: 40,
   imageOfAnswer:'',
-  answer: '100'
+  answer: 'Кносс'
 },
 { //10
   theme:Themes[1],  
-  question: 'Винни-Пух и Пятачок<br>Сладкого меду набрали бачок.<br>Пчелы разозлились,<br>Догонять пустились.<br>Покусали Пятачка<br>Десять пчелочек слегка.<br>Но досталось Винни –<br>В него сто сорок впились.<br>Ответьте, дети, поскорей,<br>Сколько пчел покусало друзей?', 
-  image:'',
+  question: 'Город, который обнаружил в 1870 г. археолог Генрих Шлиман', 
+  image:'https://puu.sh/Hy0lk/7c717eb608.png',
   audio:'',
-  points: 500,
+  points: 50,
   imageOfAnswer:'',
-  answer: '210 или 150' 
+  answer: 'Троя' 
 },
 { //11
   theme:Themes[2],  
-  question: 'Часть плоскости, ограниченная окружностью.', 
+  question: 'Бог, покровитель вина и виноделия', 
   image:'',
   audio:'',
-  points: 100,
-  imageOfAnswer:'',
-  answer: 'круг'
+  points: 10,
+  imageOfAnswer:'https://puu.sh/Hy0mL/fd2f6d00d7.png',
+  answer: 'Дионис'
 },
 { //12
   theme:Themes[2], 
-  question: 'В древности такого термина не было. Его ввел в 17 веке французский математик Франсуа Виет, в переводе с латинского он означает «спица колеса». Что это?', 
+  question: 'Это мифологическое существо подстерегало путников на дороге, задавало им хитроумные загадки и убивало всех, кто не мог их отгадать.', 
   image:'',
   audio:'',
-  points: 200,
-  imageOfAnswer:'',
-  answer:'радиус'
+  points: 20,
+  imageOfAnswer:'https://puu.sh/Hy0rY/7684cebb16.png',
+  answer:'Сфинкс'
 },
 { //13
   theme:Themes[2], 
-  question: 'Чтоб окружность верно счесть<br>Надо только постараться<br>И запомнить все как есть:<br>Три – четырнадцать – пятнадцать –<br>Девяносто два и шесть.<br>О чем речь?', 
+  question: 'Персонаж древнегреческой мифологии, выдающийся художник и инженер, построивший лабиринт на острове Крит.', 
   image:'',
   audio:'',
-  points: 300,
+  points: 30,
   imageOfAnswer:'',
-  answer:'число пи'
+  answer:'Дедал'
 },
 { //14
   theme:Themes[2],  
-  question: 'Кот в мешке.<br>Слово, которым обозначается это понятие, в переводе с греческого означает «натянутая тетива»', 
+  question: 'Главными атрибутами этой богини являются колчан со стрелами, лань и колесница.', 
   image:'',
   audio:'',
-  points: 400,
-  imageOfAnswer:'',
-  answer: 'гипотенуза'
+  points: 40,
+  imageOfAnswer:'https://puu.sh/Hy0sY/b3f82fd742.png',
+  answer: 'Артемида'
 },
 { //15
   theme:Themes[2], 
-  question: 'В вавилонских табличках это число изображалось в виде сдвоенного угла Индийцы называли его словом «сунья» (пустое), арабы перевели его соответствующим словом «ас-сыфр».', 
+  question: 'Мифологическое чудовище, которое питалось мясом, но при этом не имело клыков.', 
   image:'',
   audio:'',
-  points: 500,
+  points: 50,
   imageOfAnswer:'',
-  answer: 'ноль'
+  answer: 'Минотавр'
 },
 { //16
-  theme:Themes[3], 
-  question: 'атеткмимаа', 
+  theme:Themes[3],  //mifomen
+  question: 'Сколько времени продолжались Олимпийские игры в древней Греции?', 
   image:'',
   audio:'',
-  points: 100 ,
+  points: 10,
   imageOfAnswer:'',
-  answer: 'математика'
+  answer: '5 дней'
 },
 { //17
   theme:Themes[3],  
-  question: 'ригуфа', 
+  question: 'На олимпийских играх пятиборье состояло из следующих видов: бег, прыжки в длину, борьба, метание копья и …', 
   image:'',
   audio:'',
-  points: 200,
-  imageOfAnswer:'',
-  answer: 'фигура'
+  points: 20,
+  imageOfAnswer:'https://puu.sh/Hy0uX/fce1defc08.png',
+  answer: 'Метание диска'
 },
 { //18
   theme:Themes[3], 
-  question: 'ятарпеиц',
+  question: 'От этой даты древние греки вели свое летоисчисление.',
   image:'',
   audio:'',
-  points: 300,
+  points: 30,
   imageOfAnswer:'',
-  answer: 'трапеция'
+  answer: '776 г. до н. э. '
 },
 { //21
   theme:Themes[4],
-  question: 'Как называется самая длинная клавиша на клавиатуре персонального компьютера', 
+  question: 'Место постройки и ремонта судов.', 
   image:'',
   audio:'',
-  points: 100,
+  points: 10,
   imageOfAnswer:'',
-  answer: 'пробел'
+  answer: 'Верфь'
 },
 { //22
   theme:Themes[4], 
-  question: 'Какой вычислительной техникой пользовались счетоводы в середине 20 века?', 
+  question: 'Это слово по-гречески означает «военачальник»', 
   image:'',
   audio:'',
-  points: 200,
+  points: 20,
   imageOfAnswer:'',
-  answer: 'счёты, арифмометр, логарифмическая линейка.'
+  answer: 'Стратег'
+},
+{ //22
+  theme:Themes[4], 
+  question: 'Это земли, основанные вне территории государства', 
+  image:'',
+  audio:'',
+  points: 30,
+  imageOfAnswer:'',
+  answer: 'Колонии'
 },
 { //23
   theme:Themes[4],
-  question: 'Кот в мешке. Узнает ли себя делимое после деления, если перед делением умножить его на делитель?', 
+  question: 'Громадные глиняные бочки для хранения зерна', 
   image:'',
   audio:'',
-  points: 300,
+  points: 30,
   imageOfAnswer:'',
-  answer: 'да' 
+  answer: 'Пифос' 
 },
 { //25
   theme:Themes[4], 
-  question: 'Один оборот вокруг Земли спутник делает за 1 ч 40 минут, а другой оборот - за 100 минут. Как это может быть?', 
+  question: 'Так назывался совет знати в Афинах', 
   image:'',
   audio:'',
-  points: 500,
+  points: 50,
   imageOfAnswer:'',
-  answer: '1 ч 40 мин = 100 мин' 
+  answer: 'Ареопаг' 
 },
 { // 19
   theme:Themes[3],  
-  question: 'метгрияео',
+  question: 'Победитель Олимпийских игр, знаменитый бегун и кулачный боец, в детстве наказанный за то, что унес с площади большую бронзовую статую',
   image:'',
   audio:'',
-  points: 400,
+  points: 40,
   imageOfAnswer:'',
-  answer: 'геометрия'
+  answer: 'Феаген'
 },
 { //20
   theme:Themes[3], 
-  question: 'жеслоние', 
+  question: 'Сколько кругов было в гонках колесниц на олимпийском ипподроме?', 
   image:'',
   audio:'',
-  points: 500,
+  points: 50,
   imageOfAnswer:'',
-  answer: 'сложение'
+  answer: '12'
 },
 { //24
-  theme:Themes[4], 
-  question: 'Как называлась счетная доска у древних римлян и греков?', 
+  theme:Themes[5], 
+  question: 'В период империи Александра Македонского во всех завоеванных им странах было свыше 20 таких городов, из которых до наших дней дожил лишь один. Назовите его.', 
   image:'',
   audio:'',
-  points: 400,
+  points: 40,
   imageOfAnswer:'',
-  answer: 'абак' 
+  answer: 'Александрия' 
+},,
+{ //21
+  theme:Themes[5],
+  question: 'На территории какого полуострова расположена Македония?', 
+  image:'https://puu.sh/Hy0zX/c4fb1b303f.png',
+  audio:'',
+  points: 10,
+  imageOfAnswer:'',
+  answer: 'Балканского'
+},
+{ //22
+  theme:Themes[5], 
+  question: 'Какой крупнейший греческий ученый обучал Александра Македонского?', 
+  image:'',
+  audio:'',
+  points: 20,
+  imageOfAnswer:'https://puu.sh/Hy0Ap/ce195e4a53.png',
+  answer: 'Аристотель'
+},
+{ //23
+  theme:Themes[5],
+  question: 'В этой битве, которая началась, когда наступал вечер, Александра Македонского от гибели спас его друг по имени Клит.', 
+  image:'',
+  audio:'',
+  points: 30,
+  imageOfAnswer:'',
+  answer: 'Битва на реке Граник' 
+},
+{ //25
+  theme:Themes[5], 
+  question: 'Почувствовав приход смерти, Александр Македонский велел пронести себя через весь Вавилон с обнаженными руками.<br><u>Что он хотел этим продемонстрировать?</u>', 
+  image:'',
+  audio:'',
+  points: 50,
+  imageOfAnswer:'',
+  answer: 'Что уходит из этого мира с пустыми руками.' 
 }
 ]
 
+
 // console.log(AllQuestion.length)
-localStorage.setItem('NumberInRow', 5);
+// Math.floor(AllQuestion.length/6)
+localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/6));
 localStorage.setItem('length', AllQuestion.length);
 
 
@@ -338,6 +384,7 @@ for ( let i = 0; i < items.length; i++) {
 
 
 let NamingForPoints = document.querySelectorAll('.points');
+// console.log(NamingForPoints)
 for (let  j = 0; j < NamingForPoints.length; j++) {
   NamingForPoints[j].textContent = AllQuestion[j].points;
 }
