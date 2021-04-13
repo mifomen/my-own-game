@@ -270,7 +270,7 @@ width: 100%;*/
 #Right-Button-Minus {
   position: absolute;
   bottom: 1%;
-  min-width: 30%;
+  min-width: 25%;
   
 }
 #Right-Button,
@@ -284,7 +284,7 @@ width: 100%;*/
 #Left-Button-Minus, 
  #Right-Button-Minus { 
   bottom: 12%;
-  min-width: 30%;
+  /*min-width: 25%;*/
   /*font-size: 2.5em;*/
 }
 

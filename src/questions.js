@@ -25,16 +25,18 @@
 
 var Themes = [
 'М+И+Ф',
-'Всего понемногу',
 'Задачи в стихах',
+'Загадки',
 'Анаграммы',
-"Загадки",
+"Всего понемногу",
+'новая тема 6'
+
 ]
 // for (theme of Themes) {
 //   console.log(theme)
 // }
 console.log(Themes)
-Themes.sort();
+// Themes.sort();
 console.log(Themes)
 // function compareNumeric1(a, b) {
 //   if (a.theme < b.theme) return -1
@@ -56,16 +58,16 @@ console.log(Themes)
 
 var AllQuestion = [
 { //1
-  theme: Themes[1], 
+  theme: Themes[0], 
   question: 'От какого слова происходит название ХАКЕР (hacker)',
   image:'', //https://stihi.ru/pics/2020/03/07/1196.jpg
   audio:'', 
-  points: 301,
+  points: 100,
   imageOfAnswer:'',
   answer:'Русское слово хакер произошло от английского hacker = английский глагол to hack (рубить, кромсать) + er (суффикс для образования производителя действия). Первоначально хакерами называли программистов, которые исправляли ошибки в ПО каким-либо быстрым, но не всегда корректным способом'
 },
 { //2
-  theme:Themes[1], 
+  theme:Themes[0], 
   question: 'Какое наименьшее целое положительное число вы можете написать двумя цифрами', 
   image:'',
   audio:'',
@@ -105,7 +107,7 @@ var AllQuestion = [
   question: 'Кай для Снежной Королевы<br>Кресло выложил из льда.<br>Он работал три недели – <br>Кресло вышло хоть куда!<br>Отвечайте поскорей,<br>Сколько Кай потратил дней?', 
   image:'',
   audio:'',
-  points: 201,
+  points: 200,
   imageOfAnswer:'',
   answer: 21
 },
@@ -114,7 +116,7 @@ var AllQuestion = [
   question: 'Джин в бутылке сидит,<br>Горько плачет и грустит:<br>«Здесь уже я триста лет,<br>И на волю хода нет!»<br>Будет ваш ответ каков,<br>Если через семь веков<br>Джина выпустит мой дед,<br>Сколько Джину будет лет?', 
   image:'',
   audio:'',
-  points: 200,
+  points: 100,
   imageOfAnswer:'',
   answer: '1000'
 },
@@ -138,6 +140,51 @@ var AllQuestion = [
 },
 { //10
   theme:Themes[1],  
+  question: 'Винни-Пух и Пятачок<br>Сладкого меду набрали бачок.<br>Пчелы разозлились,<br>Догонять пустились.<br>Покусали Пятачка<br>Десять пчелочек слегка.<br>Но досталось Винни –<br>В него сто сорок впились.<br>Ответьте, дети, поскорей,<br>Сколько пчел покусало друзей?', 
+  image:'',
+  audio:'',
+  points: 500,
+  imageOfAnswer:'',
+  answer: '210 или 150' 
+},,
+{ //6
+  theme:Themes[5], 
+  question: 'Кай для Снежной Королевы<br>Кресло выложил из льда.<br>Он работал три недели – <br>Кресло вышло хоть куда!<br>Отвечайте поскорей,<br>Сколько Кай потратил дней?', 
+  image:'',
+  audio:'',
+  points: 200,
+  imageOfAnswer:'',
+  answer: 21
+},
+{ //7
+  theme:Themes[5],   
+  question: 'Джин в бутылке сидит,<br>Горько плачет и грустит:<br>«Здесь уже я триста лет,<br>И на волю хода нет!»<br>Будет ваш ответ каков,<br>Если через семь веков<br>Джина выпустит мой дед,<br>Сколько Джину будет лет?', 
+  image:'',
+  audio:'',
+  points: 100,
+  imageOfAnswer:'',
+  answer: '1000'
+},
+{ //8
+  theme:Themes[5],   
+  question: 'Три маленьких гнома трудились, устали:<br>Книги волшебные переплетали.<br>Сели гномы отдыхать,<br>Самый младший стал считать.<br>Насчитал он всего<br>По тридцать штук на каждого,<br>Десять книг в остатке.<br>Сколько всего книг, ребятки?', 
+  image:'',
+  audio:'',
+  points: 300,
+  imageOfAnswer:'',
+  answer:'100'
+},
+{ //9
+  theme:Themes[5],  
+  question: 'Сто двадцать Бабок-Ежек<br>Пустились в перелет.<br>Двадцать в своих ступах<br>Вырвались вперед.<br>Вы, наверно, догадались,<br>Сколько позади осталось?', 
+  image:'',
+  audio:'',
+  points: 400,
+  imageOfAnswer:'',
+  answer: '100'
+},
+{ //10
+  theme:Themes[5],  
   question: 'Винни-Пух и Пятачок<br>Сладкого меду набрали бачок.<br>Пчелы разозлились,<br>Догонять пустились.<br>Покусали Пятачка<br>Десять пчелочек слегка.<br>Но досталось Винни –<br>В него сто сорок впились.<br>Ответьте, дети, поскорей,<br>Сколько пчел покусало друзей?', 
   image:'',
   audio:'',
@@ -217,24 +264,6 @@ var AllQuestion = [
   imageOfAnswer:'',
   answer: 'трапеция'
 },
-{ // 19
-  theme:Themes[3],  
-  question: 'метгрияео',
-  image:'',
-  audio:'',
-  points: 400,
-  imageOfAnswer:'',
-  answer: 'геометрия'
-},
-{ //20
-  theme:Themes[3], 
-  question: 'жеслоние', 
-  image:'',
-  audio:'',
-  points: 500,
-  imageOfAnswer:'',
-  answer: 'сложение'
-},
 { //21
   theme:Themes[4],
   question: 'Как называется самая длинная клавиша на клавиатуре персонального компьютера', 
@@ -271,6 +300,24 @@ var AllQuestion = [
   imageOfAnswer:'',
   answer: ': 1 ч 40 мин = 100 мин.' 
 },
+{ // 19
+  theme:Themes[3],  
+  question: 'метгрияео',
+  image:'',
+  audio:'',
+  points: 400,
+  imageOfAnswer:'',
+  answer: 'геометрия'
+},
+{ //20
+  theme:Themes[3], 
+  question: 'жеслоние', 
+  image:'',
+  audio:'',
+  points: 500,
+  imageOfAnswer:'',
+  answer: 'сложение'
+},
 { //24
   theme:Themes[4], 
   question: 'Как называлась счетная доска у древних римлян и греков?', 
@@ -288,7 +335,7 @@ localStorage.setItem('length', AllQuestion.length);
 
 
 function compareNumeric(a, b) {
-  if (a.theme < b.theme) return -1
+  if (a.theme < b.theme) return -1;
     if (a.theme > b.theme) return 1 
       if ( a.points > b.points) return 1;
     if ( a.points < b.points) return -1;
@@ -310,10 +357,10 @@ console.log(AllQuestion.sort(compareNumeric))
 // метод сортирует содержимое arr
 
 // console.log( arr );  // 1, 15, 2
-
+console.log(Themes.length)
 for ( let i = 0; i < Themes.length; i++) {
 
-// AllQuestion[i].theme = Themes[i];
+// AllQuestion[i+5].theme = Themes[i];
 // AllQuestion[i+1].theme = Themes[i];
 // AllQuestion[i+2].theme = Themes[i];
 // AllQuestion[i+3].theme = Themes[i];
@@ -324,14 +371,15 @@ for ( let i = 0; i < Themes.length; i++) {
 let items = document.querySelectorAll('.title-theme');
 console.log(items)
 for ( let i = 0; i < items.length; i++) {
-  items[i].textContent = Themes[i];
+  // items[i].textContent = Themes[i];
+  // items[i].textContent = 't1'
+    items[i].textContent = AllQuestion[i+4*i].theme;
 // items[i+1].theme = Themes[i];
 // items[i+2].theme = Themes[i];
 // items[i+3].theme = Themes[i];
 // items[i+4].theme = Themes[i];
-
 }
-  items[3].textContent = AllQuestion[19].theme;
+  // items[3].textContent = AllQuestion[19].theme;
 
 
 let NamingForPoints = document.querySelectorAll('.points');
