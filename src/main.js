@@ -156,8 +156,8 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   AreaForAnswer.id = "AnswerSee";
 
   let AnswerMsg = document.createElement('span');
-  AnswerMsg.innerHTML = 'ответ:<br>';
-  AnswerMsg.className = 'AnswerMsg'
+  AnswerMsg.innerHTML = 'ОТВЕТ';
+  AnswerMsg.className = 'AnswerMsg vh'
   AreaForAnswer.appendChild(AnswerMsg);
 
   if ( imageSrcOfAnswer !== '' ) {
@@ -243,7 +243,6 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   if ( imageSrc !== '' ) {
     let ImageOfQuestion = document.createElement('img');
     ImageOfQuestion.className = 'Image-Of-Question';
-
     ImageOfQuestion.src=imageSrc;
     ImageOfQuestion.width ='45%';
     TextArea.appendChild(ImageOfQuestion);
@@ -271,12 +270,11 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
     StayOfCloseAnswer=1;
     // console.log(StayOfCloseAnswer)
   }
-
   
   ShowAnswer(points,Answer,ImageIfAnswer)
-  // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
   StayOfCloseAnswer = 1;
 
+  // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
 });
 
   
@@ -330,6 +328,8 @@ document.onkeydown  = function(evt) {
      StayOfCloseAnswer=1;
      // console.log(StayOfCloseAnswer)
    }
+   // ShowAnswer(points,Answer,ImageIfAnswer)
+
    var elem = document.querySelector('.AnswerImage');
    if (elem) {elem.parentNode.removeChild(elem)
 
@@ -338,13 +338,13 @@ document.onkeydown  = function(evt) {
   }
 
   if (evt.keyCode == UP_ARROW_KEY_CODE ) {
-   if (document.querySelector('.image-output')) {
+   if (document.querySelector('.AnswerImage')) {
     ArrayOfButtonsVote = document.querySelectorAll('.VoteButton');
 
  // console.log(ArrayOfButtonsVote)
  StayOfButton=0;
 
- ArrayOfButtonsVote[1].focus()
+ ArrayOfButtonsVote[0].focus()
   // console.log(StayOfButton)
 }
   // if (StayOfButton>3) {StayOfButton=0}
@@ -387,6 +387,8 @@ document.onkeydown  = function(evt) {
 // }
 // }
 if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
+
+  
 }
 }
 

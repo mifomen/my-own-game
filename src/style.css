@@ -1,6 +1,8 @@
 * {
   outline: 2px solid white;
   outline-offset: -5px;
+
+font-family: 'Roboto', sans-serif;
 }
 .vh {
   position: absolute!important;
@@ -234,14 +236,21 @@ width: 100%;*/
   z-index: 15;
 
 }
+.Text-Qestion {
+  font-size: 3.5em;
+}
 .Text_Of_Answer {
   position: relative;
-  font-size: 2em;
-  top: -25vh;
+  font-size: 4em;
+  /*top: -25vh;*/
 
 }
 .AnswerMsg {
-  font-size: 2em;
+  font-size: 3em;
+  text-decoration: uppercase;
+  text-decoration-line: underline;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
 }
 
 #Right-Button,
