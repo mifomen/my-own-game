@@ -240,7 +240,7 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   RedButtonPlus.id = "Red-Button";
   RedButtonPlus.className = 'VoteButton';
   RedButtonPlus.tabIndex = "1";
-  RedButtonPlus.textContent = "+ зеленым"
+  RedButtonPlus.textContent = "+ красным"
   AreaForAnswer.appendChild(RedButtonPlus);
   
   if (players===3) {

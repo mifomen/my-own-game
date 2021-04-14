@@ -373,6 +373,8 @@ height: calc(var(--vh, 1vh) * 100);*/
 #Blue-Button:hover,
 #Red-Button:focus,
 #Blue-Button:focus,
+#Green-Button:focus,
+#Green-Button-Minus:hover,
 #Red-Button-Minus:hover,
 #Blue-Button-Minus:hover,
 #Red-Button-Minus:focus,
@@ -388,10 +390,13 @@ height: calc(var(--vh, 1vh) * 100);*/
 #Blue-Button-Minus,
 #Red-Button-Minus {
   position: absolute;
-  bottom: 12%;
+  bottom: 13%;
   min-width: 25%;
   
 }
+ u {
+  outline: none;
+ }
 #Red-Button,
 #Red-Button-Minus {
   right: 2%;
