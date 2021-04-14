@@ -310,18 +310,17 @@ height: calc(var(--vh, 1vh) * 100);*/
 }
 .AnswerImage {
   z-index: 10;
-  flex-direction: row-reverse;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
 }
 .Image-Of-Answer {
   position: relative;
+  /*width: 185%;*/
   /*width: auto;
   height: auto;*/
   z-index: 15;
-}
-.Image-Of-Answer {
   /*top:5%;*/
-  width: 15vw;
+  width: 40em;
 }
 
 .Text-Qestion,
@@ -347,7 +346,7 @@ height: calc(var(--vh, 1vh) * 100);*/
 }
 .Text_Of_Answer {
   position: relative;
-  font-size: 4em;
+  font-size: 3.5em;
   /*top: -25vh;*/
 
 }
