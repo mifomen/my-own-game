@@ -80,8 +80,8 @@ var AllQuestion = [
   image:'',
   audio:'',
   points: 30,
-  imageOfAnswer:'42 км',
-  answer:'1'
+  imageOfAnswer:'',
+  answer:'42 км'
 },
 { //4
   theme:Themes[0], 

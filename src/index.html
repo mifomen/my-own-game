@@ -9,14 +9,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id='Start' class="game preview center hidden">
-    <h1 class="title w">Добро пожаловать!</h1>
-    <button id="StartGame" type="button" class="button" onClick="GameBegin()">Начать игру? </button>
+  <div id='Start' class="game-preview">
+    <h1 class="game-preview__title vh">Добро пожаловать!</h1>
+    <h1 class="game-preview__title">Сколько команд?!</h1>
+    <div class="game-preview__wrapper">
+    <button id="StartGameFor2" type="button" class="game-preview__button" onClick="GameBegin(2)">2</button>
+    <button id="StartGameFor3" type="button" class="game-preview__button" onClick="GameBegin(3)">3</button>
   </div>
-  <div class="game Start-One">
+  </div>
+  <div class="game Start-One vh">
     <div class="all-points">
       <span class="blue">0</span>
-      <span class="all">Все очки</span>
+      <span class="all green">Все очки</span>
       <span class="red">0</span>
     </div>
   </div>

@@ -19,7 +19,7 @@
 // };
 //
 var points = document.querySelectorAll('.points');
-var BtnStartGame = document.getElementById("StartGame");
+var BtnStartGame = document.getElementById("StartGameFor2");
 
 function addScript(src) {
   let elem = document.createElement("script");
@@ -37,32 +37,32 @@ document.addEventListener('DOMContentLoaded',function(evt){
 
 
 let NewRowOfButtons = function (evt) {
-let FindLastButton = document.querySelector('.Start-One');
-var RowForPoints = document.createElement('div');
+  let FindLastButton = document.querySelector('.Start-One');
+  var RowForPoints = document.createElement('div');
   RowForPoints.className = 'row'
-var RowTitle = document.createElement('h1');
+  var RowTitle = document.createElement('h1');
   RowTitle.textContent = '';
   // RowTitle.dataset.theme = NameOfTheme;
   RowTitle.innerHTML = ' '
   RowTitle.className = 'title-theme'
   RowForPoints.appendChild(RowTitle);
-var NewButtonForPointsF  =  function (evt) {
-let RowButtonPoints = document.createElement('button');
-  RowButtonPoints.textContent = 't1';
-  RowButtonPoints.type = "button"
-  RowButtonPoints.className = 'points'
-  RowForPoints.appendChild(RowButtonPoints);
-}
+  var NewButtonForPointsF  =  function (evt) {
+    let RowButtonPoints = document.createElement('button');
+    RowButtonPoints.textContent = 't1';
+    RowButtonPoints.type = "button"
+    RowButtonPoints.className = 'points'
+    RowForPoints.appendChild(RowButtonPoints);
+  }
 
-for (let j =0; j< evt; j++) {
+  for (let j =0; j< evt; j++) {
   // console.log('j= ' + j)
-    NewButtonForPointsF();
+  NewButtonForPointsF();
 }
 FindLastButton.appendChild(RowForPoints);
 // console.log('NewRowOfButtons')
 }
 
- let NumberInRow = localStorage.getItem('NumberInRow');
+let NumberInRow = localStorage.getItem('NumberInRow');
 for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
   // console.log('j= ' + j)
   NewRowOfButtons (NumberInRow);
@@ -77,9 +77,28 @@ var StayOfCloseAnswer=0;
 //   document.querySelector('.game').classList.add('hidden');
 //   document.querySelector('.Start-One').classList.remove('hidden');
 // })
+var players=2;
+
+console.log(players)
 var GameBegin = function (evt) {
-  document.querySelector('.game').classList.add('hidden');
-  document.querySelector('.Start-One').classList.remove('hidden');
+
+   // let elem = document.querySelector('.preview');
+  // if (elem) {elem.parentNode.removeChild(elem)}
+
+
+  document.querySelector('.game-preview').classList.add('vh');
+  document.querySelector('.Start-One').classList.remove('vh');
+  self.textContent;
+  if (evt==3) {
+    players=3;
+    document.querySelector('.all').classList.add('green');
+    document.querySelector('.all').textContent='0';
+    document.querySelector('.all').classList.remove('all');
+  // console.log('textContent')
+
+}
+// let fin = document.getElementById('StartGameFor3')
+console.log(players)
 }
 
 
@@ -107,12 +126,16 @@ var GetPointsButton = function (FindButton,points,team) {
   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
   PointsButton.disabled = true;
   if (team==='.red') {
-    document.getElementById('Right-Button-Minus').disabled = true;
+    document.getElementById('Red-Button-Minus').disabled = true;
   } else {
     if (team==='.blue') {
-      document.getElementById('Left-Button-Minus').disabled = true;
-    } 
+      document.getElementById('Blue-Button-Minus').disabled = true;
+    }  else {
+     if (team==='.green') {
+      document.getElementById('Green-Button-Minus').disabled = true; 
+    }
   }
+}
 });
 };
 var LosePointsButton = function (FindButton,points,team) {
@@ -125,11 +148,15 @@ var LosePointsButton = function (FindButton,points,team) {
   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) - Number(points)
   PointsButton.disabled = true;
   if (team==='.red') {
-    document.getElementById('Right-Button').disabled = true;
+    document.getElementById('Red-Button').disabled = true;
   } else {
     if (team==='.blue') {
-      document.getElementById('Left-Button').disabled = true;
-    } 
+      document.getElementById('Blue-Button').disabled = true;
+    } else {
+     if (team==='.green') {
+      document.getElementById('Green-Button').disabled = true; 
+    }
+  }
   }
 });
 };
@@ -155,10 +182,10 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   AreaForAnswer.className = "AnswerImage";
   AreaForAnswer.id = "AnswerSee";
 
-  let AnswerMsg = document.createElement('span');
-  AnswerMsg.innerHTML = 'ОТВЕТ';
-  AnswerMsg.className = 'AnswerMsg vh'
-  AreaForAnswer.appendChild(AnswerMsg);
+  // let AnswerMsg = document.createElement('span');
+  // AnswerMsg.innerHTML = 'ОТВЕТ';
+  // AnswerMsg.className = 'AnswerMsg vh'
+  // AreaForAnswer.appendChild(AnswerMsg);
 
   if ( imageSrcOfAnswer !== '' ) {
     let imageOfAnswer = document.createElement('img');
@@ -184,48 +211,72 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   AreaForAnswer.appendChild(TextOfAnswer);
 
 
-  var LeftButtonMinus = document.createElement('button');
-  LeftButtonMinus.type = 'button';
-  LeftButtonMinus.id = "Left-Button-Minus";
-  LeftButtonMinus.className = 'VoteButton';
-  LeftButtonMinus.tabIndex = "1";
-  LeftButtonMinus.textContent = " - синим"
-  AreaForAnswer.appendChild(LeftButtonMinus);
+  var BlueButtonMinus = document.createElement('button');
+  BlueButtonMinus.type = 'button';
+  BlueButtonMinus.id = "Blue-Button-Minus";
+  BlueButtonMinus.className = 'VoteButton';
+  BlueButtonMinus.tabIndex = "1";
+  BlueButtonMinus.textContent = " - синим"
+  AreaForAnswer.appendChild(BlueButtonMinus);
 
-  var LeftButton = document.createElement('button');
-  LeftButton.type = 'button';
-  LeftButton.id = "Left-Button";
-  LeftButton.className = 'VoteButton';
-  LeftButton.tabIndex = "1";
-  LeftButton.textContent = "+  синим"
-  AreaForAnswer.appendChild(LeftButton);
+  var BlueButtonPlus = document.createElement('button');
+  BlueButtonPlus.type = 'button';
+  BlueButtonPlus.id = "Blue-Button";
+  BlueButtonPlus.className = 'VoteButton';
+  BlueButtonPlus.tabIndex = "1";
+  BlueButtonPlus.textContent = "+  синим"
+  AreaForAnswer.appendChild(BlueButtonPlus);
 
-  var RightButtonPlus = document.createElement('button');
-  RightButtonPlus.type = 'button';
-  RightButtonPlus.id = "Right-Button-Minus";
-  RightButtonPlus.className = 'VoteButton';
-  //tabindex
-  RightButtonPlus.tabIndex = "1";
-  RightButtonPlus.textContent = "- красным"
-  AreaForAnswer.appendChild(RightButtonPlus);
+  var RedButtonMinus = document.createElement('button');
+  RedButtonMinus.type = 'button';
+  RedButtonMinus.id = "Red-Button-Minus";
+  RedButtonMinus.className = 'VoteButton';
+  RedButtonMinus.tabIndex = "1";
+  RedButtonMinus.textContent = "- красным"
+  AreaForAnswer.appendChild(RedButtonMinus);
 
-  var RightButton = document.createElement('button');
-  RightButton.type = 'button';
-  RightButton.id = "Right-Button";
-  RightButton.className = 'VoteButton';
-  //tabindex
-  RightButton.tabIndex = "1";
-  RightButton.textContent = "+ красным"
-  AreaForAnswer.appendChild(RightButton);
+  var RedButtonPlus = document.createElement('button');
+  RedButtonPlus.type = 'button';
+  RedButtonPlus.id = "Red-Button";
+  RedButtonPlus.className = 'VoteButton';
+  RedButtonPlus.tabIndex = "1";
+  RedButtonPlus.textContent = "+ зеленым"
+  AreaForAnswer.appendChild(RedButtonPlus);
   
+  if (players===3) {
+    console.log('yes')
+    var GreenButtonMinus = document.createElement('button');
+    GreenButtonMinus.type = 'button';
+    GreenButtonMinus.id = "Green-Button-Minus";
+    GreenButtonMinus.className = 'VoteButton';
+    GreenButtonMinus.tabIndex = "1";
+    GreenButtonMinus.textContent = "- зеленым"
+    AreaForAnswer.appendChild(GreenButtonMinus);
+
+    var GreenButtonPlus = document.createElement('button');
+    GreenButtonPlus.type = 'button';
+    GreenButtonPlus.id = "Green-Button";
+    GreenButtonPlus.className = 'VoteButton';
+    GreenButtonPlus.tabIndex = "1";
+    GreenButtonPlus.textContent = "+ зеленым"
+    AreaForAnswer.appendChild(GreenButtonPlus);
+
+
+
+
+  }
 
   document.body.appendChild(AreaForAnswer);
 
-  GetPointsButton('Left-Button',points,'.blue');
-  GetPointsButton('Right-Button',points,'.red');
+  if (players===3) {
 
-  LosePointsButton ('Left-Button-Minus',points,'.blue')
-  LosePointsButton ('Right-Button-Minus',points,'.red')
+    GetPointsButton('Green-Button',points,'.green');
+    LosePointsButton ('Green-Button-Minus',points,'.green')
+}
+  GetPointsButton('Blue-Button',points,'.blue');
+  LosePointsButton ('Blue-Button-Minus',points,'.blue')
+  GetPointsButton('Red-Button',points,'.red');
+  LosePointsButton ('Red-Button-Minus',points,'.red')
 
 }
 
@@ -292,8 +343,8 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
 // GetPointsButton('Left-Button',points,'.blue');
 // GetPointsButton('Right-Button',points,'.red');
 
-// LosePointsButton ('Left-Button-Minus',points,'.blue')
-// LosePointsButton ('Right-Button-Minus',points,'.red')
+// LosePointsButton ('Blue-Button-Minus',points,'.blue')
+// LosePointsButton ('Red-Button-Minus',points,'.red')
 }
 
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
@@ -380,15 +431,15 @@ document.onkeydown  = function(evt) {
 // }
 
 // } else {
-//  if (document.getElementById('Left-Button-Minus')) {
-//     document.getElementById('Left-Button-Minus').focus() 
+//  if (document.getElementById('Blue-Button-Minus')) {
+//     document.getElementById('Blue-Button-Minus').focus() 
 //        console.log('StayOfButton' + '  ' + StayOfButton)
 //     StayOfButton = 1
 // }
 // }
 if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
 
-  
+
 }
 }
 
@@ -404,8 +455,8 @@ if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
 // }
 
 // } else {
-//  if (document.getElementById('Right-Button-Minus')) {
-//     document.getElementById('Right-Button-Minus').focus() 
+//  if (document.getElementById('Red-Button-Minus')) {
+//     document.getElementById('Red-Button-Minus').focus() 
 //     console.log('StayOfButtonRightSide' + '  ' + StayOfButtonRightSide)
 //     StayOfButtonRightSide = 1
 // }
@@ -464,4 +515,4 @@ if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
 
 
 
-  console.log('all fine')
+console.log('all fine')
