@@ -28,8 +28,9 @@ var Themes = [
 'Города Древнейшей Греции', //1
 'Древнегреческая мифология', //2
 'Олимпийские игры', //3
-'Словарь', //4
+'Словарь', //4,
 'Александр Македонский' //5
+
 ]
 // for (theme of Themes) {
 //   console.log(theme)
@@ -331,7 +332,12 @@ var AllQuestion = [
 
 // console.log(AllQuestion.length)
 // Math.floor(AllQuestion.length/6)
-localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/6));
+// Themes.length
+// console.log(Themes.length)
+
+// localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/6));
+// было выше
+localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));
 localStorage.setItem('length', AllQuestion.length);
 
 
@@ -368,13 +374,13 @@ for ( let i = 0; i < Themes.length; i++) {
 // AllQuestion[i+4].theme = Themes[i];
 
 }
-
+// console.log(Themes.length)
 let items = document.querySelectorAll('.title-theme');
 // console.log(items)
 for ( let i = 0; i < items.length; i++) {
   // items[i].textContent = Themes[i];
   // items[i].textContent = 't1'
-    items[i].textContent = AllQuestion[i+4*i].theme;
+    items[i].textContent = AllQuestion[i*(Themes.length-1)].theme;
 // items[i+1].theme = Themes[i];
 // items[i+2].theme = Themes[i];
 // items[i+3].theme = Themes[i];

@@ -79,7 +79,7 @@ var StayOfCloseAnswer=0;
 // })
 var players=2;
 
-console.log(players)
+// console.log(players)
 var GameBegin = function (evt) {
 
    // let elem = document.querySelector('.preview');
@@ -98,7 +98,7 @@ var GameBegin = function (evt) {
 
 }
 // let fin = document.getElementById('StartGameFor3')
-console.log(players)
+// console.log(players)
 }
 
 
