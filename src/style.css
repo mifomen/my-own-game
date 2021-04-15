@@ -288,9 +288,9 @@ height: calc(var(--vh, 1vh) * 100);*/
    flex-wrap: wrap;
 }
 .Image-Of-Question {
-  position: relative;
+  /*position: relative;*/
   /*top:0%;*/
-  width: 35%;
+  width: auto;
 
   z-index: 15;
 }
@@ -310,8 +310,8 @@ height: calc(var(--vh, 1vh) * 100);*/
 }
 .AnswerImage {
   z-index: 10;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .Image-Of-Answer {
   position: relative;
@@ -320,7 +320,7 @@ height: calc(var(--vh, 1vh) * 100);*/
   height: auto;*/
   z-index: 15;
   /*top:5%;*/
-  width: 40em;
+  width: 30%;
 }
 
 .Text-Qestion,
@@ -343,6 +343,7 @@ height: calc(var(--vh, 1vh) * 100);*/
 }
 .Text-Qestion {
   font-size: 3.2em;
+
 }
 .Text_Of_Answer {
   position: relative;
@@ -366,6 +367,9 @@ height: calc(var(--vh, 1vh) * 100);*/
 #Green-Button-Minus{
   font-size: 2em;
   border:15px solid transparent;
+  z-index: 20;
+  outline: 5px solid grey;
+  outline-offset: -8px;
 }
 
 #Red-Button:hover,
@@ -390,10 +394,10 @@ height: calc(var(--vh, 1vh) * 100);*/
 #Red-Button-Minus {
   position: absolute;
   bottom: 13%;
-  min-width: 25%;
+  min-width: 18%;
   
 }
- u {
+ u,sup {
   outline: none;
  }
 #Red-Button,

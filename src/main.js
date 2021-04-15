@@ -31,7 +31,11 @@ document.addEventListener('DOMContentLoaded',function(evt){
   addScript('questions.js');
 })
 
-
+let ESC_KEY_CODE = 27;
+let ENTER_KEY_CODE = 13;
+let TAB_KEY_CODE = 9; //9
+let UP_ARROW_KEY_CODE = 38; //33
+let DOWN_ARROW_KEY_CODE = 40; //34
 
 // console.log(AllQuestion.length)
 
@@ -72,7 +76,7 @@ for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
 // var localVar = window.storage.globalVar;
 // console.log('localStorage.getItem(length)' + ' ' + localStorage.getItem('length'))
 
-var StayOfCloseAnswer=0;
+var StateOfCloseAnswer=0;
 // BtnStartGame.addEventListener('click',function(evt){
 //   document.querySelector('.game').classList.add('hidden');
 //   document.querySelector('.Start-One').classList.remove('hidden');
@@ -157,7 +161,7 @@ var LosePointsButton = function (FindButton,points,team) {
       document.getElementById('Green-Button').disabled = true; 
     }
   }
-  }
+}
 });
 };
 var NewButton = function(msg,id,parent) {
@@ -182,11 +186,6 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   AreaForAnswer.className = "AnswerImage";
   AreaForAnswer.id = "AnswerSee";
 
-  // let AnswerMsg = document.createElement('span');
-  // AnswerMsg.innerHTML = 'ОТВЕТ';
-  // AnswerMsg.className = 'AnswerMsg vh'
-  // AreaForAnswer.appendChild(AnswerMsg);
-
   if ( imageSrcOfAnswer !== '' ) {
     let imageOfAnswer = document.createElement('img');
     imageOfAnswer.className = 'Image-Of-Answer';
@@ -195,86 +194,53 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   } 
   var AnswerCloseButton = document.createElement('span');
   AnswerCloseButton.className = 'AnswerCloseButton';
-  AnswerCloseButton.innerHTML = 'крест ответ';
-  // AnswerCloseButton.textContent = 'крест ответ';
+  AnswerCloseButton.innerHTML = 'закрыть ответ';
   AnswerCloseButton.addEventListener('click', function () {
    if (document.querySelector('.AnswerImage')) {document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage')) }
 
  })
+
   AreaForAnswer.appendChild(AnswerCloseButton);
-
-
 
   var TextOfAnswer = document.createElement('h1');
   TextOfAnswer.innerHTML = Answer;
   TextOfAnswer.className = 'Text_Of_Answer'
   AreaForAnswer.appendChild(TextOfAnswer);
 
-
-  var BlueButtonMinus = document.createElement('button');
-  BlueButtonMinus.type = 'button';
-  BlueButtonMinus.id = "Blue-Button-Minus";
-  BlueButtonMinus.className = 'VoteButton';
-  BlueButtonMinus.tabIndex = "1";
-  BlueButtonMinus.textContent = " - синим"
-  AreaForAnswer.appendChild(BlueButtonMinus);
-
-  var BlueButtonPlus = document.createElement('button');
-  BlueButtonPlus.type = 'button';
-  BlueButtonPlus.id = "Blue-Button";
-  BlueButtonPlus.className = 'VoteButton';
-  BlueButtonPlus.tabIndex = "1";
-  BlueButtonPlus.textContent = "+  синим"
-  AreaForAnswer.appendChild(BlueButtonPlus);
-
-  var RedButtonMinus = document.createElement('button');
-  RedButtonMinus.type = 'button';
-  RedButtonMinus.id = "Red-Button-Minus";
-  RedButtonMinus.className = 'VoteButton';
-  RedButtonMinus.tabIndex = "1";
-  RedButtonMinus.textContent = "- красным"
-  AreaForAnswer.appendChild(RedButtonMinus);
-
-  var RedButtonPlus = document.createElement('button');
-  RedButtonPlus.type = 'button';
-  RedButtonPlus.id = "Red-Button";
-  RedButtonPlus.className = 'VoteButton';
-  RedButtonPlus.tabIndex = "1";
-  RedButtonPlus.textContent = "+ красным"
-  AreaForAnswer.appendChild(RedButtonPlus);
-  
-  if (players===3) {
-    console.log('yes')
-    var GreenButtonMinus = document.createElement('button');
-    GreenButtonMinus.type = 'button';
-    GreenButtonMinus.id = "Green-Button-Minus";
-    GreenButtonMinus.className = 'VoteButton';
-    GreenButtonMinus.tabIndex = "1";
-    GreenButtonMinus.textContent = "- зеленым"
-    AreaForAnswer.appendChild(GreenButtonMinus);
-
-    var GreenButtonPlus = document.createElement('button');
-    GreenButtonPlus.type = 'button';
-    GreenButtonPlus.id = "Green-Button";
-    GreenButtonPlus.className = 'VoteButton';
-    GreenButtonPlus.tabIndex = "1";
-    GreenButtonPlus.textContent = "+ зеленым"
-    AreaForAnswer.appendChild(GreenButtonPlus);
-
-
-
-
+  var CreateVoteButton = function(NameButton,id,text,parentAdd) {
+    NameButton = document.createElement('button');
+    NameButton.type = 'button';
+    NameButton.id = id;
+    NameButton.className = 'VoteButton';
+    NameButton.tabIndex = "1";
+    NameButton.textContent = text;
+    parentAdd.appendChild(NameButton);
   }
 
+  CreateVoteButton('BlueButtonPlus','Blue-Button','+  синим',AreaForAnswer)
+  CreateVoteButton('BlueButtonMinus','Blue-Button-Minus','-  синим',AreaForAnswer)
+
+  if (players===3) {
+    // console.log('yes') 
+    CreateVoteButton('GreenButtonPlus','Green-Button','+  зеленым',AreaForAnswer)
+    CreateVoteButton('GreenButtonMinus','Green-Button-Minus','-  зеленым',AreaForAnswer)
+  }
+  CreateVoteButton('RedButtonPlus','Red-Button','+  красным',AreaForAnswer)
+  CreateVoteButton('RedButtonMinus','Red-Button-Minus','-  красным',AreaForAnswer)
+  
+
+
   document.body.appendChild(AreaForAnswer);
+
+  GetPointsButton('Blue-Button',points,'.blue');
+  LosePointsButton ('Blue-Button-Minus',points,'.blue')
 
   if (players===3) {
 
     GetPointsButton('Green-Button',points,'.green');
     LosePointsButton ('Green-Button-Minus',points,'.green')
-}
-  GetPointsButton('Blue-Button',points,'.blue');
-  LosePointsButton ('Blue-Button-Minus',points,'.blue')
+  }
+
   GetPointsButton('Red-Button',points,'.red');
   LosePointsButton ('Red-Button-Minus',points,'.red')
 
@@ -310,25 +276,70 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
 
   var TextCloseButton = document.createElement('span');
   TextCloseButton.className = 'TextCloseButton';
-  TextCloseButton.innerHTML = 'крест';
-  TextCloseButton.textContent = 'крест';
+  TextCloseButton.innerHTML = 'Закрыть вопрос';
+  TextCloseButton.textContent = 'Закрыть вопрос';
   TextArea.appendChild(TextCloseButton);
 
   document.body.appendChild(TextArea);
   document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
    let elem1 = document.getElementById('Qestion-Delete');
    if (elem1) {elem1.parentNode.removeChild(elem1) 
-    StayOfCloseAnswer=1;
-    // console.log(StayOfCloseAnswer)
+    StateOfCloseAnswer=1;
+    // console.log(StateOfCloseAnswer)
   }
-  
+
+
+
   ShowAnswer(points,Answer,ImageIfAnswer)
-  StayOfCloseAnswer = 1;
+  StateOfCloseAnswer = 1;
 
   // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
 });
+  var TabButton=1;
+  document.onkeydown  = function(evt) {
 
-  
+    if (evt.keyCode == TAB_KEY_CODE && TabButton==1) {
+// TabButton=1;
+    // let elem = document.getElementById('Qestion-Delete');
+    // if (elem) {
+    //   elem.parentNode.removeChild(elem)
+    //   TabButton=2 
+    //     ShowAnswer(points,Answer,ImageIfAnswer)
+    // }
+
+}
+    if (evt.keyCode == TAB_KEY_CODE && TabButton==2) { 
+
+  // let elem = document.getElementById('AnswerSee');
+  //  if (elem) {elem.parentNode.removeChild(elem) 
+  //   StateOfCloseAnswer=1; 
+  //   // console.log(StateOfCloseAnswer)
+  // }
+    }
+  // AnswerSee
+
+
+//   if (evt.keyCode == ESC_KEY_CODE) {
+//    let elem = document.getElementById('AnswerSee');
+//    if (elem) {elem.parentNode.removeChild(elem) 
+//     StateOfCloseAnswer=1; 
+//     // console.log(StateOfCloseAnswer)
+//   }
+
+//   StateOfCloseAnswer = 1;
+
+
+
+
+//   //  let elem2 = document.getElementById('AnswerSee');
+//   //  if (elem2) {elem2.parentNode.removeChild(elem2) 
+//   //   StateOfCloseAnswer=1;
+//   //   // console.log(StateOfCloseAnswer)
+//   // }
+// }
+  // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
+};
+
 
 
 
@@ -348,11 +359,7 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
 }
 
 //code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
-let ESC_KEY_CODE = 27;
-let ENTER_KEY_CODE = 13;
-let TAB_KEY_CODE = 9; //9
-let UP_ARROW_KEY_CODE = 38; //33
-let DOWN_ARROW_KEY_CODE = 40; //34
+
 // let CloneImageDiolog = ;
 // console.log(document.querySelector('.TextCloseButton'));
 //  document.querySelector('.TextCloseButton').addEventListener('click',function () {
@@ -367,152 +374,46 @@ let DOWN_ARROW_KEY_CODE = 40; //34
   if (elem) {elem.parentNode.removeChild(elem)}
 }
 
-let StayOfButton;
-let StayOfButtonRightSide=1;
+let StateOfButton;
+let StateOfButtonRightSide=1;
 var  ArrayOfButtonsVote;
-// console.log(StayOfButton)
+// console.log(StateOfButton)
 document.onkeydown  = function(evt) {
-  if (evt.keyCode == ESC_KEY_CODE || evt.keyCode == TAB_KEY_CODE ) {
-
-    var elem = document.getElementById('Qestion-Delete');
-    if (elem) {elem.parentNode.removeChild(elem)
-     StayOfCloseAnswer=1;
-     // console.log(StayOfCloseAnswer)
-   }
-   // ShowAnswer(points,Answer,ImageIfAnswer)
-
-   var elem = document.querySelector('.AnswerImage');
-   if (elem) {elem.parentNode.removeChild(elem)
-
-   }
-    // ShowAnswer(points,Answer,ImageIfAnswer)
-  }
 
   if (evt.keyCode == UP_ARROW_KEY_CODE ) {
    if (document.querySelector('.AnswerImage')) {
     ArrayOfButtonsVote = document.querySelectorAll('.VoteButton');
 
- // console.log(ArrayOfButtonsVote)
- StayOfButton=0;
+    console.log(ArrayOfButtonsVote)
+    StateOfButton=0;
 
- ArrayOfButtonsVote[0].focus()
-  // console.log(StayOfButton)
+    ArrayOfButtonsVote[0].focus()
+  // console.log(StateOfButton)
 }
-  // if (StayOfButton>3) {StayOfButton=0}
-  //   if (StayOfButton==0) {
-  //     ArrayOfButtonsVote[0].focus() 
-  //     StayOfButton++
-  //   } else {
-  //     if (StayOfButton==1) {
-  //       ArrayOfButtonsVote[1].focus() 
-  //       StayOfButton++
-  //     }  else {
-  //       if (StayOfButton==2) {
-  //         ArrayOfButtonsVote[2].focus() 
-  //         StayOfButton++
-  //       }  else {
-  //         if (StayOfButton==3) {
-  //           ArrayOfButtonsVote[3].focus() 
-  //           StayOfButton=0
-  //         } 
-  //       }
-  //     } 
-  //   }
-  // }
+
 }
 
 
-// // StayOfButton = 1;
-// if (StayOfButton === 1) { 
-//  if (document.getElementById('Left-Button')) {
-//   document.getElementById('Left-Button').focus()
-//     console.log('StayOfButton' + '  ' + StayOfButton)
-//   StayOfButton = 0
-// }
-
-// } else {
-//  if (document.getElementById('Blue-Button-Minus')) {
-//     document.getElementById('Blue-Button-Minus').focus() 
-//        console.log('StayOfButton' + '  ' + StayOfButton)
-//     StayOfButton = 1
-// }
-// }
 if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
 
-
+  ArrayOfButtonsVote[ArrayOfButtonsVote.length-1].focus()
 }
 }
 
 
 
-
-// // StayOfButton = 1;
-// if (StayOfButtonRightSide === 1) { 
-//  if (document.getElementById('Right-Button')) {
-//   document.getElementById('Right-Button').focus()
-//       console.log('StayOfButtonRightSide' + '  ' + StayOfButtonRightSide)
-//   StayOfButtonRightSide = 0
-// }
-
-// } else {
-//  if (document.getElementById('Red-Button-Minus')) {
-//     document.getElementById('Red-Button-Minus').focus() 
-//     console.log('StayOfButtonRightSide' + '  ' + StayOfButtonRightSide)
-//     StayOfButtonRightSide = 1
-// }
-// }
-// } 
-
-
-
-
-
-
-
-  // var TimeMassive = [];
-  // TimeMassive = Array.from (FindAllTags);
-  // TimeMassive.forEach(function (it) {
-
-  //   return it.style.cssText = it.style.cssText.replace('font-size: ' + localStorage["LocalProperty0"],'');
-  //   // it.style.cssText.replace(f,'');
-  // })
-
-  // var ArrayOfQuestions = [];
-  // ArrayOfQuestions = Array.from (All);
-
-  let AllButtons = document.querySelectorAll('.points');
+let AllButtons = document.querySelectorAll('.points');
   // console.log(AllButtons)
   for (let i=0; i<AllButtons.length; i++) {
 
     AllButtons[i].addEventListener('click',function(evt) {
-      // ShowAnswer(,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
+      // ShowAnswer(AllQuestion[i].points,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
       Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image,AllQuestion[i].audio,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer);
 
-      StayOfCloseAnswer=0;
+      StateOfCloseAnswer=0;
     })
 
   }
 
-  // for (AllQuestio of AllQuestion) {
 
-  //   AllButtons.addEventListener('click',function(evt) {
-  //     // ShowAnswer(,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
-  //     Question(AllQuestion.question,AllQuestion.points,AllQuestion.image,AllQuestion.audio,AllQuestion.answer,AllQuestion.imageOfAnswer);
-
-  //     StayOfCloseAnswer=0;
-  //   })
-
-  // }
-
-
-
-// var x = AllQuestion.length, y = 5;
-
-// for (let i=0; i<Math.floor(x/y); i++) {
-//   console.log(i)
-//   NewRowOfButtons ();
-// }
-
-
-
-console.log('all fine')
+  console.log('all fine')
