@@ -66,11 +66,17 @@ FindLastButton.appendChild(RowForPoints);
 // console.log('NewRowOfButtons')
 }
 
-let variable1 = document.getElementsByTagName('title');
-variable1.innerHTML = 'test'
-console.log(variable1)
+
+// document.title
+// let variable1 = document.getElementsByTagName('title');
+// variable1.innerHTML = 'test'
+// console.log(document.title)
 
 let NumberInRow = localStorage.getItem('NumberInRow');
+// let show = function () {
+//   console.log(localStorage.getItem(document.title))
+// }
+// show()
 for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
   // console.log('j= ' + j)
   NewRowOfButtons (NumberInRow);

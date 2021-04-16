@@ -209,9 +209,13 @@ var Themes = ["М+И+Ф", "Задачи в стихах", "Загадки", "А�
 
 // localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/6));
 // было выше
-let variable = document.getElementsByTagName('title');
-console.log(variable)
-localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));
+// let variable = document.getElementsByTagName('title');
+// console.log(document.title)
+
+ // let NameFromTitle = document.title;
+
+// localStorage.setItem(NameFromTitle, Math.floor(AllQuestion.length/Themes.length));
+localStorage.setItem(NumberInRow, Math.floor(AllQuestion.length/Themes.length));
 localStorage.setItem('length', AllQuestion.length);
 
 
@@ -264,7 +268,7 @@ for ( let i = 0; i < items.length; i++) {
   // items[3].textContent = AllQuestion[19].theme;
 
 
-  let NamingForPoints = document.querySelectorAll('.points');
+let NamingForPoints = document.querySelectorAll('.points');
 // console.log(NamingForPoints)
 for (let  j = 0; j < NamingForPoints.length; j++) {
   NamingForPoints[j].textContent = AllQuestion[j].points;
