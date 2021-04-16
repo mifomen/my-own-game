@@ -209,6 +209,8 @@ var Themes = ["М+И+Ф", "Задачи в стихах", "Загадки", "А�
 
 // localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/6));
 // было выше
+let variable = document.getElementsByTagName('title');
+console.log(variable)
 localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));
 localStorage.setItem('length', AllQuestion.length);
 
