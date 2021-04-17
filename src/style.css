@@ -377,6 +377,7 @@ height: calc(var(--vh, 1vh) * 100);*/
 #Red-Button:focus,
 #Blue-Button:focus,
 #Green-Button:focus,
+#Green-Button:hover,
 #Green-Button-Minus:hover,
 #Red-Button-Minus:hover,
 #Blue-Button-Minus:hover,
@@ -477,11 +478,11 @@ height: calc(var(--vh, 1vh) * 100);*/
   transition: 300ms ease;
 }
 .TextCloseButton:hover {
-  transform: rotate(360deg);
+  transform: scale(1.7);
   transition: 300ms ease;
 }
 .AnswerCloseButton:hover {
-  transform: rotate(-360deg);
+   transform: scale(1.7);
   transition: 300ms ease;
 }
 .TextCloseButton:before, 
@@ -492,7 +493,7 @@ height: calc(var(--vh, 1vh) * 100);*/
   left: 15px;
   content: ' ';
   height: 63px;
-  width:5px;
+  width:10px;
   background-color: white;
   z-index: 20;
 }
