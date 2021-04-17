@@ -404,7 +404,7 @@ AllQuestion = [
   image: "",
   audio: "",
   points: 1000,
-  imageOfAnswer: "https://puu.sh/Hz402/af8bc0ca7e.png",
+  imageOfAnswer: "https://puu.sh/Hz4sv/7e02229cf6.png", //https://puu.sh/Hz402/af8bc0ca7e.png
   answer: "синеголовая <u>ифрита ковальди</u> и <u>питохуи</u> (Pitohui) или дроздовые мухоловки. Яд одного из видов этой птицы, также расположенный на коже и перьях, смертелен для человека"
 }
 ];
