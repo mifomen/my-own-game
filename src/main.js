@@ -73,12 +73,19 @@ FindLastButton.appendChild(RowForPoints);
 // console.log(document.title)
 
 let NumberInRow = localStorage.getItem('NumberInRow');
+// console.log(NumberInRow)
+// let NumberInRow = 10;
+// console.log('console.log(NumberInRow)' + ' ' + NumberInRow)
 // let show = function () {
 //   console.log(localStorage.getItem(document.title))
 // }
 // show()
-for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
+// console.log(NumberInRow)
+// console.log()
+// for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
+  for (let j =0; j< 5; j++) {
   // console.log('j= ' + j)
+  // NewRowOfButtons (10);
   NewRowOfButtons (NumberInRow);
 
 }
@@ -279,6 +286,7 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
     let AudioForQuestion = document.createElement('audio');
     AudioForQuestion.controls = true;
     AudioForQuestion.className = 'Audio-Of-Question';
+    AudioForQuestion.autoplay = true;
     AudioForQuestion.src=audioSrc;
     AudioForQuestion.volume = 0.1;
     TextArea.appendChild(AudioForQuestion);
