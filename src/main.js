@@ -288,7 +288,7 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
     AudioForQuestion.className = 'Audio-Of-Question';
     AudioForQuestion.autoplay = true;
     AudioForQuestion.src=audioSrc;
-    AudioForQuestion.volume = 0.1;
+    AudioForQuestion.volume = 0.3;
     TextArea.appendChild(AudioForQuestion);
   } 
 
@@ -315,6 +315,22 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
 });
   var TabButton=1;
   document.onkeydown  = function(evt) {
+
+     if (evt.keyCode == ESC_KEY_CODE ) { 
+
+  let elem = document.getElementById('AnswerSee');
+   if (elem) {elem.parentNode.removeChild(elem) 
+  //   StateOfCloseAnswer=1; 
+  //   // console.log(StateOfCloseAnswer)
+  // }
+    }
+      let elem1 = document.getElementById('Qestion-Delete');
+   if (elem1) {elem1.parentNode.removeChild(elem1) 
+  //   StateOfCloseAnswer=1; 
+  //   // console.log(StateOfCloseAnswer)
+  // }
+    }
+}
 
     if (evt.keyCode == TAB_KEY_CODE && TabButton==1) {
 // TabButton=1;
