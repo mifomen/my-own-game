@@ -48,21 +48,50 @@ function loadJSON(name) {
       }
     }
 
-var mam="";
+// var mam="";
 
 
-    let Themes = JSON.parse(loadJSON("themes.json"))
-    let AllQuestion = JSON.parse(loadJSON("allquestion.json"))
+  let Themes = JSON.parse(loadJSON("themes.json"))
+  let AllQuestion = JSON.parse(loadJSON("allquestions.json"))
+    console.log(typeof(AllQuestion))
 
-console.log(typeof(AllQuestion))
-console.log(mam)
+for ( let k=1; k<=AllQuestion.length; k++) {
+if (AllQuestion[k].theme === Number(k)) {
+    AllQuestion[k].theme = Themes[k-1].title
+  }
+
+}
+// for (Question of AllQuestion) {
+//   if (Question.theme === 1) {
+//     Question.theme =Themes[0].title
+//   }
+// if (Question.theme === 2) {
+//     Question.theme =Themes[1].title
+//   }
+
+//   if (Question.theme === 3) {
+//     Question.theme =Themes[2].title
+//   }
+
+//   if (Question.theme === 4) {
+//     Question.theme =Themes[3].title
+//   }
+
+//   if (Question.theme === 5) {
+//     Question.theme =Themes[4].title
+//   }
+// }
+
+console.log(AllQuestion)
+
+// console.log(mam)
     // document.querySelector(".text").textContent = mam.length;
    
 
    localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));     
 
 localStorage.setItem('length', AllQuestion.length);
-console.log(AllQuestion.length)
+// console.log(AllQuestion.length)
 
 function compareNumeric(a, b) {
   if (a.theme < b.theme) return -1;
@@ -83,7 +112,7 @@ console.log(items)
 for ( let i = 0; i < items.length; i++) {
   // items[i].textContent = AllQuestion[i*(Math.floor(AllQuestion.length / Themes.length))].theme;
   // items[i].textContent = AllQuestion[i*10].theme;
- items[i].textContent = Themes[i].themename;
+ items[i].textContent = Themes[i].title;
 }
 }
 
@@ -526,4 +555,4 @@ let AllButtons = document.querySelectorAll('.points');
   }
 
 
-  console.log('all fine')
+  // console.log('all fine')

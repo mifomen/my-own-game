@@ -60,10 +60,21 @@ gulp.task('css', function() {
 
 
 gulp.task('js-questions', function() {
-  return gulp.src('src/**/questions.js')
+  return gulp.src('src/**/allquestions.json')
   .pipe(plumber())
   // .pipe(uglify())
-  .pipe(rename('questions.js'))
+  .pipe(rename('allquestions.json'))
+  .pipe(gulp.dest('./build'))
+  .pipe(browserSync.reload({
+   stream: true
+  }))
+ });
+
+gulp.task('js-themes', function() {
+  return gulp.src('src/**/themes.json')
+  .pipe(plumber())
+  // .pipe(uglify())
+  .pipe(rename('themes.json'))
   .pipe(gulp.dest('./build'))
   .pipe(browserSync.reload({
    stream: true
@@ -123,7 +134,8 @@ gulp.task('clear', function() {
     'html',
     'css',
     'js',
-    'js-questions'
+    'js-questions',
+    'js-themes'
     ));
 
 gulp.task('final', function(){
@@ -146,6 +158,10 @@ gulp.task('serve', function () {
 gulp.watch("src/**/index.html",  gulp.parallel('html'));
 gulp.watch("src/**/style.css",  gulp.parallel('css'));
 gulp.watch("src/**/main.js",  gulp.parallel('js'));
-gulp.watch("src/**/questions.js",  gulp.parallel('js-questions'));
+gulp.watch("src/**/allquestions.json",  gulp.parallel('js-questions'));
+
+
+gulp.watch("src/**/themes.json",  gulp.parallel('js-themes'));
+
  
 });
