@@ -1,3 +1,5 @@
+
+
 // // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 // let vh = window.innerHeight * 0.01;
 // // Then we set the value in the --vh custom property to the root of the document
@@ -21,14 +23,85 @@
 var points = document.querySelectorAll('.points');
 var BtnStartGame = document.getElementById("StartGameFor2");
 
-function addScript(src) {
-  let elem = document.createElement("script");
-  elem.src = src;
-  document.body.appendChild(elem);
+// function addScript(src) {
+//   let elem = document.createElement("script");
+//   elem.src = src;
+//   document.body.appendChild(elem);
+// }
+
+// big Test
+function loadJSON(name) {
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', name , false);
+      xhr.send();
+      if (xhr.status != 200) {
+        // обработать ошибку
+        alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+      } else {
+        // вывести результат
+        // alert(xhr.responseText);
+        // mam = xhr.response
+        // console.log(mam);
+        return xhr.responseText;
+       
+      }
+    }
+
+var mam="";
+
+
+    let Themes = JSON.parse(loadJSON("themes.json"))
+    let AllQuestion = JSON.parse(loadJSON("allquestion.json"))
+
+console.log(typeof(AllQuestion))
+console.log(mam)
+    // document.querySelector(".text").textContent = mam.length;
+   
+
+   localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));     
+
+localStorage.setItem('length', AllQuestion.length);
+console.log(AllQuestion.length)
+
+function compareNumeric(a, b) {
+  if (a.theme < b.theme) return -1;
+  if (a.theme > b.theme) return 1 
+    if ( a.points > b.points) return 1;
+  if ( a.points < b.points) return -1;
+  // if (a.theme ==  b.theme || a.points == b.points) return 0;
+  // if (a.theme == b.theme || a.points < b.points)  return 1;
+  return 0
+}
+// console.log(AllQuestion)
+AllQuestion.sort(compareNumeric);
+
+let GetNameForThemes = function () {
+let items = document.querySelectorAll('.title-theme');
+console.log(items)
+
+for ( let i = 0; i < items.length; i++) {
+  // items[i].textContent = AllQuestion[i*(Math.floor(AllQuestion.length / Themes.length))].theme;
+  // items[i].textContent = AllQuestion[i*10].theme;
+ items[i].textContent = Themes[i].themename;
+}
 }
 
+let GetPointsForQuestion = function () {
+  let NamingForPoints = document.querySelectorAll('.points');
+  // console.log(NamingForPoints)
+  for (let  j = 0; j < NamingForPoints.length; j++) {
+    NamingForPoints[j].textContent = AllQuestion[j].points;
+  }
+
+  for ( let i=0; i<5; i++) {
+    for ( let j=0; j<AllQuestion.length; j++) {
+      AllQuestion[i].theme = Themes[j]
+    }
+  }
+}
 document.addEventListener('DOMContentLoaded',function(evt){
-  addScript('questions.js');
+  // addScript('questions.js');
 })
 
 let ESC_KEY_CODE = 27;
@@ -120,6 +193,9 @@ var GameBegin = function (evt) {
 }
 // let fin = document.getElementById('StartGameFor3')
 // console.log(players)
+
+GetNameForThemes();
+GetPointsForQuestion();
 }
 
 
