@@ -50,45 +50,47 @@ function loadJSON(name) {
 
 // var mam="";
 
+// document.title="Choose game"
+
+
+
+//   var ChooseThemeofGame = document.createElement('div');
+//   ChooseThemeofGame.type = 'button';
+//   ChooseThemeofGame.classList.add("game-preview__wrapper")
+//   // ChooseThemeofGame.textContent = msg;
+
+//   let ButtonLoad = document.createElement('button')
+//   ButtonLoad.classList.add("game-preview__button")
+//   ButtonLoad.textContent="Биология?";
+//   ButtonLoad.click = function () {
+    
+//   }
+
+//   ChooseThemeofGame.appendChild(ButtonLoad)
+
+
+//   document.querySelector("#Start").appendChild(ChooseThemeofGame);
+
 
   let Themes = JSON.parse(loadJSON("themes.json"))
   let AllQuestion = JSON.parse(loadJSON("allquestions.json"))
-    console.log(typeof(AllQuestion))
+  //   // console.log(typeof(AllQuestion))
 
-for ( let k=1; k<=AllQuestion.length; k++) {
-if (AllQuestion[k].theme === Number(k)) {
-    AllQuestion[k].theme = Themes[k-1].title
-  }
+// console.log(AllQuestion[0].theme)
+// console.log(AllQuestion[19].theme)
+// console.log(Themes[0].title)
 
-}
-// for (Question of AllQuestion) {
-//   if (Question.theme === 1) {
-//     Question.theme =Themes[0].title
-//   }
-// if (Question.theme === 2) {
-//     Question.theme =Themes[1].title
-//   }
+AllQuestion.forEach(function (item) {
+    Themes.forEach (function (itemTitle) {
+    if (item.theme === itemTitle.id) {
+      item.theme = itemTitle.title
+    }      
+  })
+})
+// document.querySelector(".text").textContent = mam.length;
+  localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));     
 
-//   if (Question.theme === 3) {
-//     Question.theme =Themes[2].title
-//   }
-
-//   if (Question.theme === 4) {
-//     Question.theme =Themes[3].title
-//   }
-
-//   if (Question.theme === 5) {
-//     Question.theme =Themes[4].title
-//   }
-// }
-
-console.log(AllQuestion)
-
-// console.log(mam)
-    // document.querySelector(".text").textContent = mam.length;
-   
-
-   localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));     
+let NumberInRow = Math.floor(AllQuestion.length/Themes.length);
 
 localStorage.setItem('length', AllQuestion.length);
 // console.log(AllQuestion.length)
@@ -174,7 +176,9 @@ FindLastButton.appendChild(RowForPoints);
 // variable1.innerHTML = 'test'
 // console.log(document.title)
 
-let NumberInRow = localStorage.getItem('NumberInRow');
+// mifomen
+// let NumberInRow = localStorage.getItem('NumberInRow');
+
 // console.log(NumberInRow)
 // let NumberInRow = 10;
 // console.log('console.log(NumberInRow)' + ' ' + NumberInRow)
