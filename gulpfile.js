@@ -134,8 +134,8 @@ gulp.task('clear', function() {
     'html',
     'css',
     'js',
-    'js-questions',
-    'js-themes'
+    'js-questions'
+    // 'js-themes'?
     ));
 
 gulp.task('final', function(){
@@ -161,7 +161,7 @@ gulp.watch("src/**/main.js",  gulp.parallel('js'));
 gulp.watch("src/**/allquestions.json",  gulp.parallel('js-questions'));
 
 
-gulp.watch("src/**/themes.json",  gulp.parallel('js-themes'));
+// gulp.watch("src/**/themes.json",  gulp.parallel('js-themes'));
 
  
 });

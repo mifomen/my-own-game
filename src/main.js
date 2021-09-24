@@ -48,51 +48,29 @@ function loadJSON(name) {
       }
     }
 
-// var mam="";
-
-// document.title="Choose game"
 
 
-
-//   var ChooseThemeofGame = document.createElement('div');
-//   ChooseThemeofGame.type = 'button';
-//   ChooseThemeofGame.classList.add("game-preview__wrapper")
-//   // ChooseThemeofGame.textContent = msg;
-
-//   let ButtonLoad = document.createElement('button')
-//   ButtonLoad.classList.add("game-preview__button")
-//   ButtonLoad.textContent="Биология?";
-//   ButtonLoad.click = function () {
-    
-//   }
-
-//   ChooseThemeofGame.appendChild(ButtonLoad)
-
-
-//   document.querySelector("#Start").appendChild(ChooseThemeofGame);
-
-
-  let Themes = JSON.parse(loadJSON("themes.json"))
   let AllQuestion = JSON.parse(loadJSON("allquestions.json"))
-  //   // console.log(typeof(AllQuestion))
+    // console.log(typeof(AllQuestion))
 
-// console.log(AllQuestion[0].theme)
-// console.log(AllQuestion[19].theme)
-// console.log(Themes[0].title)
+// console.log(AllQuestion.themes[0].title)
 
-AllQuestion.forEach(function (item) {
-    Themes.forEach (function (itemTitle) {
+
+AllQuestion.themes.forEach(function (item) {
+    AllQuestion.questions.forEach (function (itemTitle) {
     if (item.theme === itemTitle.id) {
       item.theme = itemTitle.title
     }      
   })
 })
+
 // document.querySelector(".text").textContent = mam.length;
-  localStorage.setItem('NumberInRow', Math.floor(AllQuestion.length/Themes.length));     
+  // localStorage.setItem('NumberInRow', Math.floor(AllQuestion.questions.length/AllQuestion.themes.length));   mifomen  
 
-let NumberInRow = Math.floor(AllQuestion.length/Themes.length);
+let NumberInRow = Math.floor(AllQuestion.questions.length/AllQuestion.themes.length);
+// console.log("NumberInRow= " + NumberInRow)
 
-localStorage.setItem('length', AllQuestion.length);
+// localStorage.setItem('length', AllQuestion.questions.length);
 // console.log(AllQuestion.length)
 
 function compareNumeric(a, b) {
@@ -104,32 +82,61 @@ function compareNumeric(a, b) {
   // if (a.theme == b.theme || a.points < b.points)  return 1;
   return 0
 }
+
+// function compareNumericThemes(a, b) {
+//   if (a.id < b.id) return -1;
+//   if (a.id > b.id) return 1 
+//   //   if ( a.points > b.points) return 1;
+//   // if ( a.points < b.points) return -1;
+//   // if (a.theme ==  b.theme || a.points == b.points) return 0;
+//   // if (a.theme == b.theme || a.points < b.points)  return 1;
+//   return 0
+// }
+
+
 // console.log(AllQuestion)
-AllQuestion.sort(compareNumeric);
+AllQuestion.questions.sort(compareNumeric);
+// AllQuestion.themes.sort(compareNumericThemes);
 
 let GetNameForThemes = function () {
-let items = document.querySelectorAll('.title-theme');
-console.log(items)
+  let items = document.querySelectorAll('.title-theme');
+  // console.log(items)
 
-for ( let i = 0; i < items.length; i++) {
+for ( let i=0; i<items.length; i++) {
+
+  items[i].textContent=AllQuestion.themes[i].title
+}
+
+
+  }
+
+// for (item of items) {
+//     AllQuestion.themes.forEach( function(title) {
+//       if 
+//       item.textContent = AllQuestion.themes[0];
+// }
+// }
+  // for ( let i = 0; i < items.length; i++) {
+
+    // })
   // items[i].textContent = AllQuestion[i*(Math.floor(AllQuestion.length / Themes.length))].theme;
   // items[i].textContent = AllQuestion[i*10].theme;
- items[i].textContent = Themes[i].title;
-}
-}
+  // items[i].textContent = AllQuestion.themes[i].title;
+// }
+
 
 let GetPointsForQuestion = function () {
   let NamingForPoints = document.querySelectorAll('.points');
   // console.log(NamingForPoints)
   for (let  j = 0; j < NamingForPoints.length; j++) {
-    NamingForPoints[j].textContent = AllQuestion[j].points;
+    NamingForPoints[j].textContent = AllQuestion.questions[j].points;
   }
 
-  for ( let i=0; i<5; i++) {
-    for ( let j=0; j<AllQuestion.length; j++) {
-      AllQuestion[i].theme = Themes[j]
-    }
-  }
+  // for ( let i=0; i<5; i++) {
+  //   for ( let j=0; j<AllQuestion.length; j++) {
+  //     AllQuestion[i].theme = Themes[j]
+  //   }
+  // }
 }
 document.addEventListener('DOMContentLoaded',function(evt){
   // addScript('questions.js');
@@ -188,12 +195,9 @@ FindLastButton.appendChild(RowForPoints);
 // show()
 // console.log(NumberInRow)
 // console.log()
-// for (let j =0; j< Math.floor(localStorage.getItem('length')/NumberInRow); j++) {
-  for (let j =0; j< 5; j++) {
-  // console.log('j= ' + j)
-  // NewRowOfButtons (10);
-  NewRowOfButtons (NumberInRow);
 
+  for (let j =0; j<AllQuestion.themes.length; j++) {
+  NewRowOfButtons (NumberInRow);
 }
 
 // var localVar = window.storage.globalVar;
@@ -232,7 +236,7 @@ GetPointsForQuestion();
 }
 
 
-var All  = document.querySelectorAll('.points');
+let All = document.querySelectorAll('.points');
 All.forEach(function(evt){
   evt.addEventListener('click',function(e) {
     evt.style.opacity="0";
@@ -240,18 +244,18 @@ All.forEach(function(evt){
   })
 });
 
-var All = document.querySelectorAll('.game .points')
+// var All = document.querySelectorAll('.game .points')
 // var FirstTheme  = document.querySelectorAll('.one .points')
 // var SecondTheme = document.querySelectorAll('.two .points')
 // var ThirdTheme = document.querySelectorAll('.three .points')
 // var FourTheme  = document.querySelectorAll('.four .points')
 // var FiveTheme  = document.querySelectorAll('.five .points')
 
-var GetPointsButton = function (FindButton,points,team) {
+let GetPointsButton = function (FindButton,points,team) {
  let PointsButton = document.getElementById(FindButton);
  PointsButton.addEventListener('click',function (evt) {
 
-  var WhoGetPoints = document.querySelector(team); 
+  let WhoGetPoints = document.querySelector(team); 
   if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
   PointsButton.disabled = true;
@@ -268,11 +272,11 @@ var GetPointsButton = function (FindButton,points,team) {
 }
 });
 };
-var LosePointsButton = function (FindButton,points,team) {
+let LosePointsButton = function (FindButton,points,team) {
  let PointsButton = document.getElementById(FindButton);
  PointsButton.addEventListener('click',function (evt) {
 
-  var WhoGetPoints = document.querySelector(team); 
+  let WhoGetPoints = document.querySelector(team); 
 
   if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) - Number(points)
@@ -333,7 +337,7 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   TextOfAnswer.className = 'Text_Of_Answer'
   AreaForAnswer.appendChild(TextOfAnswer);
 
-  var CreateVoteButton = function(NameButton,id,text,parentAdd) {
+  let CreateVoteButton = function(NameButton,id,text,parentAdd) {
     NameButton = document.createElement('button');
     NameButton.type = 'button';
     NameButton.id = id;
@@ -551,7 +555,7 @@ let AllButtons = document.querySelectorAll('.points');
 
     AllButtons[i].addEventListener('click',function(evt) {
       // ShowAnswer(AllQuestion[i].points,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
-      Question(AllQuestion[i].question,AllQuestion[i].points,AllQuestion[i].image,AllQuestion[i].audio,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer);
+      Question(AllQuestion.questions[i].question,AllQuestion.questions[i].points,AllQuestion.questions[i].image,AllQuestion.questions[i].audio,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer);
 
       StateOfCloseAnswer=0;
     })
