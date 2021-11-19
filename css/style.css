@@ -1,0 +1,539 @@
+* {
+  outline: 2px solid white;
+  outline-offset: -5px;
+
+  font-family: 'Roboto', sans-serif;
+}
+.vh {
+  position: absolute!important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0!important;
+  border: 0!important;
+  height: 1px!important;
+  width: 1px!important;
+  overflow: hidden
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif,'Arial';
+  /*font-family: 'Ubuntu Mono', monospace;*/
+  display: flex;
+  /*background-color: rgba(0,0,255,0.5);*/
+  justify-content: space-around;
+  align-items: space-around;
+  flex-wrap: wrap;
+  padding:0;
+  margin:0;
+
+  /*padding:2%;*/
+  height: 100%;
+  height: 100vh;
+/*  width: 100%;
+width: 100vw;*/
+background-color: rgba(3,3,123,1);
+/*animation: bg-color 10s infinite ease-in-out;*/
+/*transition: background-color 1s ease-in-out;*/
+/*background: linear-gradient(45deg, #00001f 30%, #0000ff 100%);*/
+
+/* height: 100vh;   Use vh as a fallback for browsers that do not support Custom Properties 
+height: calc(var(--vh, 1vh) * 100);*/
+/*margin: 0 auto;*/
+/*max-width: 30%;*/
+}
+/* * {
+  outline: 2px solid;
+  }*/
+  .game-preview * {
+    /*outline: 2px solid white;*/
+  }
+  .game-preview * {
+    /*border: 12px solid darkorange;*/
+  }
+  .game-preview {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+  .game-preview__title {
+    color: white;
+    width: 35%;
+    font-size: 3em;
+
+  }
+  .game-preview__wrapper {
+   width: 45%; 
+   min-height: 25vh;
+   display: flex;
+   flex-direction: row;
+   align-items: space-around;
+   justify-content: space-around;
+   align-items: stretch;
+   margin-top: 2%;
+   outline: none;
+
+ }
+
+ .game-preview__button {
+  padding:0;
+  font-size: 5em;
+  outline: none;
+  width: 150px;
+  height: 150px;
+  border: 5px solid #fff;
+  border-radius: 25px;
+  transition: 500ms ease;
+  background-color: transparent;
+  color: white;
+}
+.game-preview__button:hover,
+.game-preview__button:focus {
+
+}
+.button-start {
+ align-self: center;
+ margin: 0;
+ padding: 4%;
+ 
+ text-shadow:3px 3px 5px rgba(0,0,0,1);
+ /*text-align: center;*/
+ font-size: 3em;
+ 
+ border:0;
+ width: 45%;
+
+ 
+ border-radius: 25px;
+ margin-top: 1em;
+ outline: none;
+}
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: columns;
+  justify-content: center;
+
+}
+.title {
+ text-align: center;
+ margin:0;
+ padding:0;
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: center;
+}
+
+
+.row {
+  text-align: center;
+  margin:0;
+  padding:0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*buttons in every row*/
+.row button {
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  padding: 0.5em;
+  margin:0;
+  font-size: 2.5em;
+  background-color: rgba(0,0,175,1);
+  transition: 500ms ease;
+  outline: 2px solid white;
+  outline-offset: -5px;
+}
+/*title in row*/
+
+.row h1 {
+  margin: 0;
+  padding:0.5em;
+  color: white;
+  width: 25%;
+  text-shadow:3px 3px 0px rgba(0,0,0,1) ;
+}
+
+.game-preview__title {
+ outline: none;
+ text-align: center;
+}
+
+.points:hover,
+.points:focus {
+  transform: scale(1.2);
+  transition: 500ms ease;
+
+
+  /*text-shadow:10px 10px 2px rgba(0,0,0,1) ;*/
+  box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.3),-10px -10px 5px 0px rgba(255,255,255,0.3);
+}
+
+
+
+
+.w100 {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  border:none;
+  outline: none;
+}
+.button {
+  align-self: center;
+  margin: 0;
+  color: white;
+  text-shadow:3px 3px 5px rgba(0,0,0,1);
+  text-align: center;
+  font-size: 3em;
+  background-color: rgba(0,0,0,0);
+  border:0;
+  width: 45%;
+  transition: 500ms ease;
+  border:2px solid #fff;
+  border-radius: 25px;
+  margin-top: 1em;
+}
+.button:hover,
+.button:focus {
+  transition: 500ms ease;
+  text-shadow:3px 3px 5px rgba(12,12,255,1) ;
+  box-shadow: 0px 0px 2000px 25px rgba(255,255,255,1);
+}
+
+.all-points {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  text-shadow: 1px 1px 1px black;
+}
+.blue,
+.all,
+.green,
+.red
+{
+  border: 5px double white;
+  font-size: 3em;
+  color: white;
+  padding: 0.2em;
+
+}
+
+
+.red {
+  border: 5px double red; 
+  background-color: red;
+  /*text-shadow: 1px 1px 1px black;*/
+}
+.green {
+
+  border: 5px double green; 
+  background-color: #219130; 
+
+}
+.blue {
+  border: 5px double blue; 
+  background-color:#7572e3; 
+}
+.all {
+  border: 5px solid white;
+  background-color: darkorange;
+  color: blue;
+}
+
+.hidden {
+  transition: 500ms ease;
+  display: none;
+}
+
+.image-output,
+.AnswerImage {
+  transition: 1500ms ease;
+  border:22px solid white;
+  position:  fixed;
+  width: 85vw;
+
+  top: 10vh;
+
+  height: 80%;
+  height: 80vh;
+  background-color: rgb(0,0,200);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  /*align-content: center;*/
+  align-items: center;
+  padding:1%;
+}
+
+.image-output {
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+.Image-Of-Question {
+  /*position: relative;*/
+  /*top:0%;*/
+  width: auto;
+
+  z-index: 15;
+}
+
+.Audio-Of-Question  {
+  /*border:2px solid green;*/
+  width: 40%;
+  transform: scale(1.5);
+  outline: none;
+  /*min-height: 80vh;*/
+  /*z-index: 15;*/
+}
+
+.AnswerImage * {
+  paddin:0;
+  margin:0;
+}
+.AnswerImage {
+  z-index: 10;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.Image-Of-Answer {
+  position: relative;
+  /*width: 185%;*/
+  /*width: auto;
+  height: auto;*/
+  z-index: 15;
+  /*top:5%;*/
+  width: 30%;
+}
+
+.Text-Qestion,
+.Text_Of_Answer,
+.AnswerMsg {
+  /*margin:auto;*/
+  padding:0;
+  align-self: center;
+  text-align: center;
+  /*width: 100%;*/
+  color: white;
+  outline: none;
+  font-size: 3em;
+  text-shadow: 1px 1px 1px black,
+  -1px -1px 1px black,
+  1px -1px 1px black,
+  -1px 1px 1px black;
+  z-index: 15;
+
+}
+.Text-Qestion {
+  font-size: 3.2em;
+
+}
+.Text_Of_Answer {
+  position: relative;
+  font-size: 2.5em;
+  /*top: -25vh;*/
+
+}
+.AnswerMsg {
+  font-size: 3em;
+  text-decoration: uppercase;
+  text-decoration-line: underline;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+}
+
+#Red-Button,
+#Blue-Button,
+#Red-Button-Minus,
+#Blue-Button-Minus,
+#Green-Button,
+#Green-Button-Minus{
+  font-size: 2em;
+  border: 10px solid transparent;
+  z-index: 20;
+  outline: 5px solid grey;
+  outline-offset: -8px;
+}
+
+#Red-Button:hover,
+#Blue-Button:hover,
+#Red-Button:focus,
+#Blue-Button:focus,
+#Green-Button:focus,
+#Green-Button:hover,
+#Green-Button-Minus:hover,
+#Red-Button-Minus:hover,
+#Blue-Button-Minus:hover,
+#Red-Button-Minus:focus,
+#Blue-Button-Minus:focus
+{
+  border: 10px solid black;
+}
+
+#Red-Button,
+#Blue-Button,
+#Green-Button,
+#Green-Button-Minus,
+#Blue-Button-Minus,
+#Red-Button-Minus {
+  position: absolute;
+  bottom: 9%;
+  min-width: 15%;
+  
+}
+ u,
+ sup,
+ strong {
+  outline: none;
+ }
+#Red-Button,
+#Red-Button-Minus {
+  right: 2%;
+}
+#Blue-Button,
+#Blue-Button-Minus {
+  left:2%;
+}
+#Blue-Button-Minus, 
+#Red-Button-Minus,
+#Green-Button-Minus  { 
+  bottom: 1%;
+  /*min-width: 25%;*/
+  /*font-size: 2.5em;*/
+}
+
+
+#Green-Button,
+#Green-Button-Minus {
+ left: 50%;
+  transform: translateX(-50%);
+
+  }
+
+
+
+/*@keyframes bg-color {
+0% {background: linear-gradient(45deg, #00001f 30%, #0000ff 100%);}
+20% {background: linear-gradient(45deg, #0000ff 10%,#00001f 50%, #0000ff 100%);}
+40% {background: linear-gradient(45deg, #0000ff 40%,#00001f 70%, #0000ff 100%);}
+60% {background: linear-gradient(45deg, #0000ff 40%,#00001f 70%, #0000ff 100%);}
+80% {background: linear-gradient(45deg, #00001f 30%, #0000ff 100%);}
+100% {background: linear-gradient(45deg, #00001f 30%, #0000ff 100%);}
+}
+*/
+@keyframes bg-color {
+  0% {background-color: #00a;}
+  50% {background-color: #00001f;}
+  100% {background-color: #00b;}
+}
+
+/*#EECFBA, #C5DDE8)*/
+
+
+
+.TextCloseButton,
+.AnswerCloseButton {
+
+  position: absolute;
+  top:2%;
+  right: 2%;
+  width: 35px;
+  height: 15px;
+
+  background-color: white;
+  font-size: 0;
+}
+
+
+
+.TextCloseButton,
+.AnswerCloseButton {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 52px;
+  height: 52px;
+  /*opacity: 0.3;*/
+  content:'';
+  background-color: transparent;
+  outline: none;
+  border:0;
+  transition: 300ms ease;
+}
+.TextCloseButton:hover {
+  transform: scale(1.7);
+  transition: 300ms ease;
+}
+.AnswerCloseButton:hover {
+   transform: scale(1.7);
+  transition: 300ms ease;
+}
+.TextCloseButton:before, 
+.TextCloseButton:after,
+.AnswerCloseButton:after,
+.AnswerCloseButton:before {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 63px;
+  width:10px;
+  background-color: white;
+  z-index: 20;
+}
+.TextCloseButton:before,
+.AnswerCloseButton:before  {
+  transform: rotate(45deg);
+}
+.TextCloseButton:after,
+.AnswerCloseButton:after {
+  transform: rotate(-45deg);
+}
+
+/*.TextCloseButton:before:hover {
+
+}
+.TextCloseButton:after:hover {
+transform: rotate(-45deg);
+}*/
+
+/*body {
+    background: linear-gradient(233deg, rgba(3,3,73,1),rgba(3,3,123,1),rgba(3,3,73,1));
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}*/
