@@ -8,7 +8,7 @@ const menuChoosePlayersCount = document.querySelector('#Start');
 let chooseGameBtns = document.querySelectorAll('.choose-game > a.game-preview__title');
 console.log(chooseGameBtns)
 
-// let AllQuestion = '';
+let AllQuestion = '';
 
 for (let chooseGameBtn of chooseGameBtns) {
   chooseGameBtn.addEventListener('click', (evt) => {
@@ -17,6 +17,7 @@ for (let chooseGameBtn of chooseGameBtns) {
     menuChoosePlayersCount.classList.remove('vh');
     console.log(evt.target.dataset.url)
     initGame(loadDataJSON(evt.target.dataset.url));
+    AllQuestion = loadDataJSON(evt.target.dataset.url);
   })
 }
 
@@ -58,28 +59,27 @@ const initGame = (questionsArray) => {
 
   let NumberInRow = Math.floor(questionsArray.questions.length/questionsArray.themes.length);
 
-
   questionsArray.questions.sort(compareNumeric);
 // questionsArray.themes.sort(compareNumericThemes);
 
-let GetNameForThemes = function () {
-  let allThemesTitle = document.querySelectorAll('.title-theme');
-
-  for ( let i=0; i<allThemesTitle.length; i++) {
-    allThemesTitle[i].textContent=questionsArray.themes[i].title
+  for (let j =0; j<questionsArray.themes.length; j++) {
+    NewRowOfButtons(NumberInRow);
   }
 }
 
 let GetPointsForQuestion = function () {
   let NamingForPoints = document.querySelectorAll('.points');
   for (let  j = 0; j < NamingForPoints.length; j++) {
-    NamingForPoints[j].textContent = questionsArray.questions[j].points;
+    NamingForPoints[j].textContent = AllQuestion.questions[j].points;
   }
 }
 
-for (let j =0; j<questionsArray.themes.length; j++) {
-  NewRowOfButtons(NumberInRow);
-}
+let GetNameForThemes = function () {
+  let allThemesTitle = document.querySelectorAll('.title-theme');
+
+  for ( let i=0; i<allThemesTitle.length; i++) {
+    allThemesTitle[i].textContent=AllQuestion.themes[i].title
+  }
 }
 
 document.addEventListener('DOMContentLoaded',function(evt){
@@ -134,25 +134,40 @@ const gameBegin = function (evt) {
 
   GetNameForThemes();
   GetPointsForQuestion();
+  let All = document.querySelectorAll('.points');
+  All.forEach((evt) => {
+    evt.addEventListener('click',function(e) {
+      e.preventDefault();
+      evt.style.opacity="0";
+      evt.style.visibility="hidden";
+    })
+});
+
+  let allBtnOfGame = document.querySelectorAll('.points');
+
+for (let i=0; i<allBtnOfGame.length; i++) {
+  allBtnOfGame[i].addEventListener('click',function(evt) {
+    evt.preventDefault();
+// ShowAnswer(AllQuestion[i].points,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
+  Question(AllQuestion.questions[i].question,AllQuestion.questions[i].points,AllQuestion.questions[i].image,AllQuestion.questions[i].audio,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer);
+StateOfCloseAnswer=0;
+ })
+}
 }
 
 const startGameBtns = document.querySelectorAll('.start-game');
 
 for ( let startGameBtn of startGameBtns) {
-  startGameBtn.addEventListener('click', () => {
+  startGameBtn.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    document.querySelector('#Start').classList.add('vh');
     console.log(parseInt(startGameBtn.textContent,10));
     gameBegin(parseInt(startGameBtn.textContent,10));
   })
 }
 
 
-let All = document.querySelectorAll('.points');
-All.forEach((evt) => {
-  evt.addEventListener('click',function(e) {
-    evt.style.opacity="0";
-    evt.style.visibility="hidden";
-  })
-});
+
 
 // var All = document.querySelectorAll('.game .points')
 // var FirstTheme  = document.querySelectorAll('.one .points')
@@ -164,6 +179,7 @@ All.forEach((evt) => {
 let GetPointsButton = function (FindButton,points,team) {
   let PointsButton = document.getElementById(FindButton);
   PointsButton.addEventListener('click',function (evt) {
+    evt.preventDefault();
 
     let WhoGetPoints = document.querySelector(team);
     if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
@@ -171,14 +187,14 @@ let GetPointsButton = function (FindButton,points,team) {
     PointsButton.disabled = true;
 
     switch (true) {
-      case (team==='.red'): {
+      case (team ==='.red'): {
         document.getElementById('Red-Button-Minus').disabled = true;
         break;
       }
-      case (team==='.blue'): {
+      case (team ==='.blue'): {
         document.getElementById('Blue-Button-Minus').disabled = true;
       }
-      case (team==='.green'): {
+      case (team ==='.green'): {
         document.getElementById('Green-Button-Minus').disabled = true;
         break;
       }
@@ -191,6 +207,7 @@ let GetPointsButton = function (FindButton,points,team) {
 let LosePointsButton = function (FindButton,points,team) {
  let PointsButton = document.getElementById(FindButton);
  PointsButton.addEventListener('click',function (evt) {
+  evt.preventDefault();
 
   let WhoGetPoints = document.querySelector(team);
 
@@ -243,7 +260,8 @@ let ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   let AnswerCloseButton = document.createElement('span');
   AnswerCloseButton.className = 'AnswerCloseButton';
   AnswerCloseButton.innerHTML = 'закрыть ответ';
-  AnswerCloseButton.addEventListener('click', function () {
+  AnswerCloseButton.addEventListener('click',  (evt) => {
+    evt.preventDefault();
    if (document.querySelector('.AnswerImage')) {document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage')) }
 
  })
@@ -329,7 +347,8 @@ let Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   TextArea.appendChild(TextCloseButton);
 
   document.body.appendChild(TextArea);
-  document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
+  document.querySelector('.TextCloseButton').addEventListener('click', (evt) => {
+    evt.preventDefault();
    let elem1 = document.getElementById('Qestion-Delete');
    if (elem1) {elem1.parentNode.removeChild(elem1)
     StateOfCloseAnswer=1;
@@ -391,13 +410,5 @@ document.onkeydown  = function(evt) {
   }
 }
 
-let allBtnOfGame = document.querySelectorAll('.points');
 
-for (let i=0; i<allBtnOfGame.length; i++) {
-  allBtnOfGame[i].addEventListener('click',function(evt) {
-// ShowAnswer(AllQuestion[i].points,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
-  Question(AllQuestion.questions[i].question,AllQuestion.questions[i].points,AllQuestion.questions[i].image,AllQuestion.questions[i].audio,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer);
-StateOfCloseAnswer=0;
- })
-}
 
