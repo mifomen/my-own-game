@@ -9,12 +9,19 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id='Start' class="game-preview">
+  <div class="game-preview choose-game">
+    <h1 class="game-preview__title w100">Добро пожаловать!<br> Выбираем игру!</h1>
+    <a class="game-preview__title" href="#" data-url="informatics">Информатика 7-9</a>
+    <a class="game-preview__title" href="#" data-url="history-5-6">История 5-6</a>
+    <a class="game-preview__title" href="#" data-url="biology-7">Биология 7</a>
+    <a class="game-preview__title" href="#" data-url="mathemathics-10-11">Математика 10-11</a>
+  </div>
+  <div id='Start' class="game-preview vh">
     <h1 class="game-preview__title vh">Добро пожаловать!</h1>
     <h1 class="game-preview__title">Сколько команд?!</h1>
     <div class="game-preview__wrapper">
-    <button id="StartGameFor2" type="button" class="game-preview__button" onClick="GameBegin(2)">2</button>
-    <button id="StartGameFor3" type="button" class="game-preview__button" onClick="GameBegin(3)">3</button>
+    <button id="" type="button" class="game-preview__button start-game">2</button>
+    <button id="StartGameFor3" type="button" class="game-preview__button start-game">3</button>
   </div>
   </div>
   <div class="game Start-One vh">
@@ -24,6 +31,6 @@
       <span class="red">0</span>
     </div>
   </div>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
