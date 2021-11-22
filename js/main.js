@@ -1,4 +1,4 @@
-// import {getData} from './api.js';
+import {setOpacityItem,setOpacityItems} from './utils.js';
 
 // const points = document.querySelectorAll('.points');
 const btnStartGame = document.querySelector('.start-game');
@@ -6,10 +6,10 @@ const btnStartGame = document.querySelector('.start-game');
 const menuChooseGame = document.querySelector('.choose-game');
 const menuChoosePlayersCount = document.querySelector('#Start');
 let chooseGameBtns = document.querySelectorAll('.choose-game > a.game-preview__title');
-console.log(chooseGameBtns)
+// console.log(chooseGameBtns)
 
 let AllQuestion = '';
-
+document.title = "Choose game"
 for (let chooseGameBtn of chooseGameBtns) {
   chooseGameBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
@@ -17,6 +17,7 @@ for (let chooseGameBtn of chooseGameBtns) {
     menuChoosePlayersCount.classList.remove('vh');
     // console.log(evt.target.dataset.url);
     AllQuestion = loadDataJSON(evt.target.dataset.url);
+    document.title=evt.target.dataset.url;
     initGame();
   })
 }
@@ -43,8 +44,8 @@ function compareNumeric(a, b) {
   if (a.theme > b.theme) {return 1;}
   if ( a.points > b.points) {return 1;}
   if ( a.points < b.points) {return -1;}
-  // if (a.theme ==  b.theme || a.Points == b.Points) return 0;
-  // if (a.theme == b.theme || a.Points < b.Points)  return 1;
+  // if (a.theme ==  b.theme || a.points == b.points) return 0;
+  // if (a.theme == b.theme || a.points < b.points)  return 1;
   return 0;
 }
 
@@ -82,7 +83,7 @@ const GetNameForThemes = () => {
 document.addEventListener('DOMContentLoaded',() => {
   // addScript('questions.js');
   //eslint-disable-next-line
-  console.log('DOMContentLoaded = success');
+  // console.log('DOMContentLoaded = success');
 });
 
 const NewRowOfButtons = (evt) => {
@@ -140,6 +141,7 @@ const gameBegin = function (evt) {
 
     allBtnOfGame[i].addEventListener('click',(evet) => {
       evet.preventDefault();
+
       // ShowAnswer(AllQuestion.questions[i].points,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer)
       Question(AllQuestion.questions[i].question,AllQuestion.questions[i].points,AllQuestion.questions[i].image,AllQuestion.questions[i].audio,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer);
       StateOfCloseAnswer=0;
@@ -154,10 +156,11 @@ for ( const startGameBtn of startGameBtns) {
     evt.preventDefault();
     document.querySelector('#Start').classList.add('vh');
     //eslint-disable-next-line
-    console.log(parseInt(startGameBtn.textContent,10));
+    // console.log(parseInt(startGameBtn.textContent,10));
     gameBegin(parseInt(startGameBtn.textContent,10));
   });
 }
+
 // var All = document.querySelectorAll('.game .Points')
 // var FirstTheme  = document.querySelectorAll('.one .Points')
 // var SecondTheme = document.querySelectorAll('.two .Points')
@@ -167,7 +170,7 @@ for ( const startGameBtn of startGameBtns) {
 
 const GetPointsButton = function (FindButton,points,team) {
   const PointsButton = document.querySelector(FindButton);
-  console.log('points',points)
+  // console.log('points',points)
   PointsButton.addEventListener('click',(evt) => {
     evt.preventDefault();
 
@@ -178,10 +181,6 @@ const GetPointsButton = function (FindButton,points,team) {
     }
 
 
-    console.log('WhoGetPoints.textContent=',WhoGetPoints.textContent)
-    console.log('Number(points)',Number(
-
-      ))
     WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points);
 
      // WhoGetPoints.textContent = '500';
@@ -239,7 +238,9 @@ const NewButton = (msg,id,parent) => {
   const TextArea = document.createElement(parent);
   TextArea.className = 'image-output';
   TextArea.tabIndex = '1';
+  // TextArea.style.opacity = 0;
   TextArea.id = 'Qestion-Delete';
+
 
   const SomeButton = document.createElement('button');
   SomeButton.type = 'button';
@@ -250,7 +251,7 @@ const NewButton = (msg,id,parent) => {
 
 
 const ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
-  console.log('showanser points', points)
+  // console.log('showanser points', points)
   const AreaForAnswer = document.createElement('div');
   AreaForAnswer.className = 'AnswerImage';
   AreaForAnswer.id = 'AnswerSee';
@@ -302,7 +303,7 @@ const ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   CreateVoteButton('RedButtonMinus','Red-Button-Minus','-  красным',AreaForAnswer);
 
   document.body.appendChild(AreaForAnswer);
-  console.log('showanser points', points)
+  // console.log('showanser points', points)
   GetPointsButton('#Blue-Button',points,'.blue');
   LosePointsButton ('#Blue-Button-Minus',points,'.blue');
   if (players===3) {
@@ -316,12 +317,17 @@ const ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
 const Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   const TextArea = document.createElement('div');
   TextArea.className = 'image-output';
+  // TextArea.style.opacity = 0.5;
+  // setTimeout(setTimeout(setOpacityItem(TextArea),6000),600);
+
   TextArea.id = 'Qestion-Delete';
 
   const TextOfQuestion = document.createElement('h1');
   TextOfQuestion.innerHTML = evt;
   TextOfQuestion.className = 'Text-Qestion';
+
   TextArea.appendChild(TextOfQuestion);
+
 
   if ( imageSrc !== '' ) {
     const ImageOfQuestion = document.createElement('img');
@@ -346,11 +352,25 @@ const Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   textCloseButton.textContent = 'Закрыть вопрос';
   TextArea.appendChild(textCloseButton);
 
+  // TextArea.addEventListener('click', () => {
+  //   // TextArea.style.opacity  = 1;
+  //   setTimeout(setOpacityItem(TextArea),6000);
+  // })
+
+       // console.log(evet.target)
+      // setTimeout(setOpacityItem(TextArea),6000);
+
   document.body.appendChild(TextArea);
+
+
+// setOpacityItem(TextArea,6000);
   document.querySelector('.TextCloseButton').addEventListener('click', (evet) => {
     evet.preventDefault();
+
     const elem1 = document.querySelector('#Qestion-Delete');
     if (elem1) {
+      elem1.style.opacity = 0;
+      // setTimeout(elem1.parentNode.removeChild(elem1),5500);
       elem1.parentNode.removeChild(elem1);
       StateOfCloseAnswer=1;
     }

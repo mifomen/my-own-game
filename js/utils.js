@@ -1,3 +1,17 @@
+
+const setOpacityItems = (item) => {
+  item.style.opacity = 1;
+}
+
+const setOpacityItem = (item,delay) => {
+
+  setTimeout(setOpacityItems(item),delay)
+
+  console.log('setOpacityItem = success')
+}
+// setTimeout(TextArea.style.opacity = 1, 5100);
+
+
 // const ESCAPE = 27;
 // const ENTER_KEY_CODE = 13;
 // const TAB_KEY_CODE = 9; //9
@@ -39,3 +53,5 @@
 //     ArrayOfButtonsVote[ArrayOfButtonsVote.length-1].focus();
 //   }
 // };
+
+export {setOpacityItems,setOpacityItem}
