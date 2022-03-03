@@ -31,43 +31,43 @@ var BtnStartGame = document.getElementById("StartGameFor2");
 
 // big Test
 function loadJSON(name) {
-      var xhr = new XMLHttpRequest();
+  var xhr = new XMLHttpRequest();
 
-      xhr.open('GET', name , false);
-      xhr.send();
-      if (xhr.status != 200) {
-        // обработать ошибку
-        alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
-      } else {
-        // вывести результат
-        // alert(xhr.responseText);
-        // mam = xhr.response
-        // console.log(mam);
-        return xhr.responseText;
-       
-      }
-    }
+  xhr.open('GET', name, false);
+  xhr.send();
+  if (xhr.status != 200) {
+    // обработать ошибку
+    alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+  } else {
+    // вывести результат
+    // alert(xhr.responseText);
+    // mam = xhr.response
+    // console.log(mam);
+    return xhr.responseText;
+
+  }
+}
 
 
 
-  let AllQuestion = JSON.parse(loadJSON("allquestions.json"))
-    // console.log(typeof(AllQuestion))
+let AllQuestion = JSON.parse(loadJSON("allquestions.json"))
+// console.log(typeof(AllQuestion))
 
 // console.log(AllQuestion.themes[0].title)
 
 
 AllQuestion.themes.forEach(function (item) {
-    AllQuestion.questions.forEach (function (itemTitle) {
+  AllQuestion.questions.forEach(function (itemTitle) {
     if (item.theme === itemTitle.id) {
       item.theme = itemTitle.title
-    }      
+    }
   })
 })
 
 // document.querySelector(".text").textContent = mam.length;
-  // localStorage.setItem('NumberInRow', Math.floor(AllQuestion.questions.length/AllQuestion.themes.length));   mifomen  
+// localStorage.setItem('NumberInRow', Math.floor(AllQuestion.questions.length/AllQuestion.themes.length));   mifomen
 
-let NumberInRow = Math.floor(AllQuestion.questions.length/AllQuestion.themes.length);
+let NumberInRow = Math.floor(AllQuestion.questions.length / AllQuestion.themes.length);
 // console.log("NumberInRow= " + NumberInRow)
 
 // localStorage.setItem('length', AllQuestion.questions.length);
@@ -75,9 +75,9 @@ let NumberInRow = Math.floor(AllQuestion.questions.length/AllQuestion.themes.len
 
 function compareNumeric(a, b) {
   if (a.theme < b.theme) return -1;
-  if (a.theme > b.theme) return 1 
-    if ( a.points > b.points) return 1;
-  if ( a.points < b.points) return -1;
+  if (a.theme > b.theme) return 1
+  if (a.points > b.points) return 1;
+  if (a.points < b.points) return -1;
   // if (a.theme ==  b.theme || a.points == b.points) return 0;
   // if (a.theme == b.theme || a.points < b.points)  return 1;
   return 0
@@ -85,7 +85,7 @@ function compareNumeric(a, b) {
 
 // function compareNumericThemes(a, b) {
 //   if (a.id < b.id) return -1;
-//   if (a.id > b.id) return 1 
+//   if (a.id > b.id) return 1
 //   //   if ( a.points > b.points) return 1;
 //   // if ( a.points < b.points) return -1;
 //   // if (a.theme ==  b.theme || a.points == b.points) return 0;
@@ -98,37 +98,37 @@ function compareNumeric(a, b) {
 AllQuestion.questions.sort(compareNumeric);
 // AllQuestion.themes.sort(compareNumericThemes);
 
-let GetNameForThemes = function () {
+let GetNameForThemes =  () =>> {
   let items = document.querySelectorAll('.title-theme');
   // console.log(items)
 
-for ( let i=0; i<items.length; i++) {
+  for (let i = 0; i < items.length; i++) {
 
-  items[i].textContent=AllQuestion.themes[i].title
-}
-
-
+    items[i].textContent = AllQuestion.themes[i].title
   }
+
+
+}
 
 // for (item of items) {
 //     AllQuestion.themes.forEach( function(title) {
-//       if 
+//       if
 //       item.textContent = AllQuestion.themes[0];
 // }
 // }
-  // for ( let i = 0; i < items.length; i++) {
+// for ( let i = 0; i < items.length; i++) {
 
-    // })
-  // items[i].textContent = AllQuestion[i*(Math.floor(AllQuestion.length / Themes.length))].theme;
-  // items[i].textContent = AllQuestion[i*10].theme;
-  // items[i].textContent = AllQuestion.themes[i].title;
+// })
+// items[i].textContent = AllQuestion[i*(Math.floor(AllQuestion.length / Themes.length))].theme;
+// items[i].textContent = AllQuestion[i*10].theme;
+// items[i].textContent = AllQuestion.themes[i].title;
 // }
 
 
-let GetPointsForQuestion = function () {
+const GetPointsForQuestion =  () => {
   let NamingForPoints = document.querySelectorAll('.points');
   // console.log(NamingForPoints)
-  for (let  j = 0; j < NamingForPoints.length; j++) {
+  for (let j = 0; j < NamingForPoints.length; j++) {
     NamingForPoints[j].textContent = AllQuestion.questions[j].points;
   }
 
@@ -138,7 +138,7 @@ let GetPointsForQuestion = function () {
   //   }
   // }
 }
-document.addEventListener('DOMContentLoaded',function(evt){
+document.addEventListener('DOMContentLoaded', function (evt) {
   // addScript('questions.js');
 })
 
@@ -161,7 +161,7 @@ let NewRowOfButtons = function (evt) {
   RowTitle.innerHTML = ' '
   RowTitle.className = 'title-theme'
   RowForPoints.appendChild(RowTitle);
-  var NewButtonForPointsF  =  function (evt) {
+  var NewButtonForPointsF = function (evt) {
     let RowButtonPoints = document.createElement('button');
     RowButtonPoints.textContent = 't1';
     RowButtonPoints.type = "button"
@@ -169,12 +169,12 @@ let NewRowOfButtons = function (evt) {
     RowForPoints.appendChild(RowButtonPoints);
   }
 
-  for (let j =0; j< evt; j++) {
-  // console.log('j= ' + j)
-  NewButtonForPointsF();
-}
-FindLastButton.appendChild(RowForPoints);
-// console.log('NewRowOfButtons')
+  for (let j = 0; j < evt; j++) {
+    // console.log('j= ' + j)
+    NewButtonForPointsF();
+  }
+  FindLastButton.appendChild(RowForPoints);
+  // console.log('NewRowOfButtons')
 }
 
 
@@ -196,51 +196,51 @@ FindLastButton.appendChild(RowForPoints);
 // console.log(NumberInRow)
 // console.log()
 
-  for (let j =0; j<AllQuestion.themes.length; j++) {
-  NewRowOfButtons (NumberInRow);
+for (let j = 0; j < AllQuestion.themes.length; j++) {
+  NewRowOfButtons(NumberInRow);
 }
 
 // var localVar = window.storage.globalVar;
 // console.log('localStorage.getItem(length)' + ' ' + localStorage.getItem('length'))
 
-var StateOfCloseAnswer=0;
+var StateOfCloseAnswer = 0;
 // BtnStartGame.addEventListener('click',function(evt){
 //   document.querySelector('.game').classList.add('hidden');
 //   document.querySelector('.Start-One').classList.remove('hidden');
 // })
-var players=2;
+var players = 2;
 
 // console.log(players)
 var GameBegin = function (evt) {
 
-   // let elem = document.querySelector('.preview');
+  // let elem = document.querySelector('.preview');
   // if (elem) {elem.parentNode.removeChild(elem)}
 
 
   document.querySelector('.game-preview').classList.add('vh');
   document.querySelector('.Start-One').classList.remove('vh');
   self.textContent;
-  if (evt==3) {
-    players=3;
+  if (evt == 3) {
+    players = 3;
     document.querySelector('.all').classList.add('green');
-    document.querySelector('.all').textContent='0';
+    document.querySelector('.all').textContent = '0';
     document.querySelector('.all').classList.remove('all');
-  // console.log('textContent')
+    // console.log('textContent')
 
+  }
+  // let fin = document.getElementById('StartGameFor3')
+  // console.log(players)
+
+  GetNameForThemes();
+  GetPointsForQuestion();
 }
-// let fin = document.getElementById('StartGameFor3')
-// console.log(players)
-
-GetNameForThemes();
-GetPointsForQuestion();
-}
 
 
-let All = document.querySelectorAll('.points');
-All.forEach(function(evt){
-  evt.addEventListener('click',function(e) {
-    evt.style.opacity="0";
-    evt.style.visibility="hidden";
+let hidePointsBtn = document.querySelectorAll('.points');
+hidePointsBtn.forEach(function (evt) {
+  evt.addEventListener('click', function (e) {
+    evt.style.opacity = "0";
+    evt.style.visibility = "hidden";
   })
 });
 
@@ -251,50 +251,51 @@ All.forEach(function(evt){
 // var FourTheme  = document.querySelectorAll('.four .points')
 // var FiveTheme  = document.querySelectorAll('.five .points')
 
-let GetPointsButton = function (FindButton,points,team) {
- let PointsButton = document.getElementById(FindButton);
- PointsButton.addEventListener('click',function (evt) {
+let GetPointsButton = function (FindButton, points, team) {
+  let PointsButton = document.getElementById(FindButton);
+  PointsButton.addEventListener('click', function (evt) {
 
-  let WhoGetPoints = document.querySelector(team); 
-  if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
-  WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
-  PointsButton.disabled = true;
-  if (team==='.red') {
-    document.getElementById('Red-Button-Minus').disabled = true;
-  } else {
-    if (team==='.blue') {
-      document.getElementById('Blue-Button-Minus').disabled = true;
-    }  else {
-     if (team==='.green') {
-      document.getElementById('Green-Button-Minus').disabled = true; 
-    }
-  }
-}
-});
-};
-let LosePointsButton = function (FindButton,points,team) {
- let PointsButton = document.getElementById(FindButton);
- PointsButton.addEventListener('click',function (evt) {
-
-  let WhoGetPoints = document.querySelector(team); 
-
-  if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
-  WhoGetPoints.textContent = Number(WhoGetPoints.textContent) - Number(points)
-  PointsButton.disabled = true;
-  if (team==='.red') {
-    document.getElementById('Red-Button').disabled = true;
-  } else {
-    if (team==='.blue') {
-      document.getElementById('Blue-Button').disabled = true;
+    let WhoGetPoints = document.querySelector(team);
+    if (WhoGetPoints.textContent === '0') WhoGetPoints.textContent = 0;
+    WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
+    PointsButton.disabled = true;
+    if (team === '.red') {
+      document.getElementById('Red-Button-Minus').disabled = true;
     } else {
-     if (team==='.green') {
-      document.getElementById('Green-Button').disabled = true; 
+      if (team === '.blue') {
+        document.getElementById('Blue-Button-Minus').disabled = true;
+      } else {
+        if (team === '.green') {
+          document.getElementById('Green-Button-Minus').disabled = true;
+        }
+      }
     }
-  }
-}
-});
+  });
 };
-var NewButton = function(msg,id,parent) {
+let LosePointsButton = function (FindButton, points, team) {
+  let PointsButton = document.getElementById(FindButton);
+  PointsButton.addEventListener('click', function (evt) {
+
+    let WhoGetPoints = document.querySelector(team);
+
+    if (WhoGetPoints.textContent === '0') WhoGetPoints.textContent = 0;
+    WhoGetPoints.textContent = Number(WhoGetPoints.textContent) - Number(points)
+    PointsButton.disabled = true;
+    if (team === '.red') {
+      document.getElementById('Red-Button').disabled = true;
+    } else {
+      if (team === '.blue') {
+        document.getElementById('Blue-Button').disabled = true;
+      } else {
+        if (team === '.green') {
+          document.getElementById('Green-Button').disabled = true;
+        }
+      }
+    }
+  });
+};
+
+var NewButton = function (msg, id, parent) {
   var TextArea = document.createElement(parent);
   TextArea.className = "image-output";
   TextArea.tabIndex = "1";
@@ -311,24 +312,24 @@ var NewButton = function(msg,id,parent) {
 }
 
 
-var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
+var ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
   var AreaForAnswer = document.createElement('div');
   AreaForAnswer.className = "AnswerImage";
   AreaForAnswer.id = "AnswerSee";
 
-  if ( imageSrcOfAnswer !== '' ) {
+  if (imageSrcOfAnswer !== '') {
     let imageOfAnswer = document.createElement('img');
     imageOfAnswer.className = 'Image-Of-Answer';
-    imageOfAnswer.src=imageSrcOfAnswer;
+    imageOfAnswer.src = imageSrcOfAnswer;
     AreaForAnswer.appendChild(imageOfAnswer);
-  } 
+  }
   var AnswerCloseButton = document.createElement('span');
   AnswerCloseButton.className = 'AnswerCloseButton';
   AnswerCloseButton.innerHTML = 'закрыть ответ';
   AnswerCloseButton.addEventListener('click', function () {
-   if (document.querySelector('.AnswerImage')) {document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage')) }
+    if (document.querySelector('.AnswerImage')) { document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage')) }
 
- })
+  })
 
   AreaForAnswer.appendChild(AnswerCloseButton);
 
@@ -337,7 +338,7 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
   TextOfAnswer.className = 'Text_Of_Answer'
   AreaForAnswer.appendChild(TextOfAnswer);
 
-  let CreateVoteButton = function(NameButton,id,text,parentAdd) {
+  let CreateVoteButton = function (NameButton, id, text, parentAdd) {
     NameButton = document.createElement('button');
     NameButton.type = 'button';
     NameButton.id = id;
@@ -347,63 +348,72 @@ var ShowAnswer = function(points,Answer,imageSrcOfAnswer) {
     parentAdd.appendChild(NameButton);
   }
 
-  CreateVoteButton('BlueButtonPlus','Blue-Button','+  синим',AreaForAnswer)
-  CreateVoteButton('BlueButtonMinus','Blue-Button-Minus','-  синим',AreaForAnswer)
+  CreateVoteButton('BlueButtonPlus', 'Blue-Button', '+  синим', AreaForAnswer)
+  CreateVoteButton('BlueButtonMinus', 'Blue-Button-Minus', '-  синим', AreaForAnswer)
 
-  if (players===3) {
-    // console.log('yes') 
-    CreateVoteButton('GreenButtonPlus','Green-Button','+  зеленым',AreaForAnswer)
-    CreateVoteButton('GreenButtonMinus','Green-Button-Minus','-  зеленым',AreaForAnswer)
+  if (players === 3) {
+    // console.log('yes')
+    CreateVoteButton('GreenButtonPlus', 'Green-Button', '+  зеленым', AreaForAnswer)
+    CreateVoteButton('GreenButtonMinus', 'Green-Button-Minus', '-  зеленым', AreaForAnswer)
   }
-  CreateVoteButton('RedButtonPlus','Red-Button','+  красным',AreaForAnswer)
-  CreateVoteButton('RedButtonMinus','Red-Button-Minus','-  красным',AreaForAnswer)
-  
+  CreateVoteButton('RedButtonPlus', 'Red-Button', '+  красным', AreaForAnswer)
+  CreateVoteButton('RedButtonMinus', 'Red-Button-Minus', '-  красным', AreaForAnswer)
+
 
 
   document.body.appendChild(AreaForAnswer);
 
-  GetPointsButton('Blue-Button',points,'.blue');
-  LosePointsButton ('Blue-Button-Minus',points,'.blue')
+  GetPointsButton('Blue-Button', points, '.blue');
+  LosePointsButton('Blue-Button-Minus', points, '.blue')
 
-  if (players===3) {
+  if (players === 3) {
 
-    GetPointsButton('Green-Button',points,'.green');
-    LosePointsButton ('Green-Button-Minus',points,'.green')
+    GetPointsButton('Green-Button', points, '.green');
+    LosePointsButton('Green-Button-Minus', points, '.green')
   }
 
-  GetPointsButton('Red-Button',points,'.red');
-  LosePointsButton ('Red-Button-Minus',points,'.red')
+  GetPointsButton('Red-Button', points, '.red');
+  LosePointsButton('Red-Button-Minus', points, '.red')
 
 }
 
+
+
+// console.log(`${getImage('./src/img/questions-history-5class/theme-0-20.jpg')}`)
+
 // ShowAnswer(AllQuestion[0].answer)
-var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
-  var TextArea = document.createElement('div');
+const Question = function (evt, points, imageSrc, audioSrc, Answer, ImageIfAnswer) {
+  // getImage(imageSrc);
+
+  let TextArea = document.createElement('div');
   TextArea.className = "image-output";
   TextArea.id = "Qestion-Delete";
 
-  var TextOfQuestion = document.createElement('h1');
-  TextOfQuestion.innerHTML = evt;
-  TextOfQuestion.className = 'Text-Qestion'
-  TextArea.appendChild(TextOfQuestion);
+  let textOfQuestion = document.createElement('h1');
+  textOfQuestion.innerHTML = evt;
+  textOfQuestion.className = 'Text-Qestion'
+  TextArea.appendChild(textOfQuestion);
 
-  if ( imageSrc !== '' ) {
+  if (imageSrc !== '') {
     let ImageOfQuestion = document.createElement('img');
     ImageOfQuestion.className = 'Image-Of-Question';
-    ImageOfQuestion.src=imageSrc;
-    ImageOfQuestion.width ='45%';
-    TextArea.appendChild(ImageOfQuestion);
-  } 
+    ImageOfQuestion.src = imageSrc;
+    // ImageOfQuestion.width = '45%';
 
-  if ( audioSrc !== '' ) {
+
+
+    TextArea.appendChild(ImageOfQuestion);
+  }
+
+  if (audioSrc !== '') {
     let AudioForQuestion = document.createElement('audio');
     AudioForQuestion.controls = true;
     AudioForQuestion.className = 'Audio-Of-Question';
     AudioForQuestion.autoplay = true;
-    AudioForQuestion.src=audioSrc;
+    AudioForQuestion.src = audioSrc;
     AudioForQuestion.volume = 0.3;
     TextArea.appendChild(AudioForQuestion);
-  } 
+  }
 
   var TextCloseButton = document.createElement('span');
   TextCloseButton.className = 'TextCloseButton';
@@ -412,155 +422,86 @@ var Question = function(evt,points,imageSrc,audioSrc,Answer,ImageIfAnswer) {
   TextArea.appendChild(TextCloseButton);
 
   document.body.appendChild(TextArea);
-  document.querySelector('.TextCloseButton').addEventListener('click',function (evt) {
-   let elem1 = document.getElementById('Qestion-Delete');
-   if (elem1) {elem1.parentNode.removeChild(elem1) 
-    StateOfCloseAnswer=1;
-    // console.log(StateOfCloseAnswer)
-  }
-
-
-
-  ShowAnswer(points,Answer,ImageIfAnswer)
-  StateOfCloseAnswer = 1;
-
-  // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
-});
-  var TabButton=1;
-  document.onkeydown  = function(evt) {
-
-     if (evt.keyCode == ESC_KEY_CODE ) { 
-
-  let elem = document.getElementById('AnswerSee');
-   if (elem) {elem.parentNode.removeChild(elem) 
-  //   StateOfCloseAnswer=1; 
-  //   // console.log(StateOfCloseAnswer)
-  // }
+  document.querySelector('.TextCloseButton').addEventListener('click', function (evt) {
+    let elem1 = document.getElementById('Qestion-Delete');
+    if (elem1) {
+      elem1.parentNode.removeChild(elem1)
+      StateOfCloseAnswer = 1;
+      // console.log(StateOfCloseAnswer)
     }
+
+
+
+    ShowAnswer(points, Answer, ImageIfAnswer)
+    StateOfCloseAnswer = 1;
+
+    // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
+  });
+  var TabButton = 1;
+  document.onkeydown = function (evt) {
+
+    if (evt.keyCode == ESC_KEY_CODE) {
+
+      let elem = document.getElementById('AnswerSee');
+      if (elem) {
+        elem.parentNode.removeChild(elem)
+        //   StateOfCloseAnswer=1;
+        //   // console.log(StateOfCloseAnswer)
+        // }
+      }
       let elem1 = document.getElementById('Qestion-Delete');
-   if (elem1) {elem1.parentNode.removeChild(elem1) 
-  //   StateOfCloseAnswer=1; 
-  //   // console.log(StateOfCloseAnswer)
-  // }
+      if (elem1) {
+        elem1.parentNode.removeChild(elem1)
+      }
     }
-}
-
-    if (evt.keyCode == TAB_KEY_CODE && TabButton==1) {
-// TabButton=1;
-    // let elem = document.getElementById('Qestion-Delete');
-    // if (elem) {
-    //   elem.parentNode.removeChild(elem)
-    //   TabButton=2 
-    //     ShowAnswer(points,Answer,ImageIfAnswer)
-    // }
-
-}
-    if (evt.keyCode == TAB_KEY_CODE && TabButton==2) { 
-
-  // let elem = document.getElementById('AnswerSee');
-  //  if (elem) {elem.parentNode.removeChild(elem) 
-  //   StateOfCloseAnswer=1; 
-  //   // console.log(StateOfCloseAnswer)
-  // }
-    }
-  // AnswerSee
 
 
-//   if (evt.keyCode == ESC_KEY_CODE) {
-//    let elem = document.getElementById('AnswerSee');
-//    if (elem) {elem.parentNode.removeChild(elem) 
-//     StateOfCloseAnswer=1; 
-//     // console.log(StateOfCloseAnswer)
-//   }
-
-//   StateOfCloseAnswer = 1;
-
-
-
-
-//   //  let elem2 = document.getElementById('AnswerSee');
-//   //  if (elem2) {elem2.parentNode.removeChild(elem2) 
-//   //   StateOfCloseAnswer=1;
-//   //   // console.log(StateOfCloseAnswer)
-//   // }
-// }
-  // if (Answer !== '' || ImageIfAnswer!=='') {ShowAnswer(points,Answer,ImageIfAnswer)}
-};
-
-
-
-
-
-//   PointsButton.addEventListener('click',function (evt) {
-//   var WhoGetPoints = document.querySelector(team); 
-//   if (WhoGetPoints.textContent==='0') WhoGetPoints.textContent=0;
-//   WhoGetPoints.textContent = Number(WhoGetPoints.textContent) + Number(points)
-//   PointsButton.disabled = true;
-// });
-
-// GetPointsButton('Left-Button',points,'.blue');
-// GetPointsButton('Right-Button',points,'.red');
-
-// LosePointsButton ('Blue-Button-Minus',points,'.blue')
-// LosePointsButton ('Red-Button-Minus',points,'.red')
-}
-
-//code keys https://puzzleweb.ru/javascript/char_codes-key_codes.php
-
-// let CloneImageDiolog = ;
-// console.log(document.querySelector('.TextCloseButton'));
-//  document.querySelector('.TextCloseButton').addEventListener('click',function () {
-
-//  let elem1 = document.getElementById('Qestion-Delete');
-//     if (elem1) {elem1.parentNode.removeChild(elem1)}
-//  });
-// TextCloseButton
- // удаление окна с вопросом
- let testDiologDelete = function () {
-  var elem = document.getElementById('Qestion-Delete');
-  if (elem) {elem.parentNode.removeChild(elem)}
+// удаление окна с вопросом
+const testDiologDelete = function () {
+  let elem = document.getElementById('Qestion-Delete');
+  if (elem) { elem.parentNode.removeChild(elem) }
 }
 
 let StateOfButton;
-let StateOfButtonRightSide=1;
-var  ArrayOfButtonsVote;
+let StateOfButtonRightSide = 1;
+var ArrayOfButtonsVote;
 // console.log(StateOfButton)
-document.onkeydown  = function(evt) {
+document.onkeydown = function (evt) {
 
-  if (evt.keyCode == UP_ARROW_KEY_CODE ) {
-   if (document.querySelector('.AnswerImage')) {
-    ArrayOfButtonsVote = document.querySelectorAll('.VoteButton');
+  if (evt.keyCode == UP_ARROW_KEY_CODE) {
+    if (document.querySelector('.AnswerImage')) {
+      ArrayOfButtonsVote = document.querySelectorAll('.VoteButton');
 
-    console.log(ArrayOfButtonsVote)
-    StateOfButton=0;
+      console.log(ArrayOfButtonsVote)
+      StateOfButton = 0;
 
-    ArrayOfButtonsVote[0].focus()
-  // console.log(StateOfButton)
-}
+      ArrayOfButtonsVote[0].focus()
+      // console.log(StateOfButton)
+    }
 
-}
+  }
 
 
-if (evt.keyCode == DOWN_ARROW_KEY_CODE ) {
+  if (evt.keyCode == DOWN_ARROW_KEY_CODE) {
 
-  ArrayOfButtonsVote[ArrayOfButtonsVote.length-1].focus()
-}
+    ArrayOfButtonsVote[ArrayOfButtonsVote.length - 1].focus()
+  }
 }
 
 
 
 let AllButtons = document.querySelectorAll('.points');
-  // console.log(AllButtons)
-  for (let i=0; i<AllButtons.length; i++) {
+for (let i = 0; i < AllButtons.length; i++) {
 
-    AllButtons[i].addEventListener('click',function(evt) {
-      // ShowAnswer(AllQuestion[i].points,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
-      Question(AllQuestion.questions[i].question,AllQuestion.questions[i].points,AllQuestion.questions[i].image,AllQuestion.questions[i].audio,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer);
-
-      StateOfCloseAnswer=0;
-    })
-
-  }
+  AllButtons[i].addEventListener('click', function (evt) {
 
 
-  // console.log('all fine')
+    // ShowAnswer(AllQuestion[i].points,AllQuestion[i].answer,AllQuestion[i].imageOfAnswer)
+    Question(AllQuestion.questions[i].question, AllQuestion.questions[i].points, AllQuestion.questions[i].image, AllQuestion.questions[i].audio, AllQuestion.questions[i].answer, AllQuestion.questions[i].imageOfAnswer);
+
+    getImage(AllQuestion.questions[i].image);
+
+    StateOfCloseAnswer = 0;
+  })
+
+}

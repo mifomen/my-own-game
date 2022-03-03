@@ -28,7 +28,7 @@
   "questions":[ {
         "theme": "Themes[0]",
         "question": "Наиболее подробное изложение событий этой войны содержится в 2-х поэмах — «Илиаде» и «Одиссее»",
-        "image": "https://puu.sh/Hy081/294ac33e9d.png",
+        "image": "./src/img/questions-history-5class/theme-0-10.jpg",
         "audio": "",
         "points": 10,
         "imageOfAnswer": "",
@@ -36,7 +36,7 @@
     }, {
         "theme": "Themes[0]",
         "question": "Во время греко-персидских войн этот небольшой отряд ненадолго сдержал войска персов от вторжения в Грецию. Что это был за отряд?",
-        "image": "https://puu.sh/Hy0bH/cbb56a503f.png",
+        "image": "./src/img/questions-history-5class/theme-0-20.jpg",
         "audio": "",
         "points": 20,
         "imageOfAnswer": "",

@@ -3,7 +3,7 @@
   "themes": [
     {
       "id": 1,
-      "title": "Войны Древней Греции" 
+      "title": "Войны Древней Греции"
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
     {
       "theme": 1,
       "question": "Наиболее подробное изложение событий этой войны содержится в 2-х поэмах — «Илиаде» и «Одиссее»",
-      "image": "https://puu.sh/Hy081/294ac33e9d.png",
+      "image": "img/questions-history-5class/theme-1-100.jpg",
       "audio": "",
       "points": 10,
       "imageOfAnswer": "",

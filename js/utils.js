@@ -3,9 +3,9 @@ const setOpacityItems = (item) => {
   item.style.opacity = 1;
 }
 
-const setOpacityItem = (item,delay) => {
+const setOpacityItem = (item, delay) => {
 
-  setTimeout(setOpacityItems(item),delay)
+  setTimeout(setOpacityItems(item), delay)
 
   console.log('setOpacityItem = success')
 }
@@ -54,4 +54,15 @@ const setOpacityItem = (item,delay) => {
 //   }
 // };
 
-export {setOpacityItems,setOpacityItem}
+
+const getImage = (src) => {
+  if (src != "") {
+    // console.log(`${document.querySelector('.image-output').style.cssText}`)
+    document.querySelector('.image-output').style.cssText = `background-image: url(${src});  background-size: cover;`;
+    document.querySelector('.Text-Qestion').style.cssText = `background-color: rgba(12,12,155,0.2); padding: 15px; border: 5px solid rgba(255,255,255,0.8);`;
+  }
+}
+
+
+
+export { setOpacityItems, setOpacityItem, getImage }

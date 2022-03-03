@@ -1,4 +1,4 @@
-import {setOpacityItem,setOpacityItems} from './utils.js';
+import {setOpacityItem,setOpacityItems,getImage} from './utils.js';
 
 // const points = document.querySelectorAll('.points');
 const btnStartGame = document.querySelector('.start-game');
@@ -144,6 +144,8 @@ const gameBegin = function (evt) {
 
       // ShowAnswer(AllQuestion.questions[i].points,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer)
       Question(AllQuestion.questions[i].question,AllQuestion.questions[i].points,AllQuestion.questions[i].image,AllQuestion.questions[i].audio,AllQuestion.questions[i].answer,AllQuestion.questions[i].imageOfAnswer);
+
+      getImage(AllQuestion.questions[i].image);
       StateOfCloseAnswer=0;
     });
   }
