@@ -28,7 +28,7 @@
   "questions":[ {
         "theme": "Themes[0]",
         "question": "Наиболее подробное изложение событий этой войны содержится в 2-х поэмах — «Илиаде» и «Одиссее»",
-        "image": "./src/img/questions-history-5class/theme-0-10.jpg",
+        "image": "./img/questions-history-5class/theme-0-10.jpg",
         "audio": "",
         "points": 10,
         "imageOfAnswer": "",
@@ -36,7 +36,7 @@
     }, {
         "theme": "Themes[0]",
         "question": "Во время греко-персидских войн этот небольшой отряд ненадолго сдержал войска персов от вторжения в Грецию. Что это был за отряд?",
-        "image": "./src/img/questions-history-5class/theme-0-20.jpg",
+        "image": "./img/questions-history-5class/theme-0-20.jpg",
         "audio": "",
         "points": 20,
         "imageOfAnswer": "",
@@ -76,7 +76,7 @@
     }, {
         "theme": "Themes[1]",
         "question": "В этом городе находится Акрополь",
-        "image": "https://puu.sh/Hy0jJ/62462d922d.png",
+        "image": "./img/questions-history-5class/theme-1-20.jpg",
         "audio": "",
         "points": 20,
         "imageOfAnswer": "",
@@ -92,15 +92,15 @@
     }, {
         "theme": "Themes[1]",
         "question": "Этот город был столицей острова Крит",
-        "image": "",
+        "image": "./img/questions-history-5class/theme-1-40.jpg",
         "audio": "",
         "points": 40,
-        "imageOfAnswer": "",
+        "imageOfAnswer": "./img/questions-history-5class/theme-1-40.jpg",
         "answer": "Кносс"
     }, {
         "theme": "Themes[1]",
         "question": "Город, который обнаружил в 1870 г. археолог Генрих Шлиман",
-        "image": "https://puu.sh/Hy0lk/7c717eb608.png",
+        "image": "./img/questions-history-5class/theme-1-50.jpg",
         "audio": "",
         "points": 50,
         "imageOfAnswer": "",
@@ -108,10 +108,10 @@
     }, {
         "theme": "Themes[2]",
         "question": "Бог, покровитель вина и виноделия",
-        "image": "",
+        "image": "./img/questions-history-5class/theme-2-10.jpg",
         "audio": "",
         "points": 10,
-        "imageOfAnswer": "https://puu.sh/Hy0mL/fd2f6d00d7.png",
+        "imageOfAnswer": "",
         "answer": "Дионис"
     }, {
         "theme": "Themes[2]",
@@ -119,23 +119,23 @@
         "image": "",
         "audio": "",
         "points": 20,
-        "imageOfAnswer": "https://puu.sh/Hy0rY/7684cebb16.png",
+        "imageOfAnswer": "./img/questions-history-5class/theme-2-20.jpg",
         "answer": "Сфинкс"
     }, {
         "theme": "Themes[2]",
         "question": "Персонаж древнегреческой мифологии, выдающийся художник и инженер, построивший лабиринт на острове Крит.",
-        "image": "",
+        "image": "./img/questions-history-5class/theme-2-30.jpg",
         "audio": "",
         "points": 30,
-        "imageOfAnswer": "",
+        "imageOfAnswer": "./img/questions-history-5class/theme-2-30.jpg",
         "answer": "Дедал"
     }, {
         "theme": "Themes[2]",
         "question": "Главными атрибутами этой богини являются колчан со стрелами, лань и колесница.",
-        "image": "",
+        "image": "./img/questions-history-5class/theme-2-40.jpg",
         "audio": "",
         "points": 40,
-        "imageOfAnswer": "https://puu.sh/Hy0sY/b3f82fd742.png",
+        "imageOfAnswer": "./img/questions-history-5class/theme-2-40.jpg",
         "answer": "Артемида"
     }, {
         "theme": "Themes[2]",
@@ -156,10 +156,10 @@
     }, {
         "theme": "Themes[3]",
         "question": "На олимпийских играх пятиборье состояло из следующих видов: бег, прыжки в длину, борьба, метание копья и …",
-        "image": "",
+        "image": "./img/questions-history-5class/theme-3-20.jpg",
         "audio": "",
         "points": 20,
-        "imageOfAnswer": "https://puu.sh/Hy0uX/fce1defc08.png",
+        "imageOfAnswer": "./img/questions-history-5class/theme-3-20-1.jpg",
         "answer": "Метание диска"
     }, {
         "theme": "Themes[3]",
@@ -236,18 +236,18 @@
     }, {
         "theme": "Themes[5]",
         "question": "На территории какого полуострова расположена Македония?",
-        "image": "https://puu.sh/Hy0zX/c4fb1b303f.png",
+        "image": "./img/questions-history-5class/theme-5-10.jpg",
         "audio": "",
         "points": 10,
-        "imageOfAnswer": "",
-        "answer": "Балканского"
+        "imageOfAnswer": "./img/questions-history-5class/theme-5-10.jpg",
+        "answer": "Балкансккий полуостров"
     }, {
         "theme": "Themes[5]",
         "question": "Какой крупнейший греческий ученый обучал Александра Македонского?",
-        "image": "",
+        "image": "./img/questions-history-5class/theme-5-20.jpg",
         "audio": "",
         "points": 20,
-        "imageOfAnswer": "https://puu.sh/Hy0Ap/ce195e4a53.png",
+        "imageOfAnswer": "./img/questions-history-5class/theme-5-20.jpg",
         "answer": "Аристотель"
     }, {
         "theme": "Themes[5]",

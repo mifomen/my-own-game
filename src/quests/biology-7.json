@@ -265,7 +265,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "1.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-10.mp3",
         "points": 10,
         "imageOfAnswer":"",
         "answer": "Синица"
@@ -273,7 +273,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "2.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-20.mp3",
         "points": 20,
         "imageOfAnswer":"",
         "answer": "Стриж"
@@ -281,7 +281,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "3.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-30.mp3",
         "points": 30,
         "imageOfAnswer":"",
         "answer": "Пеночка- теньковка"
@@ -289,7 +289,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "4.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-40.mp3",
         "points": 40,
         "imageOfAnswer":"",
         "answer": "Ворон"
@@ -297,7 +297,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "5.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-50.mp3",
         "points": 50,
         "imageOfAnswer":"",
         "answer": "Гуси"
@@ -305,7 +305,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "6.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-60.mp3",
         "points": 60,
         "imageOfAnswer":"",
         "answer": "Сова"
@@ -313,7 +313,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "7.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-70.mp3",
         "points": 70,
         "imageOfAnswer":"",
         "answer": "Орел"
@@ -321,7 +321,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "8.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-80.mp3",
         "points": 80,
         "imageOfAnswer":"",
         "answer": "Павлин"
@@ -329,7 +329,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "9.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-90.mp3",
         "points": 90,
         "imageOfAnswer":"",
         "answer": "Соловей"
@@ -337,7 +337,7 @@
         "theme": "Themes[3]",
         "question": "Угадай по пению",
         "image":"",
-        "audio": "10.mp3",
+        "audio": "./src/mp3/questions-biology-7/theme-3-100.mp3",
         "points": 100,
         "imageOfAnswer":"",
         "answer": "Выпь"
@@ -347,7 +347,7 @@
         "image":"",
         "audio":"",
         "points": 10,
-        "imageOfAnswer": "https://puu.sh/Hz3UU/6883e8646d.png",
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-10.jpg",
         "answer": "Обладатель этого рекорда — пчелиный колибри. Рост этой птицы всего 5.7 см, а вес составляет 1.6 гр. "
     }, {
         "theme": "Themes[4]",
@@ -355,7 +355,7 @@
         "image":"",
         "audio":"",
         "points": 20,
-        "imageOfAnswer": "https://puu.sh/Hz3Vy/ed0eb75a92.png",
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-20.jpg",
         "answer": "Обладатель этого рекорда — страус. Его рост — до 2.75 метра, вес — до 456 килограмм. "
     }, {
         "theme": "Themes[4]",
@@ -363,7 +363,7 @@
         "image":"",
         "audio":"",
         "points": 30,
-        "imageOfAnswer": "https://puu.sh/Hz3VX/f07035db45.png",
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-30.jpg",
         "answer": "Соловей"
     }, {
         "theme": "Themes[4]",
@@ -371,15 +371,15 @@
         "image":"",
         "audio":"",
         "points": 40,
-        "imageOfAnswer": "https://puu.sh/Hz3WF/1a08e94b86.png",
-        "answer": "Обладатель этого рекорда — <u>сапсан</u>. Он летает со скоростью более 200 км/час (по некоторым данным, до 300 км/час). "
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-40.jpg",
+        "answer": "Обладатель этого рекорда — <ins>сапсан</ins>. Он летает со скоростью более 200 км/час (по некоторым данным, до 300 км/час). "
     }, {
         "theme": "Themes[4]",
         "question": "Самый большеклювый … ",
         "image":"",
         "audio":"",
         "points": 50,
-        "imageOfAnswer": "https://puu.sh/Hz3X3/3fcfb1e9bc.png",
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-50.jpg",
         "answer": "Тукан.  Его клюв  составляет от 35 до 55% длины всего тела."
     }, {
         "theme": "Themes[4]",
@@ -387,7 +387,7 @@
         "image":"",
         "audio":"",
         "points": 60,
-        "imageOfAnswer": "https://puu.sh/Hz3XE/e388fe9b23.png",
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-60.jpg",
         "answer": "Обладатель этого рекорда — дрофа. Ее масса 18-19 килограмм"
     }, {
         "theme": "Themes[4]",
@@ -395,32 +395,32 @@
         "image":"",
         "audio":"",
         "points": 70,
-        "imageOfAnswer": "https://puu.sh/Hz3Yh/9619ee4bbb.png",
-        "answer": "Обладатель этого рекорда —<u>жако (серый попугай)</u>. Его лексикон составляет целых 800 слов"
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-70.jpg",
+        "answer": "Обладатель этого рекорда —<ins>жако (серый попугай)</ins>. Его лексикон составляет целых 800 слов"
     }, {
         "theme": "Themes[4]",
         "question": "Самая красивая птица.....",
         "image":"",
         "audio":"",
         "points": 80,
-        "imageOfAnswer": "https://puu.sh/Hz3YJ/e3905d6e39.png",
-        "answer": "<u>Райская танагра</U> —  вид птиц из семейства танагровых. "
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-80.jpg",
+        "answer": "<ins>Райская танагра</U> —  вид птиц из семейства танагровых. "
     }, {
         "theme": "Themes[4]",
         "question": "Самый высокий полет у ..... ",
         "image":"",
         "audio":"",
         "points": 90,
-        "imageOfAnswer": "https://puu.sh/Hz3Zo/314fe4a127.png",
-        "answer": "<u>гриф Рюппеля</u>. Зафиксирован случай столкновения с самолетом на высоте 11 274 метра.)"
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-90.jpg",
+        "answer": "<ins>гриф Рюппеля</ins>. Зафиксирован случай столкновения с самолетом на высоте 11 274 метра.)"
     }, {
         "theme": "Themes[4]",
         "question": "САМАЯ ЯДОВИТАЯ......",
         "image":"",
         "audio":"",
         "points": 100,
-        "imageOfAnswer": "https://puu.sh/Hz4sv/7e02229cf6.png",
-        "answer": "синеголовая <u>ифрита ковальди</u> и <u>питохуи</u> (Pitohui) или дроздовые мухоловки. Яд одного из видов этой птицы, также расположенный на коже и перьях, смертелен для человека"
+        "imageOfAnswer": "./src/img/questions-biology-7/theme-4-100.jpg",
+        "answer": "синеголовая <ins>ифрита ковальди</ins> и <ins>питохуи</ins> (Pitohui) или дроздовые мухоловки. Яд одного из видов этой птицы, также расположенный на коже и перьях, смертелен для человека"
     }
   ]
 }
