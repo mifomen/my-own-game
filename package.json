@@ -17,8 +17,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "browser-sync start --server --no-notify --no-ui --files \"./**/*.*\"",
-    "test": "eslint js/"
+    "start": "browser-sync start --server --ss \"src\" --no-notify --no-ui --files \"./src/**/*.*\"",
+    "test": "eslint src/js/"
   },
   "engines": {
     "node": "14.x",
