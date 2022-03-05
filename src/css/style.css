@@ -296,9 +296,9 @@ body {
   width: 30%;
 }
 
-.Text-Qestion,
-.textAnswer,
-.AnswerMsg {
+/* .AnswerMsg { */
+.question-text,
+.question-text-answer {
   padding: 0;
   align-self: center;
   text-align: center;
@@ -312,22 +312,23 @@ body {
   z-index: 15;
 }
 
-.Text-Qestion {
+.question-text {
   font-size: 3.2em;
 }
 
-.textAnswer {
+.question-text-answer {
   position: relative;
   font-size: 2.5em;
 }
 
-.AnswerMsg {
+
+/* .AnswerMsg {
   font-size: 3em;
   text-decoration: uppercase;
   text-decoration-line: underline;
   font-weight: bold;
   text-shadow: 1px 1px 1px var(--basic-black);
-}
+} */
 
 .Red-Button,
 .Blue-Button,
@@ -398,25 +399,7 @@ sup {
   transform: translateX(-50%);
 }
 
-
-
-
-.btn-close-answer-area {
-  position: absolute;
-  right: 5%;
-  top: 5%;
-  width: 52px;
-  height: 52px;
-  /*opacity: 0.3;*/
-  content: "";
-  font-size: 0;
-  background-color: transparent;
-  outline: none;
-  border: 0;
-  transition: 300ms ease;
-}
-
-.TextCloseButton:hover {
+.btn-close-question:hover {
   transform: scale(1.7);
   transition: 300ms ease;
 }
@@ -426,12 +409,12 @@ sup {
   transition: 300ms ease;
 }
 
-.TextCloseButton::before,
-.TextCloseButton::after,
+.btn-close-question::before,
+.btn-close-question::after,
 .btn-close-answer-area::after,
 .btn-close-answer-area::before {
   position: absolute;
-  left: 15px;
+  left: 22px;
   content: "";
   height: 63px;
   width: 10px;
@@ -439,12 +422,12 @@ sup {
   z-index: 20;
 }
 
-.TextCloseButton::before,
+.btn-close-question::before,
 .btn-close-answer-area::before {
   transform: rotate(45deg);
 }
 
-.TextCloseButton::after,
+.btn-close-question::after,
 .btn-close-answer-area::after {
   transform: rotate(-45deg);
 }
@@ -509,12 +492,13 @@ sup {
   width: auto;
 }
 
-.TextCloseButton {
+.btn-close-question,
+.btn-close-answer-area {
   position: absolute;
   right: 5%;
   top: 5%;
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   /*opacity: 0.3;*/
   content: "";
   font-size: 0;

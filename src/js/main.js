@@ -263,7 +263,7 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
 
   const TextOfAnswer = document.createElement('h1');
   TextOfAnswer.innerHTML = Answer;
-  TextOfAnswer.className = 'textAnswer';
+  TextOfAnswer.className = 'question-text-answer';
   answerArea.appendChild(TextOfAnswer);
 
   const CreateVoteButton = function (elemBtn, id, txtContent, parentAdd) {
@@ -301,14 +301,14 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
 };
 
 function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
-  const TextArea = document.createElement('div');
-  TextArea.className = 'image-output';
-  TextArea.id = 'Qestion-Delete';
+  const questionArea = document.createElement('div');
+  questionArea.className = 'image-output js-question-delete';
+  // questionArea.id = '';
 
-  const TextOfQuestion = document.createElement('h1');
-  TextOfQuestion.innerHTML = evt;
-  TextOfQuestion.className = 'Text-Qestion';
-  TextArea.appendChild(TextOfQuestion);
+  const questionText = document.createElement('h1');
+  questionText.innerHTML = evt;
+  questionText.className = 'question-text';
+  questionArea.appendChild(questionText);
 
 
   if (imageSrc !== '') {
@@ -316,30 +316,30 @@ function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
     ImageOfQuestion.className = 'Image-Of-Question';
     ImageOfQuestion.src = imageSrc;
     ImageOfQuestion.width = '45%';
-    TextArea.appendChild(ImageOfQuestion);
+    questionArea.appendChild(ImageOfQuestion);
   }
 
   if (audioSrc !== '') {
-    const AudioForQuestion = document.createElement('audio');
-    AudioForQuestion.controls = true;
-    AudioForQuestion.className = 'Audio-Of-Question';
-    AudioForQuestion.autoplay = true;
-    AudioForQuestion.src = audioSrc;
-    AudioForQuestion.volume = 0.3;
-    TextArea.appendChild(AudioForQuestion);
+    const questionAudio = document.createElement('audio');
+    questionAudio.controls = true;
+    questionAudio.className = 'Audio-Of-Question';
+    questionAudio.autoplay = true;
+    questionAudio.src = audioSrc;
+    questionAudio.volume = 0.3;
+    questionArea.appendChild(questionAudio);
   }
 
   const textCloseButton = document.createElement('span');
-  textCloseButton.className = 'TextCloseButton';
+  textCloseButton.className = 'btn-close-question js-close-question';
   textCloseButton.textContent = 'Закрыть вопрос';
-  TextArea.appendChild(textCloseButton);
+  questionArea.appendChild(textCloseButton);
 
-  document.body.appendChild(TextArea);
+  document.body.appendChild(questionArea);
 
-  document.querySelector('.TextCloseButton').addEventListener('click', (evet) => {
+  document.querySelector('.js-close-question').addEventListener('click', (evet) => {
     evet.preventDefault();
 
-    const elem1 = document.querySelector('#Qestion-Delete');
+    const elem1 = document.querySelector('.js-question-delete');
     if (elem1) {
       elem1.style.opacity = 0;
       // setTimeout(elem1.parentNode.removeChild(elem1),5500);
