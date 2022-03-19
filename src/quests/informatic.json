@@ -20,6 +20,14 @@
     {
       "id": 5,
       "title": "Всего по-немногу"
+    },
+    {
+      "id": 6,
+      "title": "Как кроссворд №1"
+    },
+    {
+      "id": 7,
+      "title": "Как кроссворд №2"
     }
   ],
 
@@ -223,6 +231,87 @@
         "points": 400,
         "imageOfAnswer": "",
         "answer": "абак"
+    },
+    {
+      "theme": 6,
+      "question": "Устройство для ввода буквенной и числовой информации.",
+      "image": "",
+      "audio": "",
+      "points": 100,
+      "imageOfAnswer": "",
+      "answer": "Клавиатура"
+    },{
+      "theme": 6,
+      "question": "«Волшебная палочка» для игры на компьютере",
+      "image": "",
+      "audio": "",
+      "points": 120,
+      "imageOfAnswer": "",
+      "answer": "Джойстик"
+    },{
+      "theme": 6,
+      "question": "То, на что мы смотрим, работая на компьютере, чтобы получить от него информацию.",
+      "image": "",
+      "audio": "",
+      "points": 140,
+      "imageOfAnswer": "",
+      "answer": "Монитор"
+    }, {
+      "theme": 6,
+      "question": "Устройство для печати.",
+      "image": "",
+      "audio": "",
+      "points": 160,
+      "imageOfAnswer": "",
+      "answer": "Принтер"
+    }, {
+      "theme": 6,
+      "question": "Хранилище информации",
+      "image": "",
+      "audio": "",
+      "points": 180,
+      "imageOfAnswer": "",
+      "answer": "Память"
+    },{
+      "theme": 7,
+      "question": "Устройство для ввода графической информации.",
+      "image": "",
+      "audio": "",
+      "points": 120,
+      "imageOfAnswer": "",
+      "answer": "Сканер"
+    },{
+      "theme": 7,
+      "question": "Мозг компьютера",
+      "image": "",
+      "audio": "",
+      "points": 135,
+      "imageOfAnswer": "",
+      "answer": "Процессор"
+    },{
+      "theme": 7,
+      "question": "Устройство для вывода звуковой информации",
+      "image": "",
+      "audio": "",
+      "points": 150,
+      "imageOfAnswer": "",
+      "answer": "Динамик"
+    },{
+      "theme": 7,
+      "question": "Собери слово: КЙЕБСИ",
+      "image": "",
+      "audio": "",
+      "points": 175,
+      "imageOfAnswer": "",
+      "answer": "Бэйсик"
+    },{
+      "theme": 7,
+      "question": "Собери слово: АКНПКО",
+      "image": "",
+      "audio": "",
+      "points": 200,
+      "imageOfAnswer": "",
+      "answer": "Кнопка"
     }
   ]
 }
