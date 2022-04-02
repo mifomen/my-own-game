@@ -278,7 +278,9 @@ body {
 
 .Image-Of-Question {
   position: relative;
-  width: auto;
+  width: calc(200% - 10wv);
+  width: 95wv;
+  height: auto;
   z-index: 15;
 }
 
@@ -489,7 +491,8 @@ sup {
 }
 
 .image-output * {
-  width: auto;
+  /* width: auto; */
+  width: calc( 100wv - 40% );
 }
 
 .btn-close-question,
