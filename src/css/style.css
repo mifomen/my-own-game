@@ -402,11 +402,13 @@ sup {
 .btn-close-question:hover {
   transform: scale(1.7);
   transition: 300ms ease;
+  z-index: 30;
 }
 
 .btn-close-answer-area:hover {
   transform: scale(1.7);
   transition: 300ms ease;
+  z-index: 30;
 }
 
 .btn-close-question::before,
@@ -420,6 +422,13 @@ sup {
   width: 10px;
   background-color: var(--basic-white);
   z-index: 20;
+}
+
+.btn-close-getImage::before,
+.btn-close-getImage::after {
+  outline: 2px solid var(--basic-blue);
+  outline-offset: -2px;
+  z-index: 30;
 }
 
 .btn-close-question::before,

@@ -1,4 +1,4 @@
-import { getImage } from './utils.js';
+import { getImage,loadDataJSON, getAnswerImage, minus1000, removeClickMinus1000 } from './utils.js';
 
 // const points = document.querySelectorAll('.points');
 // const btnStartGame = document.querySelector('.start-game');
@@ -19,25 +19,13 @@ for (const chooseGameBtn of chooseGameBtns) {
     AllQuestion = loadDataJSON(evt.target.dataset.url);
     document.title = evt.target.dataset.url;
     initGame();
+
+    // minus1000('.green')
+    // minus1000('.blue')
+    // minus1000('.red')
   });
 }
 
-
-function loadJSON(name) {
-  const xhr = new XMLHttpRequest();
-
-  xhr.open('GET', name, false);
-  xhr.send();
-  if (xhr.status !== 200) {
-    //eslint-disable-next-line
-    alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
-  }
-  return xhr.responseText;
-}
-
-function loadDataJSON(URL) {
-  return JSON.parse(loadJSON(`./quests/${URL}.json`));
-}
 
 
 function compareNumeric(a, b) {
@@ -147,6 +135,7 @@ const gameBegin = function (evt) {
       Question(AllQuestion.questions[i].question, AllQuestion.questions[i].points, AllQuestion.questions[i].image, AllQuestion.questions[i].audio, AllQuestion.questions[i].answer, AllQuestion.questions[i].imageOfAnswer);
 
       getImage(AllQuestion.questions[i].image);
+      // getAnswerImage(AllQuestion.questions[i].imageOfAnswer);
       StateOfCloseAnswer = 0;
     });
   }
@@ -246,6 +235,8 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
     imageOfAnswer.className = 'Image-Of-Answer';
     imageOfAnswer.src = imageSrcOfAnswer;
     answerArea.appendChild(imageOfAnswer);
+
+
   }
 
   const btnCloseAnswerArea = document.createElement('span');
@@ -256,6 +247,10 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
     evt.preventDefault();
     if (document.querySelector('.AnswerImage')) {
       document.querySelector('.AnswerImage').parentNode.removeChild(document.querySelector('.AnswerImage'));
+      removeClickMinus1000('.green');
+      removeClickMinus1000('.red');
+      removeClickMinus1000('.blue');
+
     }
   });
 
@@ -278,18 +273,23 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
 
   CreateVoteButton('BlueButtonPlus', 'Blue-Button', '+  синим', answerArea);
   CreateVoteButton('BlueButtonMinus', 'Blue-Button-Minus', '-  синим', answerArea);
-
+  minus1000('.blue')
   if (players === 3) {
+
+
     CreateVoteButton('GreenButtonPlus', 'Green-Button', '+  зеленым', answerArea);
     CreateVoteButton('GreenButtonMinus', 'Green-Button-Minus', '-  зеленым', answerArea);
+    minus1000('.green')
   }
 
   CreateVoteButton('RedButtonPlus', 'Red-Button', '+  красным', answerArea);
   CreateVoteButton('RedButtonMinus', 'Red-Button-Minus', '-  красным', answerArea);
+  minus1000('.red')
 
   document.body.appendChild(answerArea);
   GetPointsButton('#Blue-Button', points, '.blue');
   LosePointsButton('#Blue-Button-Minus', points, '.blue');
+
 
   if (players === 3) {
     GetPointsButton('#Green-Button', points, '.green');
@@ -298,6 +298,12 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
 
   GetPointsButton('#Red-Button', points, '.red');
   LosePointsButton('#Red-Button-Minus', points, '.red');
+
+
+  if (document.querySelector('.AnswerImage')) {
+    document.querySelector('.AnswerImage').style.cssText = `background-repeat: no-repeat; background-position: center center;background-image: url(${imageSrcOfAnswer});  background-size: cover; background-color: var(--gradient2-2);`;
+  }
+
 };
 
 function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
@@ -349,5 +355,8 @@ function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
     ShowAnswer(points, Answer, imageAnswer);
     //eslint-disable-next-line
     StateOfCloseAnswer = 1;
+
+
+    // getAnswerImage(AllQuestion.questions[i].imageOfAnswer);
   });
 }

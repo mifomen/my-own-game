@@ -28,6 +28,11 @@
     {
       "id": 7,
       "title": "Как кроссворд №2"
+    },
+    {
+      "id": 8,
+      "title": "Ребусы"
+
     }
   ],
 
@@ -49,8 +54,8 @@
         "answer": "1/1 2/2 3/3 … 9/9 или 1<sup>0</sup> 2<sup>0</sup> 3<sup>0</sup> 4<sup>0</sup> … 9<sup>0</sup>"
     }, {
         "theme": 1,
-        "question": "Какой угол составляют между собой стрелки часов? Ответ нужно  дать не пользуясь транспортиром ",
-        "image": "https://puu.sh/HxhhW/c274013cc2.png",
+        "question": "Какой угол составляют между собой стрелки в 5 часов утра ? <br>Ответ нужно  дать в грудусах и не пользуясь транспортиром ",
+        "image": "./img/question-informatic/theme-1-300.jpg",
         "audio": "",
         "points": 300,
         "imageOfAnswer": "",
@@ -61,7 +66,7 @@
         "image": "",
         "audio": "",
         "points": 400,
-        "imageOfAnswer": "https://puu.sh/HxhmX/5937250f65.png",
+        "imageOfAnswer": "./img/question-informatic/theme-1-400.jpg",
         "answer": "В нем было 17000 ламп"
     }, {
         "theme": 1,
@@ -137,7 +142,7 @@
         "answer": "число пи"
     }, {
         "theme": 3,
-        "question": "Кот в мешке.<br>Слово, которым обозначается это понятие, в переводе с греческого означает «натянутая тетива»",
+        "question": "Слово, которым обозначается это понятие, в переводе с греческого означает «натянутая тетива»",
         "image": "",
         "audio": "",
         "points": 400,
@@ -193,7 +198,7 @@
         "answer": "счёты, арифмометр, логарифмическая линейка."
     }, {
         "theme": 5,
-        "question": "Кот в мешке. Узнает ли себя делимое после деления, если перед делением умножить его на делитель?",
+        "question": "Узнает ли себя делимое после деления, если перед делением умножить его на делитель?",
         "image": "",
         "audio": "",
         "points": 300,
@@ -201,7 +206,7 @@
         "answer": "да"
     }, {
         "theme": 5,
-        "question": "Один оборот вокруг Земли спутник делает за 1 ч 40 минут, а другой оборот - за 100 минут. Как это может быть?",
+        "question": "Один оборот вокруг Земли спутник делает за 2 ч 40 минут, а другой оборот - за 160 минут. Как это может быть?",
         "image": "",
         "audio": "",
         "points": 500,
@@ -237,7 +242,7 @@
       "question": "Устройство для ввода буквенной и числовой информации.",
       "image": "",
       "audio": "",
-      "points": 100,
+      "points": 300,
       "imageOfAnswer": "",
       "answer": "Клавиатура"
     },{
@@ -245,7 +250,7 @@
       "question": "«Волшебная палочка» для игры на компьютере",
       "image": "",
       "audio": "",
-      "points": 120,
+      "points": 500,
       "imageOfAnswer": "",
       "answer": "Джойстик"
     },{
@@ -253,7 +258,7 @@
       "question": "То, на что мы смотрим, работая на компьютере, чтобы получить от него информацию.",
       "image": "",
       "audio": "",
-      "points": 140,
+      "points": 200,
       "imageOfAnswer": "",
       "answer": "Монитор"
     }, {
@@ -261,7 +266,7 @@
       "question": "Устройство для печати.",
       "image": "",
       "audio": "",
-      "points": 160,
+      "points": 100,
       "imageOfAnswer": "",
       "answer": "Принтер"
     }, {
@@ -269,7 +274,7 @@
       "question": "Хранилище информации",
       "image": "",
       "audio": "",
-      "points": 180,
+      "points": 400,
       "imageOfAnswer": "",
       "answer": "Память"
     },{
@@ -277,7 +282,7 @@
       "question": "Устройство для ввода графической информации.",
       "image": "",
       "audio": "",
-      "points": 120,
+      "points": 420,
       "imageOfAnswer": "",
       "answer": "Сканер"
     },{
@@ -285,7 +290,7 @@
       "question": "Мозг компьютера",
       "image": "",
       "audio": "",
-      "points": 135,
+      "points": 435,
       "imageOfAnswer": "",
       "answer": "Процессор"
     },{
@@ -293,7 +298,7 @@
       "question": "Устройство для вывода звуковой информации",
       "image": "",
       "audio": "",
-      "points": 150,
+      "points": 450,
       "imageOfAnswer": "",
       "answer": "Динамик"
     },{
@@ -301,7 +306,7 @@
       "question": "Собери слово: КЙЕБСИ",
       "image": "",
       "audio": "",
-      "points": 175,
+      "points": 475,
       "imageOfAnswer": "",
       "answer": "Бэйсик"
     },{
@@ -309,9 +314,49 @@
       "question": "Собери слово: АКНПКО",
       "image": "",
       "audio": "",
-      "points": 200,
+      "points": 500,
       "imageOfAnswer": "",
       "answer": "Кнопка"
+    },{
+      "theme": 8,
+      "question": "Отгадай ребус",
+      "image": "./img/question-informatic/theme-8-420.jpg",
+      "audio": "",
+      "points": 420,
+      "imageOfAnswer": "",
+      "answer": "Принтер"
+    },{
+      "theme": 8,
+      "question": "Отгадай ребус, 2 слова",
+      "image": "./img/question-informatic/theme-8-440.jpg",
+      "audio": "",
+      "points": 440,
+      "imageOfAnswer": "",
+      "answer": "Диск и клавиша"
+    },{
+      "theme": 8,
+      "question": "Отгадай ребус, 2 слова",
+      "image": "./img/question-informatic/theme-8-460.jpg",
+      "audio": "",
+      "points": 460,
+      "imageOfAnswer": "",
+      "answer": "Информатика и винчестер"
+    },{
+      "theme": 8,
+      "question": "Отгадай ребус",
+      "image": "./img/question-informatic/theme-8-480.jpg",
+      "audio": "",
+      "points": 480,
+      "imageOfAnswer": "",
+      "answer": "Клавиатура"
+    },{
+      "theme": 8,
+      "question": "Отгадай ребус",
+      "image": "./img/question-informatic/theme-8-500.jpg",
+      "audio": "",
+      "points": 500,
+      "imageOfAnswer": "",
+      "answer": "Программирование"
     }
   ]
 }
