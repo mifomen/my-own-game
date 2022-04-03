@@ -100,4 +100,7 @@ function loadDataJSON(URL) {
 }
 
 
+
+
+
 export { setOpacityItems, setOpacityItem, getImage, loadDataJSON, minus1000, removeClickMinus1000,getAnswerImage };
