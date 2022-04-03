@@ -204,11 +204,13 @@ body {
 }
 
 .all-points {
-  display: flex;
+  display: grid;
   width: 100%;
-  justify-content: space-around;
-  align-items: center;
   text-shadow: 1px 1px 1px var(--basic-black);
+  padding: 0 10% 0 10%;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  column-gap: 15%;
 }
 
 .blue,
