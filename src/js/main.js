@@ -307,20 +307,6 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
 };
 
 
-const eventCloseQuestionOnClick = (points, Answer, imageAnswer) => {
-  // evet.preventDefault();
-  const elem1 = document.querySelector('.js-question-delete');
-  if (elem1) {
-    elem1.style.opacity = 0;
-    // setTimeout(elem1.parentNode.removeChild(elem1),5500);
-    elem1.parentNode.removeChild(elem1);
-    StateOfCloseAnswer = 1;
-  }
-  ShowAnswer(points, Answer, imageAnswer);
-  //eslint-disable-next-line
-  StateOfCloseAnswer = 1;
-    // getAnswerImage(AllQuestion.questions[i].imageOfAnswer);
-}
 
 const onEscapeCloseQuestion = (event,points, Answer, imageAnswer) => {
   if (event.code == 'Escape') {
@@ -367,9 +353,28 @@ function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
 
   document.body.appendChild(questionArea);
 
-  document.querySelector('.js-close-question').addEventListener('click', eventCloseQuestionOnClick(points, Answer, imageAnswer))
+  document.querySelector('.js-close-question').onclick = () => {
+  // evet.preventDefault();
+  const elem1 = document.querySelector('.js-question-delete');
+  if (elem1) {
+    elem1.style.opacity = 0;
+    // setTimeout(elem1.parentNode.removeChild(elem1),5500);
+    elem1.parentNode.removeChild(elem1);
+    StateOfCloseAnswer = 1;
+  }
+  ShowAnswer(points, Answer, imageAnswer);
+  //eslint-disable-next-line
+  StateOfCloseAnswer = 1;
+    // getAnswerImage(AllQuestion.questions[i].imageOfAnswer);
 
+  }
 
+  // eventCloseQuestionOnClick(points, Answer, imageAnswer))
   // document.addEventListener('keydown',onEscapeCloseQuestion(points, Answer, imageAnswer));
-
 }
+
+
+
+// const eventCloseQuestionOnClick = (points, Answer, imageAnswer) => {
+
+// }
