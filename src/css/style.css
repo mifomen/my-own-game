@@ -213,6 +213,13 @@ body {
   column-gap: 15%;
 }
 
+.all-points span {
+  border-radius: 20px;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 .blue,
 .all,
 .green,
