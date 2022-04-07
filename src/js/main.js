@@ -1,4 +1,4 @@
-import { getImage,loadDataJSON, getAnswerImage, minus1000, removeClickMinus1000 } from './utils.js';
+import { getImage,loadDataJSON, minus1000, removeClickMinus1000 } from './utils.js';
 
 // const points = document.querySelectorAll('.points');
 // const btnStartGame = document.querySelector('.start-game');
@@ -25,8 +25,6 @@ for (const chooseGameBtn of chooseGameBtns) {
     // minus1000('.red')
   });
 }
-
-
 
 function compareNumeric(a, b) {
   if (a.theme < b.theme) { return -1; }
@@ -235,9 +233,9 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
     imageOfAnswer.className = 'Image-Of-Answer';
     imageOfAnswer.src = imageSrcOfAnswer;
     answerArea.appendChild(imageOfAnswer);
-
-
   }
+
+
 
   const btnCloseAnswerArea = document.createElement('span');
   btnCloseAnswerArea.className = 'btn-close-answer-area';
@@ -273,18 +271,18 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
 
   CreateVoteButton('BlueButtonPlus', 'Blue-Button', '+  синим', answerArea);
   CreateVoteButton('BlueButtonMinus', 'Blue-Button-Minus', '-  синим', answerArea);
-  minus1000('.blue')
+  minus1000('.blue');
   if (players === 3) {
 
 
     CreateVoteButton('GreenButtonPlus', 'Green-Button', '+  зеленым', answerArea);
     CreateVoteButton('GreenButtonMinus', 'Green-Button-Minus', '-  зеленым', answerArea);
-    minus1000('.green')
+    minus1000('.green');
   }
 
   CreateVoteButton('RedButtonPlus', 'Red-Button', '+  красным', answerArea);
   CreateVoteButton('RedButtonMinus', 'Red-Button-Minus', '-  красным', answerArea);
-  minus1000('.red')
+  minus1000('.red');
 
   document.body.appendChild(answerArea);
   GetPointsButton('#Blue-Button', points, '.blue');
@@ -304,17 +302,17 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
     document.querySelector('.AnswerImage').style.cssText = `background-repeat: no-repeat; background-position: center center;background-image: url(${imageSrcOfAnswer});  background-size: cover; background-color: var(--gradient2-2);`;
   }
 
+
+
 };
 
-
-
-const onEscapeCloseQuestion = (event,points, Answer, imageAnswer) => {
-  if (event.code == 'Escape') {
-    alert('Escape!')
-  }
-  eventCloseQuestionOnClick(points, Answer, imageAnswer);
-}
-// document.addEventListener('keydown'
+// const onEscapeCloseQuestion = (event,points, Answer, imageAnswer) => {
+//   if (event.code == 'Escape') {
+//     alert('Escape!')
+//   }
+//   eventCloseQuestionOnClick(points, Answer, imageAnswer);
+// }
+// // document.addEventListener('keydown'
 
 
 function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
@@ -371,6 +369,11 @@ function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
 
   // eventCloseQuestionOnClick(points, Answer, imageAnswer))
   // document.addEventListener('keydown',onEscapeCloseQuestion(points, Answer, imageAnswer));
+
+
+  if (document.querySelector('.Image-Of-Question')) {
+    document.querySelector('.Image-Of-Question').remove();
+  }
 }
 
 

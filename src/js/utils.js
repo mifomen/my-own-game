@@ -70,16 +70,20 @@ const removeClickMinus1000 = (selector) => {
 const getImage = (src) => {
   if (src !== '') {
     // console.log(`${document.querySelector('.image-output').style.cssText}`)
-    document.querySelector('.image-output').style.cssText = `background-repeat: no-repeat; background-position: center center;background-image: url(${src});  background-size: 90%; background-color: var(--gradient2-2);`;
+    document.querySelector('.image-output').style.cssText = `background-repeat: no-repeat; background-position: center center;background-image: url(${src});  background-size: 73%; background-color: var(--gradient2-2);`;
     document.querySelector('.question-text').style.cssText = `padding: 15px; border: 5px solid rgba(0,0,0,0.8);`;
 
-    document.querySelector('.js-close-question').classList.add('btn-close-getImage')
+    document.querySelector('.js-close-question').classList.add('btn-close-getImage');
+
+    if (document.querySelector('.question-text')) {
+      document.querySelector('.question-text').classList.add('question-text--imageQuest');
+    }
   }
 };
 
 const getAnswerImage = (src) => {
   if (src !== '') {
-    document.querySelector('.AnswerImage').style.cssText = `background-repeat: no-repeat; background-position: center center;background-image: url(${src});  background-size: 90%; background-color: var(--gradient2-2);`;
+    document.querySelector('.AnswerImage').style.cssText = `background-repeat: no-repeat; background-position: center center;background-image: url(${src});  background-size: 65%; background-color: var(--gradient2-2);`;
   }
 }
 

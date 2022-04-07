@@ -286,10 +286,15 @@ body {
   animation: opactity 500ms ease 1;
 }
 
+.image-output {
+  background-size: 80%;
+}
+
 .Image-Of-Question {
   position: relative;
   width: auto;
   z-index: 15;
+  border: 10px double black;
 }
 
 .Audio-Of-Question {
@@ -324,6 +329,14 @@ body {
 
 .question-text {
   font-size: 3.2em;
+
+
+}
+
+.question-text--imageQuest {
+  position: absolute;
+  bottom: -4%;
+  border-radius: 20px;
 }
 
 .question-text-answer {
