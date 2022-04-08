@@ -257,6 +257,9 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
   const TextOfAnswer = document.createElement('h1');
   TextOfAnswer.innerHTML = Answer;
   TextOfAnswer.className = 'question-text-answer';
+  if (Answer.length <=11) {
+    TextOfAnswer.classList.add('question-text-answer--huge');
+  }
   answerArea.appendChild(TextOfAnswer);
 
   const CreateVoteButton = function (elemBtn, id, txtContent, parentAdd) {
@@ -323,6 +326,7 @@ function Question(evt, points, imageSrc, audioSrc, Answer, imageAnswer) {
   const questionText = document.createElement('h1');
   questionText.innerHTML = evt;
   questionText.className = 'question-text';
+
   questionArea.appendChild(questionText);
 
 
