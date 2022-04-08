@@ -257,7 +257,7 @@ const ShowAnswer = function (points, Answer, imageSrcOfAnswer) {
   const TextOfAnswer = document.createElement('h1');
   TextOfAnswer.innerHTML = Answer;
   TextOfAnswer.className = 'question-text-answer';
-  if (Answer.length <=11) {
+  if (Answer.split(' ').length <=6) {
     TextOfAnswer.classList.add('question-text-answer--huge');
   }
   answerArea.appendChild(TextOfAnswer);
